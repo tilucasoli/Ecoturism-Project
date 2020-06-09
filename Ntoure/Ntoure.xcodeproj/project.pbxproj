@@ -15,6 +15,9 @@
 		036D08C3248EBCF80011A44B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08C2248EBCF80011A44B /* TabBarController.swift */; };
 		036D08C5248EBD750011A44B /* ExplorerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08C4248EBD750011A44B /* ExplorerViewController.swift */; };
 		036D08C7248EBDBF0011A44B /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08C6248EBDBF0011A44B /* GuideViewController.swift */; };
+		5401888B248FB65A0073E630 /* AdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5401888A248FB65A0073E630 /* AdventureViewController.swift */; };
+		5401888D248FD1490073E630 /* AdventureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5401888C248FD1490073E630 /* AdventureTableViewCell.swift */; };
+		5401888F248FD5420073E630 /* Adventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5401888E248FD5420073E630 /* Adventure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		036D08C2248EBCF80011A44B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		036D08C4248EBD750011A44B /* ExplorerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorerViewController.swift; sourceTree = "<group>"; };
 		036D08C6248EBDBF0011A44B /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		5401888A248FB65A0073E630 /* AdventureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureViewController.swift; sourceTree = "<group>"; };
+		5401888C248FD1490073E630 /* AdventureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureTableViewCell.swift; sourceTree = "<group>"; };
+		5401888E248FD5420073E630 /* Adventure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Adventure.swift; path = Ntoure/Controller/Adventure.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,7 @@
 		036D08BD248EBBB70011A44B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5401888E248FD5420073E630 /* Adventure.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -93,6 +100,8 @@
 				036D08AD248EBB2B0011A44B /* ViewController.swift */,
 				036D08C4248EBD750011A44B /* ExplorerViewController.swift */,
 				036D08C6248EBDBF0011A44B /* GuideViewController.swift */,
+				5401888A248FB65A0073E630 /* AdventureViewController.swift */,
+				5401888C248FD1490073E630 /* AdventureTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -167,12 +176,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5401888D248FD1490073E630 /* AdventureTableViewCell.swift in Sources */,
+				5401888F248FD5420073E630 /* Adventure.swift in Sources */,
 				036D08AE248EBB2B0011A44B /* ViewController.swift in Sources */,
 				036D08C3248EBCF80011A44B /* TabBarController.swift in Sources */,
 				036D08AA248EBB2B0011A44B /* AppDelegate.swift in Sources */,
 				036D08AC248EBB2B0011A44B /* SceneDelegate.swift in Sources */,
 				036D08C5248EBD750011A44B /* ExplorerViewController.swift in Sources */,
 				036D08C7248EBDBF0011A44B /* GuideViewController.swift in Sources */,
+				5401888B248FB65A0073E630 /* AdventureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
