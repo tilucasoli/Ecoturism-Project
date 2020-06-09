@@ -13,8 +13,8 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let firstViewController = ExplorerViewController()
-        let secondViewController = GuideViewController()
+        let firstViewController = UINavigationController(rootViewController: ExplorerViewController())
+        let secondViewController = UINavigationController(rootViewController: GuideViewController())
         
         let tabBarList = [firstViewController, secondViewController]
         viewControllers = tabBarList
