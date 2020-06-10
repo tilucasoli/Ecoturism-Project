@@ -11,4 +11,6 @@ import UIKit
 struct Adventure {
     var image: UIImage
     var title: String
+    var categoria: String
+    var distancia: String
 }

@@ -33,6 +33,7 @@ class AdventureViewController: UIViewController {
         view.addSubview(tableView)
         setTableViewDelegates()
         
+        tableView.separatorStyle = .none
         tableView.rowHeight = 64
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -53,12 +54,30 @@ class AdventureViewController: UIViewController {
 
 extension AdventureViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return CGFloat(integerLiteral: 20)
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 16, y: 8, width: 200, height: 20))
+        let locationIcon = UIImageView(frame: CGRect(x: 20, y: 12, width: 9, height: 14))
+        let labelLocation = UILabel(frame: CGRect(x: 24 + locationIcon.frame.width, y: 8, width: 200, height: 20))
+        
+        labelLocation.text = "Ceará, Canoa Quebrada"
+        labelLocation.textColor = .black
+        labelLocation.font = UIFont(name: "SFProText", size: 16)
+        labelLocation.font.withSize(16)
+        
+        locationIcon.image = UIImage(named: "location")
+        
+        view.addSubview(locationIcon)
+        view.addSubview(labelLocation)
+        
+        return view
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Ceará, Canoa Quebrada"
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 36
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,15 +92,19 @@ extension AdventureViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     
 }
 
 extension AdventureViewController {
     
     func fetchData() -> [Adventure] {
-        let adventure1 = Adventure(image: UIImage(named: "Adventure")!, title: "Trilha por Canoa Quebrada")
-        let adventure2 = Adventure(image: UIImage(named: "Adventure")!, title: "Bondinho em Canoa Quebrada")
-        let adventure3 = Adventure(image: UIImage(named: "Adventure")!, title: "Surf em Canoa Quebrada")
+        let adventure1 = Adventure(image: UIImage(named: "Adventure")!, title: "Trilha por Canoa Quebrada", categoria: "Caminhada", distancia: "50km")
+        let adventure2 = Adventure(image: UIImage(named: "Adventure")!, title: "Bondinho em Canoa Quebrada", categoria: "Visualizar", distancia: "57km")
+        let adventure3 = Adventure(image: UIImage(named: "Adventure")!, title: "Surf em Canoa Quebrada", categoria: "Surf", distancia: "44km")
         
         return [adventure1, adventure2, adventure3]
     }
