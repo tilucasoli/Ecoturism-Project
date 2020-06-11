@@ -10,7 +10,7 @@ import UIKit
 
 class CollectionPhotoInformation: UIView {
     
-    let images = [UIImage(named: "bkgGrupo1"),UIImage(named: "bkgGrupo2"),UIImage(named: "bkgGrupo3"),UIImage(named: "bkgGrupo4")]
+    let images = [UIImage(named: "bkgGrupo1"), UIImage(named: "bkgGrupo2"), UIImage(named: "bkgGrupo3"), UIImage(named: "bkgGrupo4")]
 
     lazy var collectionPhotos: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -25,23 +25,22 @@ class CollectionPhotoInformation: UIView {
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUp()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 // MARK: ViewcodeProtocol
 extension CollectionPhotoInformation: ViewCode {
     func buildHierarchy() {
         addSubview(collectionPhotos)
     }
-    
+
     func setUpLayoutConstraints() {
         NSLayoutConstraint.activate([
             collectionPhotos.topAnchor.constraint(equalTo: topAnchor),
@@ -60,15 +59,15 @@ extension CollectionPhotoInformation: UICollectionViewDelegate, UICollectionView
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCollectionViewCell
-        cell.image.image = images[indexPath.row]
-        return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotoCollectionViewCell
+        cell?.image.image = images[indexPath.row]
+        return cell ?? UICollectionViewCell()
     }
 }
 // MARK: FlowLayoutDelegate
@@ -78,15 +77,15 @@ extension CollectionPhotoInformation: UICollectionViewDelegateFlowLayout {
         //let othersie = collectionView.frame.size
         return CGSize(width: size.width, height: size.height)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }

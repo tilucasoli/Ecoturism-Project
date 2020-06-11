@@ -16,5 +16,4 @@ extension UIColor {
     static let deleteColor = #colorLiteral(red: 0.9254901961, green: 0.3450980392, blue: 0.4039215686, alpha: 1)
     static let background = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9803921569, alpha: 1)
     static let withoutImage = #colorLiteral(red: 0.9215686275, green: 0.9215686275, blue: 0.9215686275, alpha: 1)
-    
 }

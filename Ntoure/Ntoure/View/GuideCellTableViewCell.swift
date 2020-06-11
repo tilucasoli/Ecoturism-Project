@@ -17,15 +17,15 @@ class GuideCellTableViewCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
-    var imgService: UIImageView = { 
+
+    var imgService: UIImageView = {
         let img = UIImageView()
         img.backgroundColor = .withoutImage
         img.layer.cornerRadius = 10
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
-    
+
     var title: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
@@ -33,7 +33,7 @@ class GuideCellTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     var btnArrow: UIButton = {
         let btn = UIButton()
         btn.tintColor = .textColor
@@ -41,15 +41,15 @@ class GuideCellTableViewCell: UITableViewCell {
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
-    
+
     func setupCell() {
         heightAnchor.constraint(equalToConstant: 57).isActive = true
         selectionStyle = .none
     }
-    
+
     func setupCellCard() {
         addSubview(cellView)
-        
+
         NSLayoutConstraint.activate([
             cellView.heightAnchor.constraint(equalToConstant: 55),
             cellView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
@@ -58,42 +58,39 @@ class GuideCellTableViewCell: UITableViewCell {
 //            cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
-    
+
     func setupImgService() {
         cellView.addSubview(imgService)
-        
-        
+
         NSLayoutConstraint.activate([
             imgService.heightAnchor.constraint(equalToConstant: 43),
             imgService.widthAnchor.constraint(equalToConstant: 43),
             imgService.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
-            imgService.leftAnchor.constraint(equalTo: cellView.leftAnchor,constant: 6),
-//            imgService.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: 6),
-//            cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            imgService.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 6)
         ])
-        
+
     }
-    
+
     func setupTitle() {
         cellView.addSubview(title)
-        
+
         NSLayoutConstraint.activate([
             title.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
             title.leftAnchor.constraint(equalTo: imgService.rightAnchor, constant: 18)
         ])
     }
-    
+
     func setupBtnIcon() {
         cellView.addSubview(btnArrow)
-        
+
         NSLayoutConstraint.activate([
-            btnArrow.rightAnchor.constraint(equalTo: cellView.rightAnchor, constant:  -16),
+            btnArrow.rightAnchor.constraint(equalTo: cellView.rightAnchor, constant: -16),
             btnArrow.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
             btnArrow.heightAnchor.constraint(equalToConstant: 19),
             btnArrow.widthAnchor.constraint(equalToConstant: 12)
         ])
     }
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCell()
@@ -101,15 +98,11 @@ class GuideCellTableViewCell: UITableViewCell {
         setupImgService()
         setupTitle()
         setupBtnIcon()
-//        contentView.addSubview(guideCover)
-        
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }
 
 //    override func setSelected(_ selected: Bool, animated: Bool) {

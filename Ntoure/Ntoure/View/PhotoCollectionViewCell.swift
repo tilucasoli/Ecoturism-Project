@@ -17,16 +17,16 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(image)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         //image.frame = self.bounds
@@ -38,4 +38,3 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         ])
     }
 }
-

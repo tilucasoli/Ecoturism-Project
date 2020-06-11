@@ -16,8 +16,8 @@ extension UIFont {
 }
 
 let stylingFont = [
-    NSAttributedString.Key.strokeColor : UIColor.titleColor,
-    NSAttributedString.Key.foregroundColor : UIColor.titleColor,
-    NSAttributedString.Key.strokeWidth : -2.5,
-    NSAttributedString.Key.font : UIFont.largeTitleGraviola]
-    as [NSAttributedString.Key : Any]
+    NSAttributedString.Key.strokeColor: UIColor.titleColor,
+    NSAttributedString.Key.foregroundColor: UIColor.titleColor,
+    NSAttributedString.Key.strokeWidth: -2.5,
+    NSAttributedString.Key.font: UIFont.largeTitleGraviola]
+    as [NSAttributedString.Key: Any]
