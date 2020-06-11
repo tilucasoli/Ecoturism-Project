@@ -56,15 +56,17 @@ extension AdventureViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 16, y: 8, width: 200, height: 20))
-        let locationIcon = UIImageView(frame: CGRect(x: 20, y: 12, width: 9, height: 14))
+        let locationIcon = UIImageView(frame: CGRect(x: 20, y: 11, width: 9, height: 14))
         let labelLocation = UILabel(frame: CGRect(x: 24 + locationIcon.frame.width, y: 8, width: 200, height: 20))
+        
+        view.backgroundColor = .white
         
         labelLocation.text = "Ceará, Canoa Quebrada"
         labelLocation.textColor = .black
         labelLocation.font = UIFont(name: "SFProText", size: 16)
         labelLocation.font.withSize(16)
         
-        locationIcon.image = UIImage(named: "location")
+        locationIcon.image = UIImage(named: "Location")
         
         view.addSubview(locationIcon)
         view.addSubview(labelLocation)
@@ -88,22 +90,18 @@ extension AdventureViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.adventureCell) as! AdventureTableViewCell
         let adventure = adventures[indexPath.row]
         cell.set(adventure: adventure)
+        cell.selectionStyle = .none
         
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
     
 }
 
 extension AdventureViewController {
     
     func fetchData() -> [Adventure] {
-        let adventure1 = Adventure(image: UIImage(named: "Adventure")!, title: "Trilha por Canoa Quebrada", categoria: "Caminhada", distancia: "50km")
-        let adventure2 = Adventure(image: UIImage(named: "Adventure")!, title: "Bondinho em Canoa Quebrada", categoria: "Visualizar", distancia: "57km")
+        let adventure1 = Adventure(image: UIImage(named: "Adventure")!, title: "Trilha por Canoa Quebrada", categoria: "Trilha", distancia: "50km")
+        let adventure2 = Adventure(image: UIImage(named: "Adventure")!, title: "Tirolesa em Canoa Quebrada", categoria: "Tirolesa", distancia: "57km")
         let adventure3 = Adventure(image: UIImage(named: "Adventure")!, title: "Surf em Canoa Quebrada", categoria: "Surf", distancia: "44km")
         
         return [adventure1, adventure2, adventure3]
