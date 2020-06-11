@@ -14,12 +14,12 @@ class GuideViewController: UIViewController {
     var guideList = [Guide]()
     
     let tableView: UITableView = {
-        let tv = UITableView()
-        tv.backgroundColor = .background
-        tv.separatorStyle = .none
-        tv.bounces = false
-        tv.translatesAutoresizingMaskIntoConstraints = false
-        return tv
+        let tableView = UITableView()
+        tableView.backgroundColor = .background
+        tableView.separatorStyle = .none
+        tableView.bounces = false
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
     }()
     
     let illustration: UIImageView = {
@@ -56,7 +56,7 @@ class GuideViewController: UIViewController {
         setupIllustration()
         setupIllustrationTitleLabel()
         setupIllustrationDescriptionLabel()
-        if guideList.count != 0 {
+        if !guideList.isEmpty {
             setupTableView()
         }
         
@@ -96,7 +96,7 @@ class GuideViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             illustrationDescriptionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            illustrationDescriptionLabel.topAnchor.constraint(equalTo: illustrationTitleLabel.bottomAnchor,constant:  4),
+            illustrationDescriptionLabel.topAnchor.constraint(equalTo: illustrationTitleLabel.bottomAnchor, constant: 4),
             illustrationDescriptionLabel.widthAnchor.constraint(equalToConstant: 284)
         ])
     }
