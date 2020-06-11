@@ -12,14 +12,12 @@ class Guide {
     var name: String
     var todo = [Service]()
     var done = [Service]()
-    
+
     init(name: String) {
         self.name = name
     }
-    
-    func addServiceInTodo(service: Service){
+
+    func addServiceInTodo(service: Service) {
         todo.append(service)
-        
     }
-    
 }

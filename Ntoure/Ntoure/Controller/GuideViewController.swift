@@ -52,7 +52,6 @@ class GuideViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .background
-                
         setupNavBar()
         setupIllustration()
         setupIllustrationTitleLabel()
@@ -62,7 +61,7 @@ class GuideViewController: UIViewController {
         }
         
     }
-    
+
     func setupNavBar() {
         navigationController?.navigationBar.titleTextAttributes = largeTitleStyle
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -105,16 +104,16 @@ class GuideViewController: UIViewController {
 }
 
 // TableView Settings
-extension GuideViewController: UITableViewDelegate,  UITableViewDataSource {
+extension GuideViewController: UITableViewDelegate, UITableViewDataSource {
 
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        
+
         tableView.register(GuideCellTableViewCell.self, forCellReuseIdentifier: "guideCell")
-        
+
         view.addSubview(tableView)
-        
+
         NSLayoutConstraint.activate([
             tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
             tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
@@ -122,18 +121,17 @@ extension GuideViewController: UITableViewDelegate,  UITableViewDataSource {
             tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return guideList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "guideCell", for: indexPath) as! GuideCellTableViewCell
-        cell.backgroundColor = .background
-        
-        cell.title.text = guideList[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "guideCell", for: indexPath) as? GuideCellTableViewCell
+        cell?.backgroundColor = .background
+        cell?.title.text = guideList[indexPath.row].name
 
-        return cell
+        return cell ?? UITableViewCell()
     }
 
 }
