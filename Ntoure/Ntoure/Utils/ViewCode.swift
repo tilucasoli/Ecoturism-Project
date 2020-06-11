@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+protocol ViewCode {
+    func buildHierarchy()
+    func setUpLayoutConstraints()
+    func aditionalConfigurations()
+}
+
+extension ViewCode {
+    func setUp() {
+        buildHierarchy()
+        setUpLayoutConstraints()
+        aditionalConfigurations()
+    }
+}

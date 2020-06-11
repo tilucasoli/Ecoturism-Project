@@ -15,6 +15,11 @@
 		036D08C3248EBCF80011A44B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08C2248EBCF80011A44B /* TabBarController.swift */; };
 		036D08C5248EBD750011A44B /* ExplorerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08C4248EBD750011A44B /* ExplorerViewController.swift */; };
 		036D08C7248EBDBF0011A44B /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08C6248EBDBF0011A44B /* GuideViewController.swift */; };
+		E26D3624248FC05B006A935C /* SelectedLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3623248FC05B006A935C /* SelectedLocationViewController.swift */; };
+		E26D3626248FC15E006A935C /* CollectionPhotoInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3625248FC15E006A935C /* CollectionPhotoInformation.swift */; };
+		E26D3628248FD209006A935C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */; };
+		E26D362B248FD5CE006A935C /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D362A248FD5CE006A935C /* ViewCode.swift */; };
+		E29CC2A924912049002F9611 /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29CC2A824912049002F9611 /* LocationMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		036D08C2248EBCF80011A44B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		036D08C4248EBD750011A44B /* ExplorerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorerViewController.swift; sourceTree = "<group>"; };
 		036D08C6248EBDBF0011A44B /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		E26D3623248FC05B006A935C /* SelectedLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedLocationViewController.swift; sourceTree = "<group>"; };
+		E26D3625248FC15E006A935C /* CollectionPhotoInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionPhotoInformation.swift; path = Ntoure/View/CollectionPhotoInformation.swift; sourceTree = SOURCE_ROOT; };
+		E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCollectionViewCell.swift; path = Ntoure/View/PhotoCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		E26D362A248FD5CE006A935C /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		E29CC2A824912049002F9611 /* LocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +70,10 @@
 		036D08A8248EBB2B0011A44B /* Ntoure */ = {
 			isa = PBXGroup;
 			children = (
-				036D08BF248EBBC20011A44B /* Controller */,
-				036D08BE248EBBBD0011A44B /* View */,
+				E26D3629248FD5A1006A935C /* Utils */,
 				036D08BD248EBBB70011A44B /* Model */,
+				E29CC2A724911FB4002F9611 /* View */,
+				036D08BF248EBBC20011A44B /* Controller */,
 				036D08A9248EBB2B0011A44B /* AppDelegate.swift */,
 				036D08AB248EBB2B0011A44B /* SceneDelegate.swift */,
 				036D08B2248EBB300011A44B /* Assets.xcassets */,
@@ -79,13 +90,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		036D08BE248EBBBD0011A44B /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		036D08BF248EBBC20011A44B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,8 +97,27 @@
 				036D08AD248EBB2B0011A44B /* ViewController.swift */,
 				036D08C4248EBD750011A44B /* ExplorerViewController.swift */,
 				036D08C6248EBDBF0011A44B /* GuideViewController.swift */,
+				E26D3623248FC05B006A935C /* SelectedLocationViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		E26D3629248FD5A1006A935C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E26D362A248FD5CE006A935C /* ViewCode.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E29CC2A724911FB4002F9611 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E26D3625248FC15E006A935C /* CollectionPhotoInformation.swift */,
+				E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */,
+				E29CC2A824912049002F9611 /* LocationMapView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,11 +190,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26D3624248FC05B006A935C /* SelectedLocationViewController.swift in Sources */,
+				E26D362B248FD5CE006A935C /* ViewCode.swift in Sources */,
 				036D08AE248EBB2B0011A44B /* ViewController.swift in Sources */,
+				E29CC2A924912049002F9611 /* LocationMapView.swift in Sources */,
 				036D08C3248EBCF80011A44B /* TabBarController.swift in Sources */,
 				036D08AA248EBB2B0011A44B /* AppDelegate.swift in Sources */,
 				036D08AC248EBB2B0011A44B /* SceneDelegate.swift in Sources */,
+				E26D3628248FD209006A935C /* PhotoCollectionViewCell.swift in Sources */,
 				036D08C5248EBD750011A44B /* ExplorerViewController.swift in Sources */,
+				E26D3626248FC15E006A935C /* CollectionPhotoInformation.swift in Sources */,
 				036D08C7248EBDBF0011A44B /* GuideViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +337,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3XAHB7RJJD;
 				INFOPLIST_FILE = Ntoure/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -326,6 +355,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3XAHB7RJJD;
 				INFOPLIST_FILE = Ntoure/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

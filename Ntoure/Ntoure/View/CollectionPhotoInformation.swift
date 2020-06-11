@@ -47,7 +47,7 @@ extension CollectionPhotoInformation: ViewCode {
             collectionPhotos.topAnchor.constraint(equalTo: topAnchor),
             collectionPhotos.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionPhotos.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionPhotos.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3)
+            collectionPhotos.heightAnchor.constraint(equalTo: heightAnchor)
         ])
     }
 
