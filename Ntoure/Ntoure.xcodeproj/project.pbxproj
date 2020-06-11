@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0355D4622491B2A8006B6070 /* Harbor Type - Graviola Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0355D4612491B2A8006B6070 /* Harbor Type - Graviola Regular.otf */; };
+		0355D4642491B3F4006B6070 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355D4632491B3F4006B6070 /* Fonts.swift */; };
 		036D08AA248EBB2B0011A44B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08A9248EBB2B0011A44B /* AppDelegate.swift */; };
 		036D08AC248EBB2B0011A44B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08AB248EBB2B0011A44B /* SceneDelegate.swift */; };
 		036D08B3248EBB300011A44B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036D08B2248EBB300011A44B /* Assets.xcassets */; };
@@ -19,9 +21,15 @@
 		E26D3628248FD209006A935C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */; };
 		E26D362B248FD5CE006A935C /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D362A248FD5CE006A935C /* ViewCode.swift */; };
 		E29CC2A924912049002F9611 /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29CC2A824912049002F9611 /* LocationMapView.swift */; };
+		036D08CC248FBFBB0011A44B /* Project colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08CB248FBFBB0011A44B /* Project colors.swift */; };
+		036D08D024900DC20011A44B /* Guide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08CF24900DC20011A44B /* Guide.swift */; };
+		036D08D224900E410011A44B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08D124900E410011A44B /* Service.swift */; };
+		036D08D4249015CC0011A44B /* GuideCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08D3249015CC0011A44B /* GuideCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0355D4612491B2A8006B6070 /* Harbor Type - Graviola Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Harbor Type - Graviola Regular.otf"; sourceTree = "<group>"; };
+		0355D4632491B3F4006B6070 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		036D08A6248EBB2B0011A44B /* Ntoure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ntoure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		036D08A9248EBB2B0011A44B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		036D08AB248EBB2B0011A44B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +44,10 @@
 		E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCollectionViewCell.swift; path = Ntoure/View/PhotoCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		E26D362A248FD5CE006A935C /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		E29CC2A824912049002F9611 /* LocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapView.swift; sourceTree = "<group>"; };
+		036D08CB248FBFBB0011A44B /* Project colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project colors.swift"; sourceTree = "<group>"; };
+		036D08CF24900DC20011A44B /* Guide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guide.swift; sourceTree = "<group>"; };
+		036D08D124900E410011A44B /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		036D08D3249015CC0011A44B /* GuideCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GuideCellTableViewCell.swift; path = Ntoure/View/GuideCellTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +81,10 @@
 			isa = PBXGroup;
 			children = (
 				E26D3629248FD5A1006A935C /* Utils */,
+				036D08CA248FBF820011A44B /* Resources */,
+				036D08BF248EBBC20011A44B /* Controller */,
 				036D08BD248EBBB70011A44B /* Model */,
 				E29CC2A724911FB4002F9611 /* View */,
-				036D08BF248EBBC20011A44B /* Controller */,
 				036D08A9248EBB2B0011A44B /* AppDelegate.swift */,
 				036D08AB248EBB2B0011A44B /* SceneDelegate.swift */,
 				036D08B2248EBB300011A44B /* Assets.xcassets */,
@@ -84,6 +97,8 @@
 		036D08BD248EBBB70011A44B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				036D08CF24900DC20011A44B /* Guide.swift */,
+				036D08D124900E410011A44B /* Service.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -95,6 +110,7 @@
 				036D08C4248EBD750011A44B /* ExplorerViewController.swift */,
 				036D08C6248EBDBF0011A44B /* GuideViewController.swift */,
 				E26D3623248FC05B006A935C /* SelectedLocationViewController.swift */,
+				036D08D3249015CC0011A44B /* GuideCellTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -115,6 +131,16 @@
 				E29CC2A824912049002F9611 /* LocationMapView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		036D08CA248FBF820011A44B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				036D08CB248FBFBB0011A44B /* Project colors.swift */,
+				0355D4612491B2A8006B6070 /* Harbor Type - Graviola Regular.otf */,
+				0355D4632491B3F4006B6070 /* Fonts.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +203,7 @@
 			files = (
 				036D08B6248EBB300011A44B /* LaunchScreen.storyboard in Resources */,
 				036D08B3248EBB300011A44B /* Assets.xcassets in Resources */,
+				0355D4622491B2A8006B6070 /* Harbor Type - Graviola Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,10 +217,16 @@
 				E26D3624248FC05B006A935C /* SelectedLocationViewController.swift in Sources */,
 				E26D362B248FD5CE006A935C /* ViewCode.swift in Sources */,
 				E29CC2A924912049002F9611 /* LocationMapView.swift in Sources */,
+				036D08CC248FBFBB0011A44B /* Project colors.swift in Sources */,
+				036D08AE248EBB2B0011A44B /* ViewController.swift in Sources */,
+				036D08D4249015CC0011A44B /* GuideCellTableViewCell.swift in Sources */,
 				036D08C3248EBCF80011A44B /* TabBarController.swift in Sources */,
 				036D08AA248EBB2B0011A44B /* AppDelegate.swift in Sources */,
+				036D08D224900E410011A44B /* Service.swift in Sources */,
 				036D08AC248EBB2B0011A44B /* SceneDelegate.swift in Sources */,
 				E26D3628248FD209006A935C /* PhotoCollectionViewCell.swift in Sources */,
+				036D08D024900DC20011A44B /* Guide.swift in Sources */,
+				0355D4642491B3F4006B6070 /* Fonts.swift in Sources */,
 				036D08C5248EBD750011A44B /* ExplorerViewController.swift in Sources */,
 				E26D3626248FC15E006A935C /* CollectionPhotoInformation.swift in Sources */,
 				036D08C7248EBDBF0011A44B /* GuideViewController.swift in Sources */,
