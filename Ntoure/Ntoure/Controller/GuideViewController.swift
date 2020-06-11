@@ -11,7 +11,7 @@ import UIKit
 // Main
 class GuideViewController: UIViewController {
 
-    var guideList = [Guide(name: "Roteiro do Cocó")]
+    var guideList = [Guide]()
     
     let tableView: UITableView = {
         let tv = UITableView()
@@ -22,24 +22,84 @@ class GuideViewController: UIViewController {
         return tv
     }()
     
+    let illustration: UIImageView = {
+        let img = UIImageView()
+        img.image = UIImage(named: "guide illustration")
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
+    
+    let illustrationTitleLabel: UILabel = {
+        let label = UILabel()
+        label.attributedText = NSMutableAttributedString(string: "Você não tem Aventuras?", attributes: illustrationTitle)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let illustrationDescriptionLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Tente explorar a sessão de Aventuras, você vai se apaixonar"
+        label.textColor = .textColor
+        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 2
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .background
                 
         setupNavBar()
-
-        setupTableView()
-        setupTableView()
+        setupIllustration()
+        setupIllustrationTitleLabel()
+        setupIllustrationDescriptionLabel()
+        if guideList.count != 0 {
+            setupTableView()
+        }
+        
     }
     
     func setupNavBar() {
-        navigationController?.navigationBar.titleTextAttributes = stylingFont
+        navigationController?.navigationBar.titleTextAttributes = largeTitleStyle
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.largeTitleTextAttributes = stylingFont
+        navigationController?.navigationBar.largeTitleTextAttributes = largeTitleStyle
         title = "Roteiros"
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
         navigationController?.navigationBar.tintColor = .actionColor
+    }
+    
+    func setupIllustration() {
+        view.addSubview(illustration)
+        
+        illustration.contentMode = .scaleAspectFit
+        NSLayoutConstraint.activate([
+            illustration.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            illustration.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 115)
+        ])
+    }
+    
+    func setupIllustrationTitleLabel() {
+        view.addSubview(illustrationTitleLabel)
+        
+        NSLayoutConstraint.activate([
+            illustrationTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            illustrationTitleLabel.topAnchor.constraint(equalTo: illustration.bottomAnchor, constant: 16)
+        ])
+    }
+    
+    func setupIllustrationDescriptionLabel() {
+        view.addSubview(illustrationDescriptionLabel)
+        
+        NSLayoutConstraint.activate([
+            illustrationDescriptionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            illustrationDescriptionLabel.topAnchor.constraint(equalTo: illustrationTitleLabel.bottomAnchor,constant:  4),
+            illustrationDescriptionLabel.widthAnchor.constraint(equalToConstant: 284)
+        ])
     }
 
 }

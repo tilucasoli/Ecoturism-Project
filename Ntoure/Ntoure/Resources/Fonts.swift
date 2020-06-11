@@ -9,15 +9,20 @@
 import UIKit
 
 extension UIFont {
-    static let largeTitleGraviola: UIFont = {
-        let font = UIFont(name: "Graviola-Regular", size: 34)!
-        return font
-    }()
+    static let largeTitleGraviola = UIFont(name: "Graviola-Regular", size: 34)!
+    static let illustrationTitle = UIFont(name: "Graviola-Regular", size: 23)!
 }
 
-let stylingFont = [
+let largeTitleStyle = [
     NSAttributedString.Key.strokeColor : UIColor.titleColor,
     NSAttributedString.Key.foregroundColor : UIColor.titleColor,
     NSAttributedString.Key.strokeWidth : -2.5,
     NSAttributedString.Key.font : UIFont.largeTitleGraviola]
+    as [NSAttributedString.Key : Any]
+
+let illustrationTitle = [
+    NSAttributedString.Key.strokeColor : UIColor.titleColor,
+    NSAttributedString.Key.foregroundColor : UIColor.titleColor,
+    NSAttributedString.Key.strokeWidth : -2.5,
+    NSAttributedString.Key.font : UIFont.illustrationTitle]
     as [NSAttributedString.Key : Any]
