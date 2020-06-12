@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Icon ionic-ios-pin.jpg",
+      "filename" : "locationIcon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "locationIcon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "locationIcon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
