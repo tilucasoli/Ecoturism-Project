@@ -56,10 +56,15 @@ class GuideViewController: UIViewController {
         setupIllustration()
         setupIllustrationTitleLabel()
         setupIllustrationDescriptionLabel()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+        
         if !guideList.isEmpty {
             setupTableView()
         }
-        
     }
 
     func setupNavBar() {
@@ -68,8 +73,16 @@ class GuideViewController: UIViewController {
         navigationController?.navigationBar.largeTitleTextAttributes = largeTitleStyle
         title = "Roteiros"
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(creatingGuide))
         navigationController?.navigationBar.tintColor = .actionColor
+    }
+    
+    @objc func creatingGuide() {
+        let newVC = SelectedGuideViewController()
+        let newGuide = Guide(name: "New Guide")
+        guideList.append(newGuide)
+        print(guideList)
+        self.navigationController?.pushViewController(newVC, animated: true)
     }
     
     func setupIllustration() {
