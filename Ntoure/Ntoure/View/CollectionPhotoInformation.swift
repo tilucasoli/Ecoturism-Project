@@ -74,7 +74,7 @@ extension CollectionPhotoInformation: UICollectionViewDelegate, UICollectionView
 extension CollectionPhotoInformation: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = collectionPhotos.bounds
-        //let othersie = collectionView.frame.size
+        //let othersize = collectionView.frame.size
         return CGSize(width: size.width, height: size.height)
     }
 
