@@ -68,7 +68,7 @@ class GuideViewController: UIViewController {
     }
 
     func setupNavBar() {
-        navigationController?.navigationBar.titleTextAttributes = largeTitleStyle
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = largeTitleStyle
         title = "Roteiros"
@@ -81,7 +81,7 @@ class GuideViewController: UIViewController {
         let newVC = SelectedGuideViewController()
         let newGuide = Guide(name: "New Guide")
         guideList.append(newGuide)
-        print(guideList)
+
         self.navigationController?.pushViewController(newVC, animated: true)
     }
     
@@ -131,7 +131,7 @@ extension GuideViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
             tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
             tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 8),
-            tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 
