@@ -103,6 +103,11 @@ class GuideCellTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func layoutSubviews() {
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
+
+    }
 }
 
 //    override func setSelected(_ selected: Bool, animated: Bool) {

@@ -11,7 +11,7 @@ import UIKit
 class AdventureView: UIView {
     
     // Temporary mockData
-    var guideList = [Guide(name: "Passei de Barco"), Guide(name: "Trilha de Bicicleta")]
+    var guideList = [Guide(name: "Passei de Barco"), Guide(name: "Trilha de Bicicleta"), Guide(name: "Trilha de Bicicleta")]
 
     lazy var title: UILabel = {
         let title = UILabel()
@@ -77,8 +77,8 @@ extension AdventureView: ViewCode {
 
         NSLayoutConstraint.activate([
             adventureServices.topAnchor.constraint(equalTo: title.topAnchor, constant: 5),
-            adventureServices.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            adventureServices.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            adventureServices.leadingAnchor.constraint(equalTo: leadingAnchor),
+            adventureServices.trailingAnchor.constraint(equalTo: trailingAnchor),
             adventureServices.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
@@ -90,13 +90,30 @@ extension AdventureView: ViewCode {
 
 extension AdventureView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return guideList.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "adventureServiceCell", for: indexPath) as? GuideCellTableViewCell
         cell?.backgroundColor = .background
-        cell?.title.text = guideList[indexPath.row].name
+        cell?.title.text = guideList[indexPath.section].name
         return cell ?? UITableViewCell()
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return guideList.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 8
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 8))
+        view.backgroundColor = .background
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Celula foi selecionada: section: \(indexPath.section)")
     }
 }
