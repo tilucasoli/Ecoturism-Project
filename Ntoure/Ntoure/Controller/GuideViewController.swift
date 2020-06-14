@@ -11,34 +11,107 @@ import UIKit
 // Main
 class GuideViewController: UIViewController {
 
-    var guideList = [Guide(name: "Roteiro do Cocó")]
-
+    var guideList = [Guide]()
+    
     let tableView: UITableView = {
-        let tv = UITableView()
-        tv.backgroundColor = .background
-        tv.separatorStyle = .none
-        tv.bounces = false
-        tv.translatesAutoresizingMaskIntoConstraints = false
-        return tv
+        let tableView = UITableView()
+        tableView.backgroundColor = .background
+        tableView.separatorStyle = .none
+        tableView.bounces = false
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
     }()
-
+    
+    let illustration: UIImageView = {
+        let img = UIImageView()
+        img.image = UIImage(named: "guide illustration")
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
+    
+    let illustrationTitleLabel: UILabel = {
+        let label = UILabel()
+        label.attributedText = NSMutableAttributedString(string: "Você não tem Aventuras?", attributes: illustrationTitle)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let illustrationDescriptionLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Tente explorar a sessão de Aventuras, você vai se apaixonar"
+        label.textColor = .textColor
+        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 2
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .background
         setupNavBar()
-
-        setupTableView()
-        setupTableView()
+        setupIllustration()
+        setupIllustrationTitleLabel()
+        setupIllustrationDescriptionLabel()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+        
+        if !guideList.isEmpty {
+            setupTableView()
+        }
     }
 
     func setupNavBar() {
-        navigationController?.navigationBar.titleTextAttributes = stylingFont
+        
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.largeTitleTextAttributes = stylingFont
+        navigationController?.navigationBar.largeTitleTextAttributes = largeTitleStyle
         title = "Roteiros"
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(creatingGuide))
         navigationController?.navigationBar.tintColor = .actionColor
+    }
+    
+    @objc func creatingGuide() {
+        let newVC = SelectedGuideViewController()
+        let newGuide = Guide(name: "New Guide")
+        guideList.append(newGuide)
+
+        self.navigationController?.pushViewController(newVC, animated: true)
+    }
+    
+    func setupIllustration() {
+        view.addSubview(illustration)
+        
+        illustration.contentMode = .scaleAspectFit
+        NSLayoutConstraint.activate([
+            illustration.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            illustration.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 115)
+        ])
+    }
+    
+    func setupIllustrationTitleLabel() {
+        view.addSubview(illustrationTitleLabel)
+        
+        NSLayoutConstraint.activate([
+            illustrationTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            illustrationTitleLabel.topAnchor.constraint(equalTo: illustration.bottomAnchor, constant: 16)
+        ])
+    }
+    
+    func setupIllustrationDescriptionLabel() {
+        view.addSubview(illustrationDescriptionLabel)
+        
+        NSLayoutConstraint.activate([
+            illustrationDescriptionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            illustrationDescriptionLabel.topAnchor.constraint(equalTo: illustrationTitleLabel.bottomAnchor, constant: 4),
+            illustrationDescriptionLabel.widthAnchor.constraint(equalToConstant: 284)
+        ])
     }
 
 }
@@ -58,7 +131,7 @@ extension GuideViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
             tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
             tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 8),
-            tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 

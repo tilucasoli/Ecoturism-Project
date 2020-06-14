@@ -17,7 +17,7 @@ class TabBarController: UITabBarController {
         explorer.tabBarItem = UITabBarItem(title: "Explorar", image: UIImage(named: "compass"), tag: 0)
 
         let guide = UINavigationController(rootViewController: GuideViewController())
-        guide.tabBarItem = UITabBarItem(title: "Roteiros", image: UIImage(named: "roteiros"), tag: 1)
+        guide.tabBarItem = UITabBarItem(title: "Roteiros", image: UIImage(named: "Roteiros"), tag: 1)
 
         let tabBarList = [explorer, guide]
         viewControllers = tabBarList
