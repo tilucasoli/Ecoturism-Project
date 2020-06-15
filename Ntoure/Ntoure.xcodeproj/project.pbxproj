@@ -89,6 +89,7 @@
 		036D08BE248EBBBD0011A44B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5401888C248FD1490073E630 /* AdventureTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -101,7 +102,6 @@
 				036D08C4248EBD750011A44B /* ExplorerViewController.swift */,
 				036D08C6248EBDBF0011A44B /* GuideViewController.swift */,
 				5401888A248FB65A0073E630 /* AdventureViewController.swift */,
-				5401888C248FD1490073E630 /* AdventureTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
