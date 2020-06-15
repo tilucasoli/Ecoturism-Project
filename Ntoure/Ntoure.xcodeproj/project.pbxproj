@@ -26,6 +26,8 @@
 		E26D3628248FD209006A935C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */; };
 		E26D362B248FD5CE006A935C /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D362A248FD5CE006A935C /* ViewCode.swift */; };
 		E29CC2A924912049002F9611 /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29CC2A824912049002F9611 /* LocationMapView.swift */; };
+		E2AFA1412492BF2A00F56A21 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AFA1402492BF2A00F56A21 /* InformationView.swift */; };
+		E2AFA1432493152000F56A21 /* AdventureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AFA1422493152000F56A21 /* AdventureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCollectionViewCell.swift; path = Ntoure/View/PhotoCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		E26D362A248FD5CE006A935C /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		E29CC2A824912049002F9611 /* LocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapView.swift; sourceTree = "<group>"; };
+		E2AFA1402492BF2A00F56A21 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		E2AFA1422493152000F56A21 /* AdventureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 				E26D3625248FC15E006A935C /* CollectionPhotoInformation.swift */,
 				E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */,
 				E29CC2A824912049002F9611 /* LocationMapView.swift */,
+				E2AFA1402492BF2A00F56A21 /* InformationView.swift */,
+				E2AFA1422493152000F56A21 /* AdventureView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -239,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E26D3624248FC05B006A935C /* SelectedLocationViewController.swift in Sources */,
+				E2AFA1412492BF2A00F56A21 /* InformationView.swift in Sources */,
 				E26D362B248FD5CE006A935C /* ViewCode.swift in Sources */,
 				E29CC2A924912049002F9611 /* LocationMapView.swift in Sources */,
 				036D08CC248FBFBB0011A44B /* Project colors.swift in Sources */,
@@ -250,6 +257,7 @@
 				036D08AC248EBB2B0011A44B /* SceneDelegate.swift in Sources */,
 				E26D3628248FD209006A935C /* PhotoCollectionViewCell.swift in Sources */,
 				036D08D024900DC20011A44B /* Guide.swift in Sources */,
+				E2AFA1432493152000F56A21 /* AdventureView.swift in Sources */,
 				0355D4642491B3F4006B6070 /* Fonts.swift in Sources */,
 				036D08C5248EBD750011A44B /* ExplorerViewController.swift in Sources */,
 				E26D3626248FC15E006A935C /* CollectionPhotoInformation.swift in Sources */,

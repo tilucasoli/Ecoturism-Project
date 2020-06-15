@@ -146,5 +146,4 @@ extension GuideViewController: UITableViewDelegate, UITableViewDataSource {
 
         return cell ?? UITableViewCell()
     }
-
 }

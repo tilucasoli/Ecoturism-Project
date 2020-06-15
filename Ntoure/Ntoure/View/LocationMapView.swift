@@ -9,7 +9,11 @@
 import UIKit
 
 class LocationMapView: UIView {
-
+    
+    private var shadowLayer: CAShapeLayer!
+    private var cornerRadius: CGFloat = 25.0
+    private var fillColor: UIColor = .blue
+    
     lazy var title: UILabel = {
         var title = UILabel()
         title.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
@@ -21,9 +25,10 @@ class LocationMapView: UIView {
     }()
 
     lazy var locationIcon: UIImageView = {
-        let locationIcon  = UIImageView(frame: CGRect(x: 0, y: 0, width: 8, height: 12))
+        let locationIcon  = UIImageView()
         locationIcon.image = UIImage(named: "locationIcon")
         locationIcon.contentMode = .scaleAspectFill
+        locationIcon.clipsToBounds = true
         locationIcon.translatesAutoresizingMaskIntoConstraints = false
         return locationIcon
     }()
@@ -58,7 +63,8 @@ class LocationMapView: UIView {
     }
 
    override func layoutSubviews() {
-       roundCorners(corners: [.bottomLeft, .topLeft], radius: 10)
+        roundCorners(corners: [.bottomLeft, .topLeft], radius: 10)
+        addShadow()
    }
 
 }
@@ -73,16 +79,18 @@ extension LocationMapView: ViewCode {
 
     func setUpLayoutConstraints() {
         NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            title.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             title.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             title.trailingAnchor.constraint(equalTo: mapLocation.leadingAnchor),
-            title.bottomAnchor.constraint(equalTo: locationIcon.topAnchor, constant: 10)
+            title.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.4)
         ])
 
         NSLayoutConstraint.activate([
+            locationIcon.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 5),
             locationIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            locationIcon.trailingAnchor.constraint(equalTo: locationDistance.leadingAnchor, constant: 10),
-            locationIcon.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 10)
+            locationIcon.trailingAnchor.constraint(equalTo: locationDistance.leadingAnchor, constant: -10),
+            locationIcon.widthAnchor.constraint(equalTo: locationIcon.heightAnchor, multiplier: 0.7),
+            locationIcon.heightAnchor.constraint(equalTo: locationDistance.heightAnchor)
         ])
 
         NSLayoutConstraint.activate([
@@ -97,7 +105,16 @@ extension LocationMapView: ViewCode {
     }
 
     func aditionalConfigurations() {
-        backgroundColor = .lightGray
+        backgroundColor = .backgroundAcessory
+    }
+    
+    func addShadow() {
+        layer.masksToBounds = false
+        layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: 10).cgPath
+        layer.shadowColor = UIColor.red.cgColor
+        layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+        layer.shadowOpacity = 0.9
+        layer.shadowRadius = 25.0
     }
 }
 
