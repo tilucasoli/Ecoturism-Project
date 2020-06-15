@@ -8,14 +8,7 @@
 
 import UIKit
 
-struct CustomData {
-    var title: String
-    var distance: String
-    var image: UIImage
-    var state: String?
-}
-
-class ExplorerViewController: UIViewController {
+class ExplorerViewController: UIViewController{
     
     //places example
     let data = [
@@ -32,15 +25,15 @@ class ExplorerViewController: UIViewController {
         return cv
     }()
     
-//    fileprivate let location: UILabel = {
-//       let text = UILabel()
-//        text.text = "Ceará, Brasil"
-//        text.textColor = UIColor.black
-//        text.translatesAutoresizingMaskIntoConstraints = false
-//        text.textAlignment = .center
-//        text.font = UIFont.boldSystemFont(ofSize: 18)
-//        return text
-//    }()
+    fileprivate let location: UILabel = {
+       let text = UILabel()
+        text.text = "Ceará, Brasil"
+        text.textColor = .titleColor
+        text.translatesAutoresizingMaskIntoConstraints = false
+        text.textAlignment = .center
+        text.font = UIFont.boldSystemFont(ofSize: 18)
+        return text
+    }()
     
     fileprivate let searchBar: UISearchController = {
         let searchBar = UISearchController(searchResultsController: nil)
@@ -50,37 +43,66 @@ class ExplorerViewController: UIViewController {
         return searchBar
     }()
     
+    fileprivate let topView: UIView = {
+        let topView = UIView()
+        topView.translatesAutoresizingMaskIntoConstraints = false
+      
+        return topView
+    }()
+    
+    fileprivate let botView: UIView = {
+        let botView = UIView()
+        botView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return botView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Explorar"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = largeTitleStyle
         navigationItem.searchController = searchBar //SearchController here
+        view.addSubview(UIView())
         
         
         view.backgroundColor = .white
         view.addSubview(collectionView)
-        //view.addSubview(location)
+        view.addSubview(topView)
+        view.addSubview(botView)
+        view.addSubview(location)
+        
+        topView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        topView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        topView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        topView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.23).isActive = true
+        
+        botView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        botView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        botView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        botView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.07).isActive = true
         
         collectionView.backgroundColor = .white
-        
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        collectionView.topAnchor.constraint(equalTo: topView.bottomAnchor).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: botView.topAnchor).isActive = true
         
-//        location.topAnchor.constraint(equalTo: view.topAnchor, constant: 140).isActive = true
-//        location.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-
+        
+        location.topAnchor.constraint(equalTo: collectionView.topAnchor, constant: 5).isActive = true
+        location.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        
         
         collectionView.delegate = self
         collectionView.dataSource = self
     }
 
 }
+
 extension ExplorerViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/1.2, height: collectionView.frame.height/1.65)
+        return CGSize(width: collectionView.frame.width/1.2, height: collectionView.frame.height/1.2)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
@@ -92,8 +114,11 @@ extension ExplorerViewController: UICollectionViewDelegateFlowLayout, UICollecti
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // select function here
+        let nextViewController = SelectedLocationViewController()
+        navigationController?.pushViewController(nextViewController, animated: true)
     }
+    
+    
 }
 
 
