@@ -76,7 +76,6 @@ class ExplorerViewController: UIViewController {
         collectionView.dataSource = self
     }
 
-
 }
 extension ExplorerViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -190,4 +189,5 @@ class CustomCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
 }
