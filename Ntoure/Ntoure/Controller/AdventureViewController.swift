@@ -95,6 +95,11 @@ extension AdventureViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! AdventureTableViewCell
+        print(cell.adventureTitleLabel.text)
+    }
+    
 }
 
 extension AdventureViewController {
