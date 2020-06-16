@@ -56,7 +56,6 @@ class SelectedLocationViewController: UIViewController, MyDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     override func viewWillLayoutSubviews() {

@@ -19,6 +19,7 @@ class CollectionPhotoInformation: UIView {
         collection.backgroundColor = .white
         collection.showsHorizontalScrollIndicator = false
         collection.isPagingEnabled = true
+        collection.contentInsetAdjustmentBehavior = .never
         collection.delegate = self
         collection.dataSource = self
         collection.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCell")
