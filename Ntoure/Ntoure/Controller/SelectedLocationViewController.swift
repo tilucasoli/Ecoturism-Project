@@ -23,13 +23,13 @@ class SelectedLocationViewController: UIViewController, MyDelegate {
     }()
 
     lazy var locationMapComponent: LocationMapView = {
-        let locationMap = LocationMapView(frame: .zero, title: "Parque Coco", locationDistance: "12km")
+        let locationMap = LocationMapView(frame: .zero, title: "Canoa Quebrada", locationDistance: "163km")
         locationMap.translatesAutoresizingMaskIntoConstraints = false
         return locationMap
     }()
     
     lazy var informationComponent: InformationView = {
-        let informationComponent = InformationView(frame: .zero, placeDescription: "Canoa Quebrada is a beach located in the east coast of Ceará State, Distant 163 km from Fortaleza and 12 km from the seat of the municipality of Aracati, to which it belongs.")
+        let informationComponent = InformationView(frame: .zero, placeDescription: "Canoa Quebrada é uma praia localizada no litoral leste do Estado do Ceará. A sua paisagem é caracterizada por dunas e falésias avermelhadas de até trinta metros acima do nível do mar.")
         informationComponent.translatesAutoresizingMaskIntoConstraints = false
         return informationComponent
     }()
@@ -56,7 +56,6 @@ class SelectedLocationViewController: UIViewController, MyDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     override func viewWillLayoutSubviews() {
@@ -101,11 +100,11 @@ extension SelectedLocationViewController: ViewCode {
             informationComponent.topAnchor.constraint(equalTo: locationMapComponent.bottomAnchor, constant: 16),
             informationComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             informationComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            informationComponent.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2)
+//            informationComponent.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2)
         ])
         
         NSLayoutConstraint.activate([
-            servicesComponent.topAnchor.constraint(equalTo: informationComponent.bottomAnchor, constant: 20),
+            servicesComponent.topAnchor.constraint(equalTo: informationComponent.bottomAnchor, constant: 16),
             servicesComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             servicesComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             servicesComponent.bottomAnchor.constraint(equalTo: view.bottomAnchor)

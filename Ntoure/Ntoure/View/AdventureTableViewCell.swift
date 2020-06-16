@@ -33,6 +33,7 @@ class AdventureTableViewCell: UITableViewCell {
         configureImageView()
         configureTitleLabel()
         configureSubtitle()
+        setViewConstraints()
         setImageConstraints()
         setTitleLabelConstraints()
         setSubtitleConstraints()
@@ -49,8 +50,18 @@ class AdventureTableViewCell: UITableViewCell {
         categoriaLabel.text = adventure.categoria
         distanciaLabel.text = adventure.distancia
         
-        categoriaImage.image = UIImage(named: adventure.categoria)
-        distanciaImage.image = #imageLiteral(resourceName: "Distancia")
+        switch adventure.categoria {
+        case "Parapente":
+            categoriaImage.image = UIImage(named: "parapenteIcon")
+        case "Jangada":
+            categoriaImage.image = UIImage(named: "jangadaIcon")
+        case "Kitesurf":
+            categoriaImage.image = UIImage(named: "kitesurfIcon")
+        default:
+            categoriaImage.image = nil
+        }
+        
+        distanciaImage.image = #imageLiteral(resourceName: "location")
     }
     
     func configureView() {
@@ -60,11 +71,10 @@ class AdventureTableViewCell: UITableViewCell {
         viewBackground.frame = CGRect(x: 16, y: 8, width: UIScreen.main.bounds.size.width - 32, height: 64)
         
         viewBackground.layer.shadowColor = UIColor.black.cgColor
-        viewBackground.layer.shadowOpacity = 0.15
+        viewBackground.layer.shadowOpacity = 0.02
         viewBackground.layer.shadowOffset = CGSize(width: 0, height: 3)
-        viewBackground.layer.shadowRadius = 1
+        viewBackground.layer.shadowRadius = 6
         viewBackground.layer.masksToBounds = false
-        
     }
     
     func configureImageView() {
@@ -94,6 +104,13 @@ class AdventureTableViewCell: UITableViewCell {
         
         categoriaImage.frame = CGRect(x: 0, y: 0, width: 10, height: 12)
         distanciaImage.frame = CGRect(x: 0, y: 0, width: 9, height: 13)
+    }
+    
+    func setViewConstraints() {
+        viewBackground.translatesAutoresizingMaskIntoConstraints = false
+        viewBackground.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        viewBackground.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
+        viewBackground.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
     }
     
     func setImageConstraints() {
