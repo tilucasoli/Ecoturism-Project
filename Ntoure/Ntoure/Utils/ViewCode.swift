@@ -15,7 +15,7 @@ protocol ViewCode {
     func aditionalConfigurations()
 }
 
-protocol MyDelegate {
+protocol MyDelegate: class {
     func onButtonTapped()
 }
 

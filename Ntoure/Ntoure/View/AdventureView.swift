@@ -10,6 +10,7 @@ import UIKit
 
 class AdventureView: UIView {
     
+    weak var delegate: MyDelegate?
     // Temporary mockData
     var guideList = [Guide(name: "Passei de Barco"), Guide(name: "Trilha de Bicicleta"), Guide(name: "Trilha de Bicicleta")]
 
@@ -54,8 +55,8 @@ class AdventureView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func pushAllAdventures() {
-        print("Next screen")
+    @objc func pushAllAdventures(){
+        self.delegate?.onButtonTapped()
     }
     
 }

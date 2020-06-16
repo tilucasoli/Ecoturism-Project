@@ -8,8 +8,14 @@
 
 import UIKit
 
-class SelectedLocationViewController: UIViewController {
+class SelectedLocationViewController: UIViewController, MyDelegate {
 
+    
+    func onButtonTapped() {
+        let nextViewController = AdventureViewController()
+        navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
     lazy var collectionComponent: CollectionPhotoInformation = {
         let collection = CollectionPhotoInformation()
         collection.translatesAutoresizingMaskIntoConstraints = false
@@ -31,6 +37,7 @@ class SelectedLocationViewController: UIViewController {
     lazy var servicesComponent: AdventureView = {
         let servicesComponent = AdventureView()
         servicesComponent.translatesAutoresizingMaskIntoConstraints = false
+        servicesComponent.delegate = self
         return servicesComponent
     }()
     

@@ -49,7 +49,7 @@ class AdventureTableViewCell: UITableViewCell {
         categoriaLabel.text = adventure.categoria
         distanciaLabel.text = adventure.distancia
         
-        categoriaImage.image = UIImage(named: adventure.categoria)!
+        categoriaImage.image = UIImage(named: adventure.categoria)
         distanciaImage.image = #imageLiteral(resourceName: "Distancia")
     }
     
