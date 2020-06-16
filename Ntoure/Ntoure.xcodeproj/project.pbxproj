@@ -21,6 +21,7 @@
 		036D08D224900E410011A44B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08D124900E410011A44B /* Service.swift */; };
 		036D08D4249015CC0011A44B /* GuideCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08D3249015CC0011A44B /* GuideCellTableViewCell.swift */; };
 		0374230A2493A6CD007BDD38 /* SelectedGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037423092493A6CD007BDD38 /* SelectedGuideViewController.swift */; };
+		03C8BBB22497AA97007992BA /* EmptyStateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8BBB12497AA97007992BA /* EmptyStateComponent.swift */; };
 		5401888B248FB65A0073E630 /* AdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5401888A248FB65A0073E630 /* AdventureViewController.swift */; };
 		5401888F248FD5420073E630 /* Adventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5401888E248FD5420073E630 /* Adventure.swift */; };
 		546DDAB12498F083001D9B63 /* AdventureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546DDAB02498F03C001D9B63 /* AdventureTableViewCell.swift */; };
@@ -51,6 +52,7 @@
 		036D08D124900E410011A44B /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		036D08D3249015CC0011A44B /* GuideCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GuideCellTableViewCell.swift; path = Ntoure/View/GuideCellTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		037423092493A6CD007BDD38 /* SelectedGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedGuideViewController.swift; sourceTree = "<group>"; };
+		03C8BBB12497AA97007992BA /* EmptyStateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateComponent.swift; sourceTree = "<group>"; };
 		5401888A248FB65A0073E630 /* AdventureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureViewController.swift; sourceTree = "<group>"; };
 		5401888C248FD1490073E630 /* AdventureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureTableViewCell.swift; sourceTree = "<group>"; };
 		5401888E248FD5420073E630 /* Adventure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Adventure.swift; path = Ntoure/Controller/Adventure.swift; sourceTree = SOURCE_ROOT; };
@@ -170,6 +172,7 @@
 				E29CC2A824912049002F9611 /* LocationMapView.swift */,
 				E2AFA1402492BF2A00F56A21 /* InformationView.swift */,
 				E2AFA1422493152000F56A21 /* AdventureView.swift */,
+				03C8BBB12497AA97007992BA /* EmptyStateComponent.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				036D08D224900E410011A44B /* Service.swift in Sources */,
 				036D08AC248EBB2B0011A44B /* SceneDelegate.swift in Sources */,
 				E26D3628248FD209006A935C /* PhotoCollectionViewCell.swift in Sources */,
+				03C8BBB22497AA97007992BA /* EmptyStateComponent.swift in Sources */,
 				036D08D024900DC20011A44B /* Guide.swift in Sources */,
 				E2AFA1432493152000F56A21 /* AdventureView.swift in Sources */,
 				546DDAB12498F083001D9B63 /* AdventureTableViewCell.swift in Sources */,
