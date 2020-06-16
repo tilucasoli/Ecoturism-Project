@@ -30,18 +30,42 @@ class ExplorerViewController: UIViewController {
         text.text = "Ceará, Brasil"
         text.textColor = .titleColor
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.textAlignment = .center
-        text.font = UIFont.boldSystemFont(ofSize: 18)
+        text.textAlignment = .left
+        text.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         return text
     }()
     
     fileprivate let searchBar: UISearchController = {
-        let searchBar = UISearchController(searchResultsController: nil)
-        searchBar.searchBar.placeholder = "Try Canoa Quebrada"
-        searchBar.searchBar.searchBarStyle = .minimal
-        searchBar.definesPresentationContext = true
-        return searchBar
+        let searchController = UISearchController(searchResultsController: nil)
+        
+        searchController.searchBar.placeholder = "Tente Canoa Quebrada"
+        searchController.searchBar.searchBarStyle = .prominent
+        searchController.searchBar.isTranslucent = true
+        searchController.definesPresentationContext = true
+        
+        let textField = searchController.searchBar.searchTextField
+        textField.backgroundColor = .white
+
+//
+//        if let textfield = searchController.value(forKey: "searchField") as? UITextField {
+//            textfield.textColor = UIColor.blue
+//            if let backgroundview = textfield.subviews.first {
+//                // Background color
+//                backgroundview.backgroundColor = UIColor.white
+//                // Rounded corner
+//                backgroundview.layer.cornerRadius = 14;
+//                backgroundview.clipsToBounds = true;
+//            }
+//        }
+//        searchController.searchBar.backgroundColor = .black
+        return searchController
     }()
+    
+    let searchBarView: UIView = {
+        let sbView = UIView()
+        return sbView
+    }()
+    
     
     fileprivate let topView: UIView = {
         let topView = UIView()
@@ -60,12 +84,14 @@ class ExplorerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Explorar"
+        navigationController?.navigationBar.tintColor = .actionColor
         self.navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = largeTitleStyle
         navigationItem.searchController = searchBar //SearchController here
+//        view.addSubview(searchBar)
         view.addSubview(UIView())
         
-        view.backgroundColor = .white
+        view.backgroundColor = .background
         view.addSubview(collectionView)
         view.addSubview(topView)
         view.addSubview(botView)
@@ -81,14 +107,14 @@ class ExplorerViewController: UIViewController {
         botView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         botView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.07).isActive = true
         
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .background
         collectionView.topAnchor.constraint(equalTo: topView.bottomAnchor).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: botView.topAnchor).isActive = true
         
-        location.topAnchor.constraint(equalTo: collectionView.topAnchor, constant: 5).isActive = true
-        location.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        location.topAnchor.constraint(equalTo: collectionView.topAnchor, constant: 21).isActive = true
+        location.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         
         collectionView.delegate = self
         collectionView.dataSource = self
