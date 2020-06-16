@@ -49,8 +49,18 @@ class AdventureTableViewCell: UITableViewCell {
         categoriaLabel.text = adventure.categoria
         distanciaLabel.text = adventure.distancia
         
-        categoriaImage.image = UIImage(named: adventure.categoria)
-        distanciaImage.image = #imageLiteral(resourceName: "Distancia")
+        switch adventure.categoria {
+        case "Parapente":
+            categoriaImage.image = UIImage(named: "parapenteIcon")
+        case "Jangada":
+            categoriaImage.image = UIImage(named: "jangadaIcon")
+        case "Kitesurf":
+            categoriaImage.image = UIImage(named: "kitesurfIcon")
+        default:
+            categoriaImage.image = nil
+        }
+        
+        distanciaImage.image = #imageLiteral(resourceName: "location")
     }
     
     func configureView() {

@@ -19,7 +19,8 @@ class AdventureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.98, alpha: 1.00)
+        tableView.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.98, alpha: 1.00)
         
         adventures = fetchData()
         
@@ -59,14 +60,14 @@ extension AdventureViewController: UITableViewDataSource, UITableViewDelegate {
         let locationIcon = UIImageView(frame: CGRect(x: 20, y: 11, width: 9, height: 14))
         let labelLocation = UILabel(frame: CGRect(x: 24 + locationIcon.frame.width, y: 8, width: 200, height: 20))
         
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.98, alpha: 1.00)
         
         labelLocation.text = "Ceará, Canoa Quebrada"
         labelLocation.textColor = .black
         labelLocation.font = UIFont(name: "SFProText", size: 16)
         labelLocation.font.withSize(16)
         
-        locationIcon.image = UIImage(named: "Location")
+        locationIcon.image = #imageLiteral(resourceName: "location")
         
         view.addSubview(locationIcon)
         view.addSubview(labelLocation)
@@ -91,6 +92,7 @@ extension AdventureViewController: UITableViewDataSource, UITableViewDelegate {
         let adventure = adventures[indexPath.row]
         cell.set(adventure: adventure)
         cell.selectionStyle = .none
+        cell.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.98, alpha: 1.00)
         
         return cell
     }
@@ -105,9 +107,9 @@ extension AdventureViewController: UITableViewDataSource, UITableViewDelegate {
 extension AdventureViewController {
     
     func fetchData() -> [Adventure] {
-        let adventure1 = Adventure(image: UIImage(named: "Adventure")!, title: "Trilha por Canoa Quebrada", categoria: "Trilha", distancia: "50km")
-        let adventure2 = Adventure(image: UIImage(named: "Adventure")!, title: "Tirolesa em Canoa Quebrada", categoria: "Tirolesa", distancia: "57km")
-        let adventure3 = Adventure(image: UIImage(named: "Adventure")!, title: "Surf em Canoa Quebrada", categoria: "Surf", distancia: "44km")
+        let adventure1 = Adventure(image: UIImage(named: "parapenteImg")!, title: "Aventura de Parapente", categoria: "Parapente", distancia: "5km")
+        let adventure2 = Adventure(image: UIImage(named: "jangadaImg")!, title: "Travessia de Jangada", categoria: "Jangada", distancia: "7km")
+        let adventure3 = Adventure(image: UIImage(named: "kitesurfImg")!, title: "Praia de KiteSurfing", categoria: "Kitesurf", distancia: "11km")
         
         return [adventure1, adventure2, adventure3]
     }
