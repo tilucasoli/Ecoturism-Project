@@ -28,6 +28,7 @@ class AdventureView: UIView {
         let showAll = UIButton()
         showAll.setTitle("Show All", for: .normal)
         showAll.setTitleColor(.actionColor, for: .normal)
+        showAll.addTarget(self, action: #selector(pushAllAdventures), for: .touchUpInside)
         showAll.translatesAutoresizingMaskIntoConstraints = false
         return showAll
     }()
@@ -53,6 +54,10 @@ class AdventureView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc func pushAllAdventures() {
+        print("Next screen")
+    }
+    
 }
 
 extension AdventureView: ViewCode {
@@ -72,11 +77,11 @@ extension AdventureView: ViewCode {
         NSLayoutConstraint.activate([
             showAllAdventures.topAnchor.constraint(equalTo: topAnchor),
             showAllAdventures.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            showAllAdventures.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.1)
+            showAllAdventures.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.2)
         ])
 
         NSLayoutConstraint.activate([
-            adventureServices.topAnchor.constraint(equalTo: title.topAnchor, constant: 5),
+            adventureServices.topAnchor.constraint(equalTo: showAllAdventures.bottomAnchor, constant: -5),
             adventureServices.leadingAnchor.constraint(equalTo: leadingAnchor),
             adventureServices.trailingAnchor.constraint(equalTo: trailingAnchor),
             adventureServices.bottomAnchor.constraint(equalTo: bottomAnchor)

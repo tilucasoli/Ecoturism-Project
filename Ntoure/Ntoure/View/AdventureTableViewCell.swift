@@ -57,7 +57,7 @@ class AdventureTableViewCell: UITableViewCell {
         viewBackground.layer.cornerRadius = 10
         viewBackground.clipsToBounds = true
         viewBackground.backgroundColor = .white
-        viewBackground.frame = CGRect(x: 16, y: 8, width:  UIScreen.main.bounds.size.width - 32, height: 64)
+        viewBackground.frame = CGRect(x: 16, y: 8, width: UIScreen.main.bounds.size.width - 32, height: 64)
         
         viewBackground.layer.shadowColor = UIColor.black.cgColor
         viewBackground.layer.shadowOpacity = 0.15

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExplorerViewController: UIViewController{
+class ExplorerViewController: UIViewController {
     
     //places example
     let data = [
@@ -17,7 +17,7 @@ class ExplorerViewController: UIViewController{
     ]
     
     fileprivate let collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout ()
+        let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
@@ -65,7 +65,6 @@ class ExplorerViewController: UIViewController{
         navigationItem.searchController = searchBar //SearchController here
         view.addSubview(UIView())
         
-        
         view.backgroundColor = .white
         view.addSubview(collectionView)
         view.addSubview(topView)
@@ -88,10 +87,8 @@ class ExplorerViewController: UIViewController{
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: botView.topAnchor).isActive = true
         
-        
         location.topAnchor.constraint(equalTo: collectionView.topAnchor, constant: 5).isActive = true
         location.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -99,7 +96,7 @@ class ExplorerViewController: UIViewController{
 
 }
 
-extension ExplorerViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+extension ExplorerViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width/1.2, height: collectionView.frame.height/1.2)
@@ -117,8 +114,5 @@ extension ExplorerViewController: UICollectionViewDelegateFlowLayout, UICollecti
         let nextViewController = SelectedLocationViewController()
         navigationController?.pushViewController(nextViewController, animated: true)
     }
-    
-    
+
 }
-
-

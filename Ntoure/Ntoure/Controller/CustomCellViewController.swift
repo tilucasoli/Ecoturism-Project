@@ -10,7 +10,7 @@ import UIKit
 
 class CustomCellViewController: UICollectionViewCell {
     var data: CustomData? {
-        didSet{
+        didSet {
             guard let data = data else {return}
             bg.image = data.image
             title.text = data.title
@@ -66,7 +66,7 @@ class CustomCellViewController: UICollectionViewCell {
     }()
     
     
-    override init(frame: CGRect){
+    override init(frame: CGRect) {
         super.init(frame: frame)
         
         contentView.addSubview(bg)
@@ -74,7 +74,6 @@ class CustomCellViewController: UICollectionViewCell {
         contentView.addSubview(title)
         contentView.addSubview(icon)
         contentView.addSubview(describ)
-        
 
         bg.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         bg.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
