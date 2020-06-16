@@ -21,6 +21,7 @@
 		036D08D224900E410011A44B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08D124900E410011A44B /* Service.swift */; };
 		036D08D4249015CC0011A44B /* GuideCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08D3249015CC0011A44B /* GuideCellTableViewCell.swift */; };
 		0374230A2493A6CD007BDD38 /* SelectedGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037423092493A6CD007BDD38 /* SelectedGuideViewController.swift */; };
+		03C8BBB22497AA97007992BA /* EmptyStateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8BBB12497AA97007992BA /* EmptyStateComponent.swift */; };
 		E26D3624248FC05B006A935C /* SelectedLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3623248FC05B006A935C /* SelectedLocationViewController.swift */; };
 		E26D3626248FC15E006A935C /* CollectionPhotoInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3625248FC15E006A935C /* CollectionPhotoInformation.swift */; };
 		E26D3628248FD209006A935C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */; };
@@ -47,6 +48,7 @@
 		036D08D124900E410011A44B /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		036D08D3249015CC0011A44B /* GuideCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GuideCellTableViewCell.swift; path = Ntoure/View/GuideCellTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		037423092493A6CD007BDD38 /* SelectedGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedGuideViewController.swift; sourceTree = "<group>"; };
+		03C8BBB12497AA97007992BA /* EmptyStateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateComponent.swift; sourceTree = "<group>"; };
 		E26D3623248FC05B006A935C /* SelectedLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedLocationViewController.swift; sourceTree = "<group>"; };
 		E26D3625248FC15E006A935C /* CollectionPhotoInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionPhotoInformation.swift; path = Ntoure/View/CollectionPhotoInformation.swift; sourceTree = SOURCE_ROOT; };
 		E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCollectionViewCell.swift; path = Ntoure/View/PhotoCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -148,6 +150,7 @@
 				E29CC2A824912049002F9611 /* LocationMapView.swift */,
 				E2AFA1402492BF2A00F56A21 /* InformationView.swift */,
 				E2AFA1422493152000F56A21 /* AdventureView.swift */,
+				03C8BBB12497AA97007992BA /* EmptyStateComponent.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				036D08D224900E410011A44B /* Service.swift in Sources */,
 				036D08AC248EBB2B0011A44B /* SceneDelegate.swift in Sources */,
 				E26D3628248FD209006A935C /* PhotoCollectionViewCell.swift in Sources */,
+				03C8BBB22497AA97007992BA /* EmptyStateComponent.swift in Sources */,
 				036D08D024900DC20011A44B /* Guide.swift in Sources */,
 				E2AFA1432493152000F56A21 /* AdventureView.swift in Sources */,
 				0355D4642491B3F4006B6070 /* Fonts.swift in Sources */,

@@ -22,95 +22,68 @@ class GuideViewController: UIViewController {
         return tableView
     }()
     
-    let illustration: UIImageView = {
-        let img = UIImageView()
-        img.image = UIImage(named: "guide illustration")
-        img.translatesAutoresizingMaskIntoConstraints = false
-        return img
-    }()
-    
-    let illustrationTitleLabel: UILabel = {
-        let label = UILabel()
-        label.attributedText = NSMutableAttributedString(string: "Você não tem Aventuras?", attributes: illustrationTitle)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let illustrationDescriptionLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Tente explorar a sessão de Aventuras, você vai se apaixonar"
-        label.textColor = .textColor
-        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-        
-        label.lineBreakMode = .byWordWrapping
-        label.numberOfLines = 2
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    let emptyState: EmptyState = {
+        let emptyState = EmptyState()
+        emptyState.illustration.image = UIImage(named: "guide illustration")
+        emptyState.illustrationTitleLabel.text = "Você não tem Aventuras?"
+        emptyState.illustrationDescriptionLabel.text = "Tente explorar a sessão de Aventuras, você vai se apaixonar"
+        emptyState.translatesAutoresizingMaskIntoConstraints = false
+        return emptyState
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .background
         setupNavBar()
-        setupIllustration()
-        setupIllustrationTitleLabel()
-        setupIllustrationDescriptionLabel()
+        setupEmptyState()
+        setupTableView()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
         
-        if !guideList.isEmpty {
-            setupTableView()
+        if guideList.isEmpty {
+            tableView.isHidden = true
         }
     }
 
     func setupNavBar() {
-        
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = largeTitleStyle
         title = "Roteiros"
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(creatingGuide))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(alertCreatingGuide))
         navigationController?.navigationBar.tintColor = .actionColor
     }
     
-    @objc func creatingGuide() {
-        let newVC = SelectedGuideViewController()
-        let newGuide = Guide(name: "New Guide")
-        guideList.append(newGuide)
-
-        self.navigationController?.pushViewController(newVC, animated: true)
+    @objc func alertCreatingGuide() {
+        let alert = UIAlertController(title: "Criando Roteiro", message: "Adicione um nome para o Roteiro", preferredStyle: .alert)
+        
+        alert.addTextField {(textField) in
+            textField.placeholder = "Tente Roteiro para Jericoacoara"
+        }
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .destructive, handler: { _ in}))
+        alert.addAction(UIAlertAction(title: "Criar", style: .default, handler: {_ in
+            if let txtField = alert.textFields?.first, let text = txtField.text {
+                let newGuide = Guide(name: text)
+                self.guideList.append(newGuide)
+                
+                self.tableView.reloadData()
+                self.tableView.isHidden = false
+            }
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
-    func setupIllustration() {
-        view.addSubview(illustration)
-        
-        illustration.contentMode = .scaleAspectFit
-        NSLayoutConstraint.activate([
-            illustration.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            illustration.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 115)
-        ])
-    }
-    
-    func setupIllustrationTitleLabel() {
-        view.addSubview(illustrationTitleLabel)
+    func setupEmptyState() {
+        view.addSubview(emptyState)
         
         NSLayoutConstraint.activate([
-            illustrationTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            illustrationTitleLabel.topAnchor.constraint(equalTo: illustration.bottomAnchor, constant: 16)
-        ])
-    }
-    
-    func setupIllustrationDescriptionLabel() {
-        view.addSubview(illustrationDescriptionLabel)
-        
-        NSLayoutConstraint.activate([
-            illustrationDescriptionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            illustrationDescriptionLabel.topAnchor.constraint(equalTo: illustrationTitleLabel.bottomAnchor, constant: 4),
-            illustrationDescriptionLabel.widthAnchor.constraint(equalToConstant: 284)
+            emptyState.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            emptyState.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
 
@@ -145,5 +118,12 @@ extension GuideViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.title.text = guideList[indexPath.row].name
 
         return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let newVC = SelectedGuideViewController()
+        newVC.listGuide = self.guideList
+        newVC.indexPathSelected = indexPath.row
+        self.navigationController?.pushViewController(newVC, animated: true)
     }
 }
