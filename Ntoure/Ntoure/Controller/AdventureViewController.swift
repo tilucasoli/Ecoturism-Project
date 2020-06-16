@@ -62,7 +62,7 @@ extension AdventureViewController: UITableViewDataSource, UITableViewDelegate {
         
         view.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.98, alpha: 1.00)
         
-        labelLocation.text = "Ceará, Canoa Quebrada"
+        labelLocation.text = "Canoa Quebrada, Ceará"
         labelLocation.textColor = .black
         labelLocation.font = UIFont(name: "SFProText", size: 16)
         labelLocation.font.withSize(16)

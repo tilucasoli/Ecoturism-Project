@@ -12,7 +12,7 @@ class AdventureView: UIView {
     
     weak var delegate: MyDelegate?
     // Temporary mockData
-    var guideList = [Guide(name: "Passei de Barco"), Guide(name: "Trilha de Bicicleta"), Guide(name: "Trilha de Bicicleta")]
+    var guideList: [Adventure] = []
 
     lazy var title: UILabel = {
         let title = UILabel()
@@ -27,7 +27,8 @@ class AdventureView: UIView {
     
     lazy var showAllAdventures: UIButton = {
         let showAll = UIButton()
-        showAll.setTitle("Show All", for: .normal)
+        showAll.setTitle("Ver Todos", for: .normal)
+        showAll.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         showAll.setTitleColor(.actionColor, for: .normal)
         showAll.addTarget(self, action: #selector(pushAllAdventures), for: .touchUpInside)
         showAll.translatesAutoresizingMaskIntoConstraints = false
@@ -41,13 +42,14 @@ class AdventureView: UIView {
         adventureServices.bounces = false
         adventureServices.delegate = self
         adventureServices.dataSource = self
-        adventureServices.register(GuideCellTableViewCell.self, forCellReuseIdentifier: "adventureServiceCell")
+        adventureServices.register(AdventureTableViewCell.self, forCellReuseIdentifier: "adventureServiceCell")
         adventureServices.translatesAutoresizingMaskIntoConstraints = false
         return adventureServices
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        guideList = fetchData()
         setUp()
     }
     
@@ -78,7 +80,8 @@ extension AdventureView: ViewCode {
         NSLayoutConstraint.activate([
             showAllAdventures.topAnchor.constraint(equalTo: topAnchor),
             showAllAdventures.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            showAllAdventures.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.2)
+            showAllAdventures.centerYAnchor.constraint(equalTo: title.centerYAnchor)
+//            showAllAdventures.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.2)
         ])
 
         NSLayoutConstraint.activate([
@@ -96,18 +99,25 @@ extension AdventureView: ViewCode {
 
 extension AdventureView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return guideList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "adventureServiceCell", for: indexPath) as? GuideCellTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "adventureServiceCell", for: indexPath) as? AdventureTableViewCell
         cell?.backgroundColor = .background
-        cell?.title.text = guideList[indexPath.section].name
+        let adventure = guideList[indexPath.row]
+        cell?.set(adventure: adventure)
+        cell?.selectionStyle = .none
+    
         return cell ?? UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 72
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return guideList.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -121,5 +131,17 @@ extension AdventureView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Celula foi selecionada: section: \(indexPath.section)")
+    }
+}
+
+
+extension AdventureView {
+    
+    func fetchData() -> [Adventure] {
+        let adventure1 = Adventure(image: UIImage(named: "parapenteImg")!, title: "Aventura de Parapente", categoria: "Parapente", distancia: "5km")
+        let adventure2 = Adventure(image: UIImage(named: "jangadaImg")!, title: "Travessia de Jangada", categoria: "Jangada", distancia: "7km")
+        let adventure3 = Adventure(image: UIImage(named: "kitesurfImg")!, title: "Praia de KiteSurfing", categoria: "Kitesurf", distancia: "11km")
+        
+        return [adventure1, adventure2, adventure3]
     }
 }

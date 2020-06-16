@@ -21,7 +21,8 @@ class GuideCellTableViewCell: UITableViewCell {
     var imgService: UIImageView = {
         let img = UIImageView()
         img.backgroundColor = .withoutImage
-        img.layer.cornerRadius = 10
+        img.layer.cornerRadius = 8
+        img.clipsToBounds = true
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
