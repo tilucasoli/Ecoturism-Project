@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ExplorerViewController: UIViewController {
     
     //places example
@@ -17,8 +18,12 @@ class ExplorerViewController: UIViewController {
     ]
     
     fileprivate let collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
+        let layout = UPCarouselFlowLayout()
         layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 10, height: 600)
+        layout.sideItemScale = 0.8
+        layout.sideItemAlpha = 1.0
+        layout.spacingMode = .fixed(spacing: 20)
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.register(CustomCellViewController.self, forCellWithReuseIdentifier: "cell")
