@@ -57,7 +57,7 @@ class AdventureView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func pushAllAdventures(){
+    @objc func pushAllAdventures() {
         self.delegate?.onButtonTapped()
     }
     
@@ -133,7 +133,6 @@ extension AdventureView: UITableViewDelegate, UITableViewDataSource {
         print("Celula foi selecionada: section: \(indexPath.section)")
     }
 }
-
 
 extension AdventureView {
     
