@@ -109,3 +109,10 @@ extension SelectedLocationViewController: ViewCode {
         view.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.98, alpha: 1.00)
     }
 }
+
+extension SelectedLocationViewController: PresentMapLocationDelegate {
+    func presentLocation() {
+        let mapController = MapLocationControllerViewController()
+        self.present(mapController, animated: true, completion: nil)
+    }
+}

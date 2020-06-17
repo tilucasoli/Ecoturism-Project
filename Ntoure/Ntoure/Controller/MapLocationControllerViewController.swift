@@ -8,17 +8,30 @@
 
 import UIKit
 import MapKit
+import Contacts
 
 class MapLocationControllerViewController: UIViewController {
-
-    let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+    
+    let cumbuco = CLLocationCoordinate2D(latitude: -3.6467904, longitude: -38.69615054)
+    let apple = CLLocationCoordinate2D(latitude: 37.3348469, longitude: -122.01139216)
+    let location = LocationCoordinate(title: "Cumbuco", locationName: "Bairro no Ceará", coordinate: CLLocationCoordinate2D(latitude: -3.6467904, longitude: -38.69615054))
 
     lazy var mapView: MKMapView = {
         let mapView = MKMapView()
-        let initialLocation = CLLocation(latitude: 37.3348469, longitude: -122.01139216)
+        //set center of location
+        let initialLocation = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let regionRadius: CLLocationDistance = 2000
         let coordinateRegion = MKCoordinateRegion(center: initialLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
+        //set camera
+        let mapCamera = MKMapView.CameraBoundary(coordinateRegion: coordinateRegion)
+        mapView.setCameraBoundary(mapCamera, animated: true)
+        //set zoom camera
+        let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 150000)
+        mapView.setCameraZoomRange(zoomRange, animated: true)
+        mapView.addAnnotation(location)
+        //delegate
+        mapView.delegate = self
         mapView.translatesAutoresizingMaskIntoConstraints = false
         return mapView
     }()
@@ -52,3 +65,31 @@ extension MapLocationControllerViewController: ViewCode {
     }
 }
 
+extension MapLocationControllerViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "Annotation"
+        guard let annotation = annotation as? LocationCoordinate else {return nil}
+        var view: MKMarkerAnnotationView
+        
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView {
+            dequeuedView.annotation = annotation
+            view = dequeuedView
+        } else {
+            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.canShowCallout = true
+            view.calloutOffset = CGPoint(x: -5, y: -5)
+            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }
+        return view
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        guard let location = view.annotation as? LocationCoordinate else {
+          return
+        }
+        let launchOptions = [
+          MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving
+        ]
+        location.mapItem?.openInMaps(launchOptions: launchOptions)
+    }
+}

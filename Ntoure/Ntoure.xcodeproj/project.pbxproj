@@ -26,6 +26,8 @@
 		E26D3628248FD209006A935C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */; };
 		E26D362B248FD5CE006A935C /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D362A248FD5CE006A935C /* ViewCode.swift */; };
 		E279004524984261004D1FF5 /* MapLocationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E279004424984261004D1FF5 /* MapLocationControllerViewController.swift */; };
+		E2790047249AC0E9004D1FF5 /* LocationCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2790046249AC0E9004D1FF5 /* LocationCoordinate.swift */; };
+		E2790049249AC2CF004D1FF5 /* PresentMapLocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2790048249AC2CF004D1FF5 /* PresentMapLocationDelegate.swift */; };
 		E29CC2A924912049002F9611 /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29CC2A824912049002F9611 /* LocationMapView.swift */; };
 		E2AFA1412492BF2A00F56A21 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AFA1402492BF2A00F56A21 /* InformationView.swift */; };
 		E2AFA1432493152000F56A21 /* AdventureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AFA1422493152000F56A21 /* AdventureView.swift */; };
@@ -53,6 +55,8 @@
 		E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCollectionViewCell.swift; path = Ntoure/View/PhotoCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		E26D362A248FD5CE006A935C /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		E279004424984261004D1FF5 /* MapLocationControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationControllerViewController.swift; sourceTree = "<group>"; };
+		E2790046249AC0E9004D1FF5 /* LocationCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinate.swift; sourceTree = "<group>"; };
+		E2790048249AC2CF004D1FF5 /* PresentMapLocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMapLocationDelegate.swift; sourceTree = "<group>"; };
 		E29CC2A824912049002F9611 /* LocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapView.swift; sourceTree = "<group>"; };
 		E2AFA1402492BF2A00F56A21 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		E2AFA1422493152000F56A21 /* AdventureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureView.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 			children = (
 				036D08CF24900DC20011A44B /* Guide.swift */,
 				036D08D124900E410011A44B /* Service.swift */,
+				E2790046249AC0E9004D1FF5 /* LocationCoordinate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				E26D362A248FD5CE006A935C /* ViewCode.swift */,
+				E2790048249AC2CF004D1FF5 /* PresentMapLocationDelegate.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -257,12 +263,14 @@
 				0374230A2493A6CD007BDD38 /* SelectedGuideViewController.swift in Sources */,
 				036D08AA248EBB2B0011A44B /* AppDelegate.swift in Sources */,
 				036D08D224900E410011A44B /* Service.swift in Sources */,
+				E2790049249AC2CF004D1FF5 /* PresentMapLocationDelegate.swift in Sources */,
 				036D08AC248EBB2B0011A44B /* SceneDelegate.swift in Sources */,
 				E26D3628248FD209006A935C /* PhotoCollectionViewCell.swift in Sources */,
 				036D08D024900DC20011A44B /* Guide.swift in Sources */,
 				E279004524984261004D1FF5 /* MapLocationControllerViewController.swift in Sources */,
 				E2AFA1432493152000F56A21 /* AdventureView.swift in Sources */,
 				0355D4642491B3F4006B6070 /* Fonts.swift in Sources */,
+				E2790047249AC0E9004D1FF5 /* LocationCoordinate.swift in Sources */,
 				036D08C5248EBD750011A44B /* ExplorerViewController.swift in Sources */,
 				E26D3626248FC15E006A935C /* CollectionPhotoInformation.swift in Sources */,
 				036D08C7248EBDBF0011A44B /* GuideViewController.swift in Sources */,

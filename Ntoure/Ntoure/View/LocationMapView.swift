@@ -10,9 +10,7 @@ import UIKit
 
 class LocationMapView: UIView {
     
-    private var shadowLayer: CAShapeLayer!
-    private var cornerRadius: CGFloat = 25.0
-    private var fillColor: UIColor = .blue
+    var delegate: PresentMapLocationDelegate?
     
     lazy var title: UILabel = {
         var title = UILabel()
@@ -47,6 +45,7 @@ class LocationMapView: UIView {
         let mapLocation = UIButton()
         mapLocation.setImage(UIImage(named: "mapIcon"), for: .normal)
         mapLocation.adjustsImageWhenHighlighted = true // ver o comportamento disso
+        mapLocation.addTarget(self, action: #selector(goToMapController), for: .touchUpInside)
         mapLocation.translatesAutoresizingMaskIntoConstraints = false
         return mapLocation
     }()
@@ -62,11 +61,14 @@ class LocationMapView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-   override func layoutSubviews() {
+    override func layoutSubviews() {
         roundCorners(corners: [.bottomLeft, .topLeft], radius: 10)
         addShadow()
-   }
-
+    }
+    
+    @objc func goToMapController() {
+        delegate?.presentLocation()
+    }
 }
 
 extension LocationMapView: ViewCode {
