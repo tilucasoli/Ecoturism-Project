@@ -18,6 +18,7 @@ class SelectedLocationViewController: UIViewController {
 
     lazy var locationMapComponent: LocationMapView = {
         let locationMap = LocationMapView(frame: .zero, title: "Parque Coco", locationDistance: "12km")
+        locationMap.delegate = self
         locationMap.translatesAutoresizingMaskIntoConstraints = false
         return locationMap
     }()
