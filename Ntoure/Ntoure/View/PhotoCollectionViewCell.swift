@@ -14,6 +14,13 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
+        //gradiente
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
+        gradientLayer.colors = [UIColor.white.withAlphaComponent(0.3).cgColor, UIColor.black.withAlphaComponent(0.2).cgColor]
+        gradientLayer.startPoint = CGPoint(x: 1.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        image.layer.addSublayer(gradientLayer)
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -36,4 +43,5 @@ class PhotoCollectionViewCell: UICollectionViewCell {
             image.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
+    
 }

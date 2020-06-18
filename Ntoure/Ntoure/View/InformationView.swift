@@ -53,17 +53,14 @@ extension InformationView: ViewCode {
         NSLayoutConstraint.activate([
             title.topAnchor.constraint(equalTo: topAnchor),
             title.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            title.trailingAnchor.constraint(equalTo: trailingAnchor),
-//            title.bottomAnchor.constraint(equalTo: placeDescription.topAnchor, constant: -5)
+            title.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
         
         NSLayoutConstraint.activate([
             placeDescription.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             placeDescription.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-//            placeDescription.bottomAnchor.constraint(equalTo: bottomAnchor),
             placeDescription.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 4),
             placeDescription.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-//            placeDescription.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.8)
         ])
     }
 
