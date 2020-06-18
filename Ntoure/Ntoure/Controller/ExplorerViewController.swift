@@ -26,6 +26,7 @@ class ExplorerViewController: UIViewController {
         layout.spacingMode = .fixed(spacing: 20)
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.showsHorizontalScrollIndicator = false
         cv.register(CustomCellViewController.self, forCellWithReuseIdentifier: "cell")
         return cv
     }()
