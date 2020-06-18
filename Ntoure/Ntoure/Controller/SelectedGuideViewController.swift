@@ -9,7 +9,7 @@
 import UIKit
 
 class SelectedGuideViewController: UIViewController {
-    let section = ["To do", "Done"]
+    let sections = ["To do", "Done"]
     
     var listGuide = [Guide]()
     var indexPathSelected = 0
@@ -39,10 +39,8 @@ class SelectedGuideViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTitle))
         
-        tableView.register(GuideCellTableViewCell.self, forCellReuseIdentifier: "guideCell")
-        
         setupEmptyState()
-        view.addSubview(tableView)
+        setupTableView()
         // Do any additional setup after loading the view.
     }
     
@@ -75,17 +73,59 @@ class SelectedGuideViewController: UIViewController {
 
 extension SelectedGuideViewController: UITableViewDataSource, UITableViewDelegate {
     
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        view.addSubview(tableView)
+        tableView.register(AdventureTableViewCell.self, forCellReuseIdentifier: "AdventureCell")
+        tableView.register(MyCustomHeader.self, forHeaderFooterViewReuseIdentifier: "HeaderCell")
+
+        tableView.rowHeight = 72
+        tableView.sectionHeaderHeight = 40
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return section.count
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = (tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderCell") as? MyCustomHeader)!
+        view.titleLbl.text = sections[section]
+        
+        return view
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = (tableView.dequeueReusableCell(withIdentifier: "guideCell", for: indexPath) as? GuideCellTableViewCell)!
+        let cell = (tableView.dequeueReusableCell(withIdentifier: "AdventureCell", for: indexPath) as? AdventureTableViewCell)!
+        
+        let listAdventures = fetchData()
+        cell.set(adventure: listAdventures[indexPath.row])
+        cell.backgroundColor = .background
+        cell.selectionStyle = .none
+        print(indexPath.section)
         return cell
     }
     
+}
+
+extension SelectedGuideViewController {
+    
+    func fetchData() -> [Adventure] {
+        let adventure1 = Adventure(image: UIImage(named: "parapenteImg")!, title: "Aventura de Parapente", categoria: "Parapente", distancia: "5km")
+        let adventure2 = Adventure(image: UIImage(named: "jangadaImg")!, title: "Travessia de Jangada", categoria: "Jangada", distancia: "7km")
+        let adventure3 = Adventure(image: UIImage(named: "kitesurfImg")!, title: "Praia de KiteSurfing", categoria: "Kitesurf", distancia: "11km")
+        
+        return [adventure1, adventure2, adventure3]
+    }
 }
