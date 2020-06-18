@@ -21,6 +21,11 @@
 		036D08D224900E410011A44B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08D124900E410011A44B /* Service.swift */; };
 		036D08D4249015CC0011A44B /* GuideCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08D3249015CC0011A44B /* GuideCellTableViewCell.swift */; };
 		0374230A2493A6CD007BDD38 /* SelectedGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037423092493A6CD007BDD38 /* SelectedGuideViewController.swift */; };
+		03C8BBB22497AA97007992BA /* EmptyStateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8BBB12497AA97007992BA /* EmptyStateComponent.swift */; };
+		5401888B248FB65A0073E630 /* AdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5401888A248FB65A0073E630 /* AdventureViewController.swift */; };
+		5401888F248FD5420073E630 /* Adventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5401888E248FD5420073E630 /* Adventure.swift */; };
+		546DDAB12498F083001D9B63 /* AdventureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546DDAB02498F03C001D9B63 /* AdventureTableViewCell.swift */; };
+		69683ECC2497AB8300358395 /* CustomCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69683ECB2497AB8300358395 /* CustomCellViewController.swift */; };
 		E26D3624248FC05B006A935C /* SelectedLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3623248FC05B006A935C /* SelectedLocationViewController.swift */; };
 		E26D3626248FC15E006A935C /* CollectionPhotoInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3625248FC15E006A935C /* CollectionPhotoInformation.swift */; };
 		E26D3628248FD209006A935C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */; };
@@ -50,6 +55,12 @@
 		036D08D124900E410011A44B /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		036D08D3249015CC0011A44B /* GuideCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GuideCellTableViewCell.swift; path = Ntoure/View/GuideCellTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		037423092493A6CD007BDD38 /* SelectedGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedGuideViewController.swift; sourceTree = "<group>"; };
+		03C8BBB12497AA97007992BA /* EmptyStateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateComponent.swift; sourceTree = "<group>"; };
+		5401888A248FB65A0073E630 /* AdventureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureViewController.swift; sourceTree = "<group>"; };
+		5401888C248FD1490073E630 /* AdventureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureTableViewCell.swift; sourceTree = "<group>"; };
+		5401888E248FD5420073E630 /* Adventure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Adventure.swift; path = Ntoure/Controller/Adventure.swift; sourceTree = SOURCE_ROOT; };
+		546DDAB02498F03C001D9B63 /* AdventureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureTableViewCell.swift; sourceTree = "<group>"; };
+		69683ECB2497AB8300358395 /* CustomCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellViewController.swift; sourceTree = "<group>"; };
 		E26D3623248FC05B006A935C /* SelectedLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedLocationViewController.swift; sourceTree = "<group>"; };
 		E26D3625248FC15E006A935C /* CollectionPhotoInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionPhotoInformation.swift; path = Ntoure/View/CollectionPhotoInformation.swift; sourceTree = SOURCE_ROOT; };
 		E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCollectionViewCell.swift; path = Ntoure/View/PhotoCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -78,6 +89,7 @@
 			children = (
 				036D08A8248EBB2B0011A44B /* Ntoure */,
 				036D08A7248EBB2B0011A44B /* Products */,
+				54A4AB662497A5AF007D9DAF /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +121,7 @@
 		036D08BD248EBBB70011A44B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5401888E248FD5420073E630 /* Adventure.swift */,
 				036D08CF24900DC20011A44B /* Guide.swift */,
 				036D08D124900E410011A44B /* Service.swift */,
 				E2790046249AC0E9004D1FF5 /* LocationCoordinate.swift */,
@@ -123,8 +136,10 @@
 				036D08C4248EBD750011A44B /* ExplorerViewController.swift */,
 				E26D3623248FC05B006A935C /* SelectedLocationViewController.swift */,
 				036D08C6248EBDBF0011A44B /* GuideViewController.swift */,
+				5401888A248FB65A0073E630 /* AdventureViewController.swift */,
 				037423092493A6CD007BDD38 /* SelectedGuideViewController.swift */,
 				E279004424984261004D1FF5 /* MapLocationControllerViewController.swift */,
+				69683ECB2497AB8300358395 /* CustomCellViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -139,6 +154,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		54A4AB662497A5AF007D9DAF /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				5401888C248FD1490073E630 /* AdventureTableViewCell.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		E26D3629248FD5A1006A935C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,12 +174,14 @@
 		E29CC2A724911FB4002F9611 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				546DDAB02498F03C001D9B63 /* AdventureTableViewCell.swift */,
 				036D08D3249015CC0011A44B /* GuideCellTableViewCell.swift */,
 				E26D3625248FC15E006A935C /* CollectionPhotoInformation.swift */,
 				E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */,
 				E29CC2A824912049002F9611 /* LocationMapView.swift */,
 				E2AFA1402492BF2A00F56A21 /* InformationView.swift */,
 				E2AFA1422493152000F56A21 /* AdventureView.swift */,
+				03C8BBB12497AA97007992BA /* EmptyStateComponent.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -253,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5401888F248FD5420073E630 /* Adventure.swift in Sources */,
 				E26D3624248FC05B006A935C /* SelectedLocationViewController.swift in Sources */,
 				E2AFA1412492BF2A00F56A21 /* InformationView.swift in Sources */,
 				E26D362B248FD5CE006A935C /* ViewCode.swift in Sources */,
@@ -266,14 +292,18 @@
 				E2790049249AC2CF004D1FF5 /* PresentMapLocationDelegate.swift in Sources */,
 				036D08AC248EBB2B0011A44B /* SceneDelegate.swift in Sources */,
 				E26D3628248FD209006A935C /* PhotoCollectionViewCell.swift in Sources */,
+				03C8BBB22497AA97007992BA /* EmptyStateComponent.swift in Sources */,
 				036D08D024900DC20011A44B /* Guide.swift in Sources */,
 				E279004524984261004D1FF5 /* MapLocationControllerViewController.swift in Sources */,
 				E2AFA1432493152000F56A21 /* AdventureView.swift in Sources */,
+				546DDAB12498F083001D9B63 /* AdventureTableViewCell.swift in Sources */,
 				0355D4642491B3F4006B6070 /* Fonts.swift in Sources */,
 				E2790047249AC0E9004D1FF5 /* LocationCoordinate.swift in Sources */,
 				036D08C5248EBD750011A44B /* ExplorerViewController.swift in Sources */,
 				E26D3626248FC15E006A935C /* CollectionPhotoInformation.swift in Sources */,
 				036D08C7248EBDBF0011A44B /* GuideViewController.swift in Sources */,
+				5401888B248FB65A0073E630 /* AdventureViewController.swift in Sources */,
+				69683ECC2497AB8300358395 /* CustomCellViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

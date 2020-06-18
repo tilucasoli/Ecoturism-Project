@@ -10,7 +10,7 @@ import UIKit
 
 class LocationMapView: UIView {
     
-    var delegate: PresentMapLocationDelegate?
+    weak var delegate: PresentMapLocationDelegate?
     
     lazy var title: UILabel = {
         var title = UILabel()

@@ -16,7 +16,7 @@ class InformationView: UIView {
         title.textColor = .titleColor
         title.numberOfLines = 1
         title.adjustsFontSizeToFitWidth = true
-        title.font = UIFont.systemFont(ofSize: 25, weight: .medium)
+        title.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
     }()
@@ -25,9 +25,9 @@ class InformationView: UIView {
         var description = UILabel()
         description.textColor = .textColor
         description.numberOfLines = 0
-        description.textAlignment = .justified
+        description.textAlignment = .left
         description.adjustsFontSizeToFitWidth = true
-        description.font = UIFont.systemFont(ofSize: 40, weight: .regular)
+        description.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         description.translatesAutoresizingMaskIntoConstraints = false
         return description
     }()
@@ -53,15 +53,16 @@ extension InformationView: ViewCode {
         NSLayoutConstraint.activate([
             title.topAnchor.constraint(equalTo: topAnchor),
             title.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            title.trailingAnchor.constraint(equalTo: trailingAnchor),
-            title.bottomAnchor.constraint(equalTo: placeDescription.topAnchor, constant: -5)
+            title.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
         
         NSLayoutConstraint.activate([
             placeDescription.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             placeDescription.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            placeDescription.bottomAnchor.constraint(equalTo: bottomAnchor),
-            placeDescription.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.8)
+//            placeDescription.bottomAnchor.constraint(equalTo: bottomAnchor),
+            placeDescription.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 4),
+            placeDescription.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+//            placeDescription.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.8)
         ])
     }
 

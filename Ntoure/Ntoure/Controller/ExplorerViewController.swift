@@ -8,13 +8,6 @@
 
 import UIKit
 
-struct CustomData {
-    var title: String
-    var distance: String
-    var image: UIImage
-    var state: String?
-}
-
 class ExplorerViewController: UIViewController {
     
     //places example
@@ -24,170 +17,127 @@ class ExplorerViewController: UIViewController {
     ]
     
     fileprivate let collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout ()
+        let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.register(CustomCell.self, forCellWithReuseIdentifier: "cell")
+        cv.register(CustomCellViewController.self, forCellWithReuseIdentifier: "cell")
         return cv
     }()
     
-//    fileprivate let location: UILabel = {
-//       let text = UILabel()
-//        text.text = "Ceará, Brasil"
-//        text.textColor = UIColor.black
-//        text.translatesAutoresizingMaskIntoConstraints = false
-//        text.textAlignment = .center
-//        text.font = UIFont.boldSystemFont(ofSize: 18)
-//        return text
-//    }()
+    fileprivate let location: UILabel = {
+       let text = UILabel()
+        text.text = "Ceará, Brasil"
+        text.textColor = .titleColor
+        text.translatesAutoresizingMaskIntoConstraints = false
+        text.textAlignment = .left
+        text.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        return text
+    }()
     
     fileprivate let searchBar: UISearchController = {
-        let searchBar = UISearchController(searchResultsController: nil)
-        searchBar.searchBar.placeholder = "Try Canoa Quebrada"
-        searchBar.searchBar.searchBarStyle = .minimal
-        searchBar.definesPresentationContext = true
-        return searchBar
+        let searchController = UISearchController(searchResultsController: nil)
+        
+        searchController.searchBar.placeholder = "Tente Canoa Quebrada"
+        searchController.searchBar.searchBarStyle = .prominent
+        searchController.searchBar.isTranslucent = true
+        searchController.definesPresentationContext = true
+        
+        let textField = searchController.searchBar.searchTextField
+        textField.backgroundColor = .white
+
+//
+//        if let textfield = searchController.value(forKey: "searchField") as? UITextField {
+//            textfield.textColor = UIColor.blue
+//            if let backgroundview = textfield.subviews.first {
+//                // Background color
+//                backgroundview.backgroundColor = UIColor.white
+//                // Rounded corner
+//                backgroundview.layer.cornerRadius = 14;
+//                backgroundview.clipsToBounds = true;
+//            }
+//        }
+//        searchController.searchBar.backgroundColor = .black
+        return searchController
+    }()
+    
+    let searchBarView: UIView = {
+        let sbView = UIView()
+        return sbView
+    }()
+
+    fileprivate let topView: UIView = {
+        let topView = UIView()
+        topView.translatesAutoresizingMaskIntoConstraints = false
+      
+        return topView
+    }()
+    
+    fileprivate let botView: UIView = {
+        let botView = UIView()
+        botView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return botView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Explorar"
+        navigationController?.navigationBar.tintColor = .actionColor
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes = largeTitleStyle
         navigationItem.searchController = searchBar //SearchController here
+//        view.addSubview(searchBar)
+        view.addSubview(UIView())
         
-        
-        view.backgroundColor = .white
+        view.backgroundColor = .background
         view.addSubview(collectionView)
-        //view.addSubview(location)
+        view.addSubview(topView)
+        view.addSubview(botView)
+        view.addSubview(location)
         
-        collectionView.backgroundColor = .white
+        topView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        topView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        topView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        topView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.23).isActive = true
         
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        botView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        botView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        botView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        botView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.07).isActive = true
+        
+        collectionView.backgroundColor = .background
+        collectionView.topAnchor.constraint(equalTo: topView.bottomAnchor).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: botView.topAnchor).isActive = true
         
-//        location.topAnchor.constraint(equalTo: view.topAnchor, constant: 140).isActive = true
-//        location.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-
+        location.topAnchor.constraint(equalTo: collectionView.topAnchor, constant: 21).isActive = true
+        location.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         
         collectionView.delegate = self
         collectionView.dataSource = self
     }
 
 }
-extension ExplorerViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+
+extension ExplorerViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/1.2, height: collectionView.frame.height/1.65)
+        return CGSize(width: collectionView.frame.width/1.2, height: collectionView.frame.height/1.2)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCellViewController
         cell.data = self.data[indexPath.row]
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // select function here
-    }
-}
-
-class CustomCell: UICollectionViewCell {
-    var data: CustomData? {
-        didSet{
-            guard let data = data else {return}
-            bg.image = data.image
-            title.text = data.title
-            describ.text = data.distance
-        }
-    }
-    
-    fileprivate let bg: UIImageView = {
-        let image = UIImageView()
-        
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleToFill
-        image.clipsToBounds = true
-        image.layer.cornerRadius = 12
-        return image
-        
-    }()
-    fileprivate let gradient: UIImageView = {
-        let image = UIImageView()
-        image.image = #imageLiteral(resourceName: "Rectangle 90")
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleToFill
-        image.clipsToBounds = true
-        image.layer.cornerRadius = 12
-        return image
-    }()
-    
-    fileprivate let title: UILabel = {
-        let text = UILabel()
-        
-        text.textColor = UIColor.white
-        text.translatesAutoresizingMaskIntoConstraints = false
-        text.textAlignment = .center
-        text.font = UIFont.boldSystemFont(ofSize: 25)
-        return text
-    }()
-    
-    fileprivate let describ: UILabel = {
-        let text = UILabel()
-
-        text.textColor = UIColor.white
-        text.translatesAutoresizingMaskIntoConstraints = false
-        text.textAlignment = .center
-        text.font = UIFont.boldSystemFont(ofSize: 15)
-        return text
-    }()
-    
-    fileprivate let icon: UIImageView = {
-       let image = UIImageView()
-        image.image = #imageLiteral(resourceName: "Icon ionic-ios-pin")
-        image.translatesAutoresizingMaskIntoConstraints = false
-        return image
-    }()
-    
-    
-    override init(frame: CGRect){
-        super.init(frame: frame)
-        
-        contentView.addSubview(bg)
-        contentView.addSubview(gradient)
-        contentView.addSubview(title)
-        contentView.addSubview(icon)
-        contentView.addSubview(describ)
-        
-
-        bg.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        bg.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
-        bg.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
-        bg.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        
-        gradient.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        gradient.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
-        gradient.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
-        gradient.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        
-        title.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
-        title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 25).isActive = true
-        
-        icon.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -45).isActive = true
-        icon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 25).isActive = true
-        icon.widthAnchor.constraint(equalToConstant: 7).isActive = true
-        icon.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        
-        describ.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -41).isActive = true
-        describ.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 35).isActive = true
-        
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        let nextViewController = SelectedLocationViewController()
+        navigationController?.pushViewController(nextViewController, animated: true)
     }
 
 }

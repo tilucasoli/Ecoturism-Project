@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol PresentMapLocationDelegate {
+protocol PresentMapLocationDelegate: class {
     func presentLocation()
 }

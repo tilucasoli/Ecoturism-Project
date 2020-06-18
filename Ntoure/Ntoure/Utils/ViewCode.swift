@@ -7,11 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ViewCode {
     func buildHierarchy()
     func setUpLayoutConstraints()
     func aditionalConfigurations()
+}
+
+protocol MyDelegate: class {
+    func onButtonTapped()
 }
 
 extension ViewCode {
@@ -20,4 +25,11 @@ extension ViewCode {
         setUpLayoutConstraints()
         aditionalConfigurations()
     }
+}
+
+struct CustomData {
+    var title: String
+    var distance: String
+    var image: UIImage
+    var state: String?
 }
