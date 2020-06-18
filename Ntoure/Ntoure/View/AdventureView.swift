@@ -140,7 +140,6 @@ extension AdventureView {
         let adventure1 = Adventure(image: UIImage(named: "parapenteImg")!, title: "Aventura de Parapente", categoria: "Parapente", distancia: "5km")
         let adventure2 = Adventure(image: UIImage(named: "jangadaImg")!, title: "Travessia de Jangada", categoria: "Jangada", distancia: "7km")
         let adventure3 = Adventure(image: UIImage(named: "kitesurfImg")!, title: "Praia de KiteSurfing", categoria: "Kitesurf", distancia: "11km")
-        
         return [adventure1, adventure2, adventure3]
     }
 }

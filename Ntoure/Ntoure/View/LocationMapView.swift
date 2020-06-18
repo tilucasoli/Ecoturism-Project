@@ -10,6 +10,8 @@ import UIKit
 
 class LocationMapView: UIView {
     
+    weak var delegate: PresentMapLocationDelegate?
+    
     lazy var title: UILabel = {
         var title = UILabel()
         title.font = .placeTitle
@@ -44,6 +46,7 @@ class LocationMapView: UIView {
         let mapLocation = UIButton()
         mapLocation.setImage(UIImage(named: "mapIcon"), for: .normal)
         mapLocation.adjustsImageWhenHighlighted = true // ver o comportamento disso
+        mapLocation.addTarget(self, action: #selector(goToMapController), for: .touchUpInside)
         mapLocation.translatesAutoresizingMaskIntoConstraints = false
         return mapLocation
     }()
@@ -64,6 +67,9 @@ class LocationMapView: UIView {
         addShadow()
     }
 
+    @objc func goToMapController() {
+        delegate?.presentLocation()
+    }
 }
 
 extension LocationMapView: ViewCode {
