@@ -18,10 +18,10 @@
 		036D08C7248EBDBF0011A44B /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08C6248EBDBF0011A44B /* GuideViewController.swift */; };
 		036D08CC248FBFBB0011A44B /* Project colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08CB248FBFBB0011A44B /* Project colors.swift */; };
 		036D08D024900DC20011A44B /* Guide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08CF24900DC20011A44B /* Guide.swift */; };
-		036D08D224900E410011A44B /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08D124900E410011A44B /* Service.swift */; };
 		036D08D4249015CC0011A44B /* GuideCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08D3249015CC0011A44B /* GuideCellTableViewCell.swift */; };
 		0374230A2493A6CD007BDD38 /* SelectedGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037423092493A6CD007BDD38 /* SelectedGuideViewController.swift */; };
 		03C8BBB22497AA97007992BA /* EmptyStateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8BBB12497AA97007992BA /* EmptyStateComponent.swift */; };
+		03EB928F249A66E800B68FD8 /* MyCustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EB928E249A66E800B68FD8 /* MyCustomHeader.swift */; };
 		5401888B248FB65A0073E630 /* AdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5401888A248FB65A0073E630 /* AdventureViewController.swift */; };
 		5401888F248FD5420073E630 /* Adventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5401888E248FD5420073E630 /* Adventure.swift */; };
 		546DDAB12498F083001D9B63 /* AdventureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546DDAB02498F03C001D9B63 /* AdventureTableViewCell.swift */; };
@@ -31,6 +31,9 @@
 		E26D3626248FC15E006A935C /* CollectionPhotoInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3625248FC15E006A935C /* CollectionPhotoInformation.swift */; };
 		E26D3628248FD209006A935C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */; };
 		E26D362B248FD5CE006A935C /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D362A248FD5CE006A935C /* ViewCode.swift */; };
+		E279004524984261004D1FF5 /* MapLocationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E279004424984261004D1FF5 /* MapLocationControllerViewController.swift */; };
+		E2790047249AC0E9004D1FF5 /* LocationCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2790046249AC0E9004D1FF5 /* LocationCoordinate.swift */; };
+		E2790049249AC2CF004D1FF5 /* PresentMapLocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2790048249AC2CF004D1FF5 /* PresentMapLocationDelegate.swift */; };
 		E29CC2A924912049002F9611 /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29CC2A824912049002F9611 /* LocationMapView.swift */; };
 		E2AFA1412492BF2A00F56A21 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AFA1402492BF2A00F56A21 /* InformationView.swift */; };
 		E2AFA1432493152000F56A21 /* AdventureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AFA1422493152000F56A21 /* AdventureView.swift */; };
@@ -50,10 +53,10 @@
 		036D08C6248EBDBF0011A44B /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		036D08CB248FBFBB0011A44B /* Project colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project colors.swift"; sourceTree = "<group>"; };
 		036D08CF24900DC20011A44B /* Guide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guide.swift; sourceTree = "<group>"; };
-		036D08D124900E410011A44B /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		036D08D3249015CC0011A44B /* GuideCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GuideCellTableViewCell.swift; path = Ntoure/View/GuideCellTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		037423092493A6CD007BDD38 /* SelectedGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedGuideViewController.swift; sourceTree = "<group>"; };
 		03C8BBB12497AA97007992BA /* EmptyStateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateComponent.swift; sourceTree = "<group>"; };
+		03EB928E249A66E800B68FD8 /* MyCustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomHeader.swift; sourceTree = "<group>"; };
 		5401888A248FB65A0073E630 /* AdventureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureViewController.swift; sourceTree = "<group>"; };
 		5401888C248FD1490073E630 /* AdventureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureTableViewCell.swift; sourceTree = "<group>"; };
 		5401888E248FD5420073E630 /* Adventure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Adventure.swift; path = Ntoure/Controller/Adventure.swift; sourceTree = SOURCE_ROOT; };
@@ -64,6 +67,9 @@
 		E26D3625248FC15E006A935C /* CollectionPhotoInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionPhotoInformation.swift; path = Ntoure/View/CollectionPhotoInformation.swift; sourceTree = SOURCE_ROOT; };
 		E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCollectionViewCell.swift; path = Ntoure/View/PhotoCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		E26D362A248FD5CE006A935C /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		E279004424984261004D1FF5 /* MapLocationControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationControllerViewController.swift; sourceTree = "<group>"; };
+		E2790046249AC0E9004D1FF5 /* LocationCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinate.swift; sourceTree = "<group>"; };
+		E2790048249AC2CF004D1FF5 /* PresentMapLocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMapLocationDelegate.swift; sourceTree = "<group>"; };
 		E29CC2A824912049002F9611 /* LocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapView.swift; sourceTree = "<group>"; };
 		E2AFA1402492BF2A00F56A21 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		E2AFA1422493152000F56A21 /* AdventureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureView.swift; sourceTree = "<group>"; };
@@ -120,6 +126,7 @@
 				5401888E248FD5420073E630 /* Adventure.swift */,
 				036D08CF24900DC20011A44B /* Guide.swift */,
 				036D08D124900E410011A44B /* Service.swift */,
+				E2790046249AC0E9004D1FF5 /* LocationCoordinate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,9 +138,10 @@
 				036D08C2248EBCF80011A44B /* TabBarController.swift */,
 				036D08C4248EBD750011A44B /* ExplorerViewController.swift */,
 				E26D3623248FC05B006A935C /* SelectedLocationViewController.swift */,
-				036D08C6248EBDBF0011A44B /* GuideViewController.swift */,
 				5401888A248FB65A0073E630 /* AdventureViewController.swift */,
 				037423092493A6CD007BDD38 /* SelectedGuideViewController.swift */,
+				036D08C6248EBDBF0011A44B /* GuideViewController.swift */,
+				E279004424984261004D1FF5 /* MapLocationControllerViewController.swift */,
 				69683ECB2497AB8300358395 /* CustomCellViewController.swift */,
 			);
 			path = Controller;
@@ -161,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				E26D362A248FD5CE006A935C /* ViewCode.swift */,
+				E2790048249AC2CF004D1FF5 /* PresentMapLocationDelegate.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -176,6 +185,7 @@
 				E2AFA1402492BF2A00F56A21 /* InformationView.swift */,
 				E2AFA1422493152000F56A21 /* AdventureView.swift */,
 				03C8BBB12497AA97007992BA /* EmptyStateComponent.swift */,
+				03EB928E249A66E800B68FD8 /* MyCustomHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -283,14 +293,18 @@
 				0374230A2493A6CD007BDD38 /* SelectedGuideViewController.swift in Sources */,
 				036D08AA248EBB2B0011A44B /* AppDelegate.swift in Sources */,
 				036D08D224900E410011A44B /* Service.swift in Sources */,
+				E2790049249AC2CF004D1FF5 /* PresentMapLocationDelegate.swift in Sources */,
 				036D08AC248EBB2B0011A44B /* SceneDelegate.swift in Sources */,
 				E26D3628248FD209006A935C /* PhotoCollectionViewCell.swift in Sources */,
 				03C8BBB22497AA97007992BA /* EmptyStateComponent.swift in Sources */,
 				69263E49249A9A27009EB2A6 /* UPCarouselFlowLayout.swift in Sources */,
 				036D08D024900DC20011A44B /* Guide.swift in Sources */,
+				E279004524984261004D1FF5 /* MapLocationControllerViewController.swift in Sources */,
 				E2AFA1432493152000F56A21 /* AdventureView.swift in Sources */,
 				546DDAB12498F083001D9B63 /* AdventureTableViewCell.swift in Sources */,
+				03EB928F249A66E800B68FD8 /* MyCustomHeader.swift in Sources */,
 				0355D4642491B3F4006B6070 /* Fonts.swift in Sources */,
+				E2790047249AC0E9004D1FF5 /* LocationCoordinate.swift in Sources */,
 				036D08C5248EBD750011A44B /* ExplorerViewController.swift in Sources */,
 				E26D3626248FC15E006A935C /* CollectionPhotoInformation.swift in Sources */,
 				036D08C7248EBDBF0011A44B /* GuideViewController.swift in Sources */,
@@ -441,7 +455,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Academy.Ntoure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -459,7 +473,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Academy.Ntoure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -70,8 +70,7 @@ class ExplorerViewController: UIViewController {
         let sbView = UIView()
         return sbView
     }()
-    
-    
+
     fileprivate let topView: UIView = {
         let topView = UIView()
         topView.translatesAutoresizingMaskIntoConstraints = false

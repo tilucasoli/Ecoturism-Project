@@ -10,7 +10,6 @@ import UIKit
 
 class SelectedLocationViewController: UIViewController, MyDelegate {
 
-    
     func onButtonTapped() {
         let nextViewController = AdventureViewController()
         navigationController?.pushViewController(nextViewController, animated: true)
@@ -24,6 +23,7 @@ class SelectedLocationViewController: UIViewController, MyDelegate {
 
     lazy var locationMapComponent: LocationMapView = {
         let locationMap = LocationMapView(frame: .zero, title: "Canoa Quebrada", locationDistance: "163km")
+        locationMap.delegate = self
         locationMap.translatesAutoresizingMaskIntoConstraints = false
         return locationMap
     }()
@@ -99,8 +99,7 @@ extension SelectedLocationViewController: ViewCode {
         NSLayoutConstraint.activate([
             informationComponent.topAnchor.constraint(equalTo: locationMapComponent.bottomAnchor, constant: 16),
             informationComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            informationComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            informationComponent.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2)
+            informationComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -113,5 +112,12 @@ extension SelectedLocationViewController: ViewCode {
 
     func aditionalConfigurations() {
         view.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.98, alpha: 1.00)
+    }
+}
+
+extension SelectedLocationViewController: PresentMapLocationDelegate {
+    func presentLocation() {
+        let mapController = MapLocationControllerViewController()
+        navigationController?.pushViewController(mapController, animated: true)
     }
 }

@@ -10,16 +10,15 @@ import UIKit
 
 class LocationMapView: UIView {
     
-    private var shadowLayer: CAShapeLayer!
-    private var cornerRadius: CGFloat = 25.0
-    private var fillColor: UIColor = .blue
+    weak var delegate: PresentMapLocationDelegate?
     
     lazy var title: UILabel = {
         var title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        title.font = .placeTitle
+        title.attributedText = NSMutableAttributedString(string: "Canoa", attributes: placeTitle)
         title.adjustsFontSizeToFitWidth = true
         title.numberOfLines = 1
-        title.textColor = UIColor(red: 0.15, green: 0.22, blue: 0.25, alpha: 1.00) // Mudar para cor de sistema
+        title.textColor = .titleColor
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
     }()
@@ -35,10 +34,10 @@ class LocationMapView: UIView {
 
     lazy var locationDistance: UILabel = {
         let location = UILabel()
-        location.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        location.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         location.adjustsFontSizeToFitWidth = true
         location.numberOfLines = 1
-        location.textColor = UIColor(red: 0.15, green: 0.22, blue: 0.25, alpha: 1.00) // Mudar para cor de sistema
+        location.textColor = .titleColor
         location.translatesAutoresizingMaskIntoConstraints = false
         return location
     }()
@@ -47,6 +46,7 @@ class LocationMapView: UIView {
         let mapLocation = UIButton()
         mapLocation.setImage(UIImage(named: "mapIcon"), for: .normal)
         mapLocation.adjustsImageWhenHighlighted = true // ver o comportamento disso
+        mapLocation.addTarget(self, action: #selector(goToMapController), for: .touchUpInside)
         mapLocation.translatesAutoresizingMaskIntoConstraints = false
         return mapLocation
     }()
@@ -62,11 +62,14 @@ class LocationMapView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-   override func layoutSubviews() {
+    override func layoutSubviews() {
         roundCorners(corners: [.bottomLeft, .topLeft], radius: 10)
         addShadow()
-   }
+    }
 
+    @objc func goToMapController() {
+        delegate?.presentLocation()
+    }
 }
 
 extension LocationMapView: ViewCode {
@@ -90,7 +93,7 @@ extension LocationMapView: ViewCode {
             locationIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             locationIcon.trailingAnchor.constraint(equalTo: locationDistance.leadingAnchor, constant: -10),
             locationIcon.widthAnchor.constraint(equalTo: locationIcon.heightAnchor, multiplier: 0.7),
-            locationIcon.heightAnchor.constraint(equalTo: locationDistance.heightAnchor)
+            locationIcon.heightAnchor.constraint(equalTo: locationDistance.heightAnchor, multiplier: 0.5)
         ])
 
         NSLayoutConstraint.activate([
