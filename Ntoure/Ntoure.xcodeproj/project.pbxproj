@@ -25,7 +25,7 @@
 		5401888B248FB65A0073E630 /* AdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5401888A248FB65A0073E630 /* AdventureViewController.swift */; };
 		5401888F248FD5420073E630 /* Adventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5401888E248FD5420073E630 /* Adventure.swift */; };
 		546DDAB12498F083001D9B63 /* AdventureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546DDAB02498F03C001D9B63 /* AdventureTableViewCell.swift */; };
-		69263E49249A9A27009EB2A6 /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69263E48249A9A27009EB2A6 /* UPCarouselFlowLayout.swift */; };
+		69263E4B249B99BC009EB2A6 /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69263E4A249B99BC009EB2A6 /* UPCarouselFlowLayout.swift */; };
 		69683ECC2497AB8300358395 /* CustomCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69683ECB2497AB8300358395 /* CustomCellViewController.swift */; };
 		E26D3624248FC05B006A935C /* SelectedLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3623248FC05B006A935C /* SelectedLocationViewController.swift */; };
 		E26D3626248FC15E006A935C /* CollectionPhotoInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3625248FC15E006A935C /* CollectionPhotoInformation.swift */; };
@@ -61,7 +61,7 @@
 		5401888C248FD1490073E630 /* AdventureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureTableViewCell.swift; sourceTree = "<group>"; };
 		5401888E248FD5420073E630 /* Adventure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Adventure.swift; path = Ntoure/Controller/Adventure.swift; sourceTree = SOURCE_ROOT; };
 		546DDAB02498F03C001D9B63 /* AdventureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureTableViewCell.swift; sourceTree = "<group>"; };
-		69263E48249A9A27009EB2A6 /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UPCarouselFlowLayout.swift; path = ../../../../../.Trash/UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
+		69263E4A249B99BC009EB2A6 /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
 		69683ECB2497AB8300358395 /* CustomCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellViewController.swift; sourceTree = "<group>"; };
 		E26D3623248FC05B006A935C /* SelectedLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedLocationViewController.swift; sourceTree = "<group>"; };
 		E26D3625248FC15E006A935C /* CollectionPhotoInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionPhotoInformation.swift; path = Ntoure/View/CollectionPhotoInformation.swift; sourceTree = SOURCE_ROOT; };
@@ -125,7 +125,6 @@
 			children = (
 				5401888E248FD5420073E630 /* Adventure.swift */,
 				036D08CF24900DC20011A44B /* Guide.swift */,
-				036D08D124900E410011A44B /* Service.swift */,
 				E2790046249AC0E9004D1FF5 /* LocationCoordinate.swift */,
 			);
 			path = Model;
@@ -134,7 +133,7 @@
 		036D08BF248EBBC20011A44B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				69263E48249A9A27009EB2A6 /* UPCarouselFlowLayout.swift */,
+				69263E4A249B99BC009EB2A6 /* UPCarouselFlowLayout.swift */,
 				036D08C2248EBCF80011A44B /* TabBarController.swift */,
 				036D08C4248EBD750011A44B /* ExplorerViewController.swift */,
 				E26D3623248FC05B006A935C /* SelectedLocationViewController.swift */,
@@ -290,14 +289,13 @@
 				036D08CC248FBFBB0011A44B /* Project colors.swift in Sources */,
 				036D08D4249015CC0011A44B /* GuideCellTableViewCell.swift in Sources */,
 				036D08C3248EBCF80011A44B /* TabBarController.swift in Sources */,
+				69263E4B249B99BC009EB2A6 /* UPCarouselFlowLayout.swift in Sources */,
 				0374230A2493A6CD007BDD38 /* SelectedGuideViewController.swift in Sources */,
 				036D08AA248EBB2B0011A44B /* AppDelegate.swift in Sources */,
-				036D08D224900E410011A44B /* Service.swift in Sources */,
 				E2790049249AC2CF004D1FF5 /* PresentMapLocationDelegate.swift in Sources */,
 				036D08AC248EBB2B0011A44B /* SceneDelegate.swift in Sources */,
 				E26D3628248FD209006A935C /* PhotoCollectionViewCell.swift in Sources */,
 				03C8BBB22497AA97007992BA /* EmptyStateComponent.swift in Sources */,
-				69263E49249A9A27009EB2A6 /* UPCarouselFlowLayout.swift in Sources */,
 				036D08D024900DC20011A44B /* Guide.swift in Sources */,
 				E279004524984261004D1FF5 /* MapLocationControllerViewController.swift in Sources */,
 				E2AFA1432493152000F56A21 /* AdventureView.swift in Sources */,
