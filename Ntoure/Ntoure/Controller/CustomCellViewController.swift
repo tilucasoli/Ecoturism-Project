@@ -20,7 +20,6 @@ class CustomCellViewController: UICollectionViewCell {
     
     fileprivate let bg: UIImageView = {
         let image = UIImageView()
-        
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleToFill
         image.clipsToBounds = true
@@ -28,6 +27,7 @@ class CustomCellViewController: UICollectionViewCell {
         return image
         
     }()
+
     fileprivate let gradient: UIImageView = {
         let image = UIImageView()
         image.image = #imageLiteral(resourceName: "Rectangle 90")
@@ -64,8 +64,7 @@ class CustomCellViewController: UICollectionViewCell {
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
-    
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -97,9 +96,8 @@ class CustomCellViewController: UICollectionViewCell {
         describ.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 35).isActive = true
         
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }
