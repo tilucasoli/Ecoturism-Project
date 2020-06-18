@@ -10,14 +10,14 @@ import UIKit
 
 class Guide {
     var name: String
-    var todo = [Service]()
-    var done = [Service]()
+    var todo = [Adventure]()
+    var done = [Adventure]()
 
     init(name: String) {
         self.name = name
     }
 
-    func addServiceInTodo(service: Service) {
+    func addServiceInTodo(service: Adventure) {
         todo.append(service)
     }
 }
