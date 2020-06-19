@@ -44,8 +44,10 @@ class GuideCellTableViewCell: UITableViewCell {
     }()
 
     func setupCell() {
-        heightAnchor.constraint(equalToConstant: 57).isActive = true
         selectionStyle = .none
+        let const = heightAnchor.constraint(equalToConstant: 57)
+        const.priority = UILayoutPriority(999)
+        const.isActive = true
     }
 
     func setupCellCard() {
@@ -55,9 +57,10 @@ class GuideCellTableViewCell: UITableViewCell {
             cellView.heightAnchor.constraint(equalToConstant: 55),
             cellView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
             cellView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
-            cellView.topAnchor.constraint(equalTo: self.topAnchor)
+            cellView.topAnchor.constraint(equalTo: self.topAnchor),
 //            cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
+
     }
 
     func setupImgService() {

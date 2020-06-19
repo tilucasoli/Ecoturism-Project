@@ -43,11 +43,16 @@ class GuideViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
         
+        hiddenTableView()
+        
+    }
+    
+    func hiddenTableView() {
         if guideList.isEmpty {
             tableView.isHidden = true
         }
     }
-
+    
     func setupNavBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = largeTitleStyle
@@ -116,8 +121,20 @@ extension GuideViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "guideCell", for: indexPath) as? GuideCellTableViewCell
         cell?.backgroundColor = .background
         cell?.title.text = guideList[indexPath.row].name
-
         return cell ?? UITableViewCell()
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.guideList.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            hiddenTableView()
+        }
+        
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
