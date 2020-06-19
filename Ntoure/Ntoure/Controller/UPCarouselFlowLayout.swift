@@ -104,9 +104,9 @@ open class UPCarouselFlowLayout: UICollectionViewFlowLayout {
         attributes.zIndex = Int(alpha * 10)
         
         if isHorizontal {
-            attributes.center.y = attributes.center.y + shift
+            attributes.center.y += shift
         } else {
-            attributes.center.x = attributes.center.x + shift
+            attributes.center.x += shift
         }
         
         return attributes

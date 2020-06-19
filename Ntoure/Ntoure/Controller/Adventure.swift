@@ -13,4 +13,6 @@ struct Adventure {
     var title: String
     var categoria: String
     var distancia: String
+    
+    var done: Bool = false
 }
