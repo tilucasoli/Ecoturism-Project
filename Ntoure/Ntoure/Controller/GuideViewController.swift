@@ -134,7 +134,6 @@ extension GuideViewController: UITableViewDelegate, UITableViewDataSource {
             hiddenTableView()
         }
         
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

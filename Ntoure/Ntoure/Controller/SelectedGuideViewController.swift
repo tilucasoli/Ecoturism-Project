@@ -118,37 +118,17 @@ extension SelectedGuideViewController: UITableViewDataSource, UITableViewDelegat
         return true
     }
 
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delete  = UITableViewRowAction(style: .destructive, title: "Delete", handler: {action, index  in
-            if indexPath.section == 0 {
-                self.notDoneAdventure.remove(at: indexPath.row)
-                self.tableView.deleteRows(at: [indexPath], with: .fade)
-            } else {
-                self.doneAdventure.remove(at: indexPath.row)
-                self.tableView.deleteRows(at: [indexPath], with: .fade)
+        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                if indexPath.section == 0 {
+                    self.notDoneAdventure.remove(at: indexPath.row)
+                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                } else {
+                    self.doneAdventure.remove(at: indexPath.row)
+                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                }
             }
-        })
-        delete.backgroundColor = .deleteColor
-        
-        if indexPath.section == 0 {
-            let check = UITableViewRowAction(style: .default, title: "Check", handler: {action, index  in
-                let adventureRemoved = self.notDoneAdventure.remove(at: indexPath.row)
-                self.doneAdventure += [adventureRemoved]
-            })
-            check.backgroundColor = .actionColor
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-
-            return [delete, check]
-        } else {
-            let uncheck = UITableViewRowAction(style: .default, title: "Uncheck", handler: {action, index  in
-                
-            })
-            uncheck.backgroundColor = .textColor
-            return [delete, uncheck]
         }
-    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = (tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderCell") as? MyCustomHeader)!
