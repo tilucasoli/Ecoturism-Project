@@ -49,8 +49,14 @@ class SelectedGuideViewController: UIViewController {
         notDoneAdventure = adventureList.filter {$0.done == false}
         
         setupEmptyState()
+//        hiddenTableView()
         setupTableView()
-        // Do any additional setup after loading the view.
+    }
+    
+    func hiddenTableView() {
+        if adventureList.isEmpty {
+            tableView.isHidden = true
+        }
     }
     
     @objc func editTitle() {
@@ -128,6 +134,7 @@ extension SelectedGuideViewController: UITableViewDataSource, UITableViewDelegat
                     self.tableView.deleteRows(at: [indexPath], with: .fade)
                 }
             }
+            self.hiddenTableView()
         }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -139,8 +146,6 @@ extension SelectedGuideViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "AdventureCell", for: indexPath) as? AdventureTableViewCell)!
-        
-        let listAdventures = self.fetchData()
        
         cell.backgroundColor = .background
         cell.selectionStyle = .none
@@ -150,7 +155,7 @@ extension SelectedGuideViewController: UITableViewDataSource, UITableViewDelegat
         } else {
             cell.set(adventure: self.doneAdventure[indexPath.row])
             cell.subviews.forEach {$0.alpha = 0.7}
-            cell.adventureTitleLabel.attributedText = addStrikethrough(string: listAdventures[indexPath.row].title)
+            cell.adventureTitleLabel.attributedText = addStrikethrough(string: doneAdventure[indexPath.row].title)
         }
         
         return cell
@@ -168,7 +173,7 @@ extension SelectedGuideViewController {
     
     func fetchData() -> [Adventure] {
         let adventure1 = Adventure(image: UIImage(named: "parapenteImg")!, title: "Aventura de Parapente", categoria: "Parapente", distancia: "5km", done: false)
-        let adventure2 = Adventure(image: UIImage(named: "jangadaImg")!, title: "Travessia de Jangada", categoria: "Jangada", distancia: "7km", done: false)
+        let adventure2 = Adventure(image: UIImage(named: "jangadaImg")!, title: "Travessia de Jangada", categoria: "Jangada", distancia: "7km", done: true)
         let adventure3 = Adventure(image: UIImage(named: "kitesurfImg")!, title: "Praia de KiteSurfing", categoria: "Kitesurf", distancia: "11km", done: true)
         
         return [adventure1, adventure2, adventure3]

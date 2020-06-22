@@ -8,16 +8,16 @@
 
 import UIKit
 
-class Guide {
+class Guide: Codable {
     var name: String
     var todo = [Adventure]()
     var done = [Adventure]()
 
-    init(name: String) {
-        self.name = name
-    }
-
     func addServiceInTodo(service: Adventure) {
         todo.append(service)
+    }
+    
+    required init(name: String) {
+        self.name = name
     }
 }

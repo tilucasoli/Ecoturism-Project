@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0355D4622491B2A8006B6070 /* Harbor Type - Graviola Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0355D4612491B2A8006B6070 /* Harbor Type - Graviola Regular.otf */; };
 		0355D4642491B3F4006B6070 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355D4632491B3F4006B6070 /* Fonts.swift */; };
+		036B06C324A0D833007F0BD3 /* GuideData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 036B06C224A0D833007F0BD3 /* GuideData.plist */; };
+		036B06C524A0E5DD007F0BD3 /* PlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B06C424A0E5DD007F0BD3 /* PlistManager.swift */; };
 		036D08AA248EBB2B0011A44B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08A9248EBB2B0011A44B /* AppDelegate.swift */; };
 		036D08AC248EBB2B0011A44B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08AB248EBB2B0011A44B /* SceneDelegate.swift */; };
 		036D08B3248EBB300011A44B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036D08B2248EBB300011A44B /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		0355D4612491B2A8006B6070 /* Harbor Type - Graviola Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Harbor Type - Graviola Regular.otf"; sourceTree = "<group>"; };
 		0355D4632491B3F4006B6070 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		036B06C224A0D833007F0BD3 /* GuideData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GuideData.plist; sourceTree = "<group>"; };
+		036B06C424A0E5DD007F0BD3 /* PlistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistManager.swift; sourceTree = "<group>"; };
 		036D08A6248EBB2B0011A44B /* Ntoure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ntoure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		036D08A9248EBB2B0011A44B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		036D08AB248EBB2B0011A44B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				036D08BD248EBBB70011A44B /* Model */,
 				E29CC2A724911FB4002F9611 /* View */,
 				036D08A9248EBB2B0011A44B /* AppDelegate.swift */,
+				036B06C224A0D833007F0BD3 /* GuideData.plist */,
 				036D08AB248EBB2B0011A44B /* SceneDelegate.swift */,
 				036D08B2248EBB300011A44B /* Assets.xcassets */,
 				036D08B4248EBB300011A44B /* LaunchScreen.storyboard */,
@@ -126,6 +131,7 @@
 				5401888E248FD5420073E630 /* Adventure.swift */,
 				036D08CF24900DC20011A44B /* Guide.swift */,
 				E2790046249AC0E9004D1FF5 /* LocationCoordinate.swift */,
+				036B06C424A0E5DD007F0BD3 /* PlistManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				036D08B6248EBB300011A44B /* LaunchScreen.storyboard in Resources */,
+				036B06C324A0D833007F0BD3 /* GuideData.plist in Resources */,
 				036D08B3248EBB300011A44B /* Assets.xcassets in Resources */,
 				0355D4622491B2A8006B6070 /* Harbor Type - Graviola Regular.otf in Resources */,
 			);
@@ -289,6 +296,7 @@
 				036D08CC248FBFBB0011A44B /* Project colors.swift in Sources */,
 				036D08D4249015CC0011A44B /* GuideCellTableViewCell.swift in Sources */,
 				036D08C3248EBCF80011A44B /* TabBarController.swift in Sources */,
+				036B06C524A0E5DD007F0BD3 /* PlistManager.swift in Sources */,
 				69263E4B249B99BC009EB2A6 /* UPCarouselFlowLayout.swift in Sources */,
 				0374230A2493A6CD007BDD38 /* SelectedGuideViewController.swift in Sources */,
 				036D08AA248EBB2B0011A44B /* AppDelegate.swift in Sources */,
