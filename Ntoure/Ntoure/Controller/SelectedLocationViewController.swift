@@ -14,6 +14,11 @@ class SelectedLocationViewController: UIViewController, MyDelegate {
         let nextViewController = AdventureViewController()
         navigationController?.pushViewController(nextViewController, animated: true)
     }
+    func adventureTapped(data: Adventure) {
+        let nextViewController = SelectedAdventureViewController()
+        nextViewController.data = data
+        navigationController?.pushViewController(nextViewController, animated: true)
+    }
     
     lazy var collectionComponent: CollectionPhotoInformation = {
         let collection = CollectionPhotoInformation()

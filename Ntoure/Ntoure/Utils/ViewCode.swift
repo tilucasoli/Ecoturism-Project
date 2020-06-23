@@ -17,6 +17,7 @@ protocol ViewCode {
 
 protocol MyDelegate: class {
     func onButtonTapped()
+    func adventureTapped(data: Adventure)
 }
 
 extension ViewCode {

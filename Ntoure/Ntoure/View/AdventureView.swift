@@ -130,8 +130,15 @@ extension AdventureView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Celula foi selecionada: section: \(indexPath.section)")
+        //pass cell id here to the next controller
+        var data = fetchData()[indexPath.row]
+        func pushAdventure(){
+            self.delegate?.adventureTapped(data: data)
+        }
+        pushAdventure()
+       
     }
+    
 }
 
 extension AdventureView {

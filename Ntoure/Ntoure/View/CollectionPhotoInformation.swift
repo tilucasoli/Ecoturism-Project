@@ -10,7 +10,7 @@ import UIKit
 
 class CollectionPhotoInformation: UIView {
     
-    let images = [UIImage(named: "canoaQuebrada3"), UIImage(named: "canoaQuebrada2"), UIImage(named: "canoaQuebrada1")]
+    var images = [UIImage(named: "canoaQuebrada3"), UIImage(named: "canoaQuebrada2"), UIImage(named: "canoaQuebrada1")]
 
     lazy var collectionPhotos: UICollectionView = {
         let layout = UICollectionViewFlowLayout()

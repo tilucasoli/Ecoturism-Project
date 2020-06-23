@@ -98,8 +98,12 @@ extension AdventureViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! AdventureTableViewCell
-        print(cell.adventureTitleLabel.text)
+//        let cell = tableView.cellForRow(at: indexPath) as! AdventureTableViewCell
+        let nextViewController = SelectedAdventureViewController()
+        //pass cell id here to the next controller
+        nextViewController.data = fetchData()[indexPath.row]
+        navigationController?.pushViewController(nextViewController, animated: true)
+        
     }
     
 }
