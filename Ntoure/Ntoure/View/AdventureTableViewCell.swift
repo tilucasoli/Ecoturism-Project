@@ -44,7 +44,7 @@ class AdventureTableViewCell: UITableViewCell {
     }
     
     func set(adventure: Adventure) {
-        adventureImageView.image = adventure.image
+        adventureImageView.image = UIImage(data: adventure.imageData)
         adventureTitleLabel.text = adventure.title
         
         categoriaLabel.text = adventure.categoria

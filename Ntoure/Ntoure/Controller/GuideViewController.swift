@@ -34,6 +34,9 @@ class GuideViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .background
+        
+        self.guideList = PlistManager().read()
+        
         setupNavBar()
         setupEmptyState()
         setupTableView()
@@ -42,7 +45,6 @@ class GuideViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
-        
         hiddenTableView()
         
     }
@@ -77,6 +79,7 @@ class GuideViewController: UIViewController {
                 
                 self.tableView.reloadData()
                 self.tableView.isHidden = false
+                PlistManager().write(guide: self.guideList)
             }
         }))
         
@@ -131,9 +134,9 @@ extension GuideViewController: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             self.guideList.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
+            PlistManager().write(guide: self.guideList)
             hiddenTableView()
         }
-        
         
     }
     

@@ -16,7 +16,7 @@ class SelectedAdventureViewController: UIViewController {
             titleComponent.title.text = data.title
             titleComponent.locationDistance.text = data.distancia
             titleComponent.category.text = data.categoria
-            collectionComponent.images[0] = data.image //change dataimage type to array
+//            collectionComponent.images[0] = data.image //change dataimage type to array
             
             switch data.categoria {
             case "Parapente":

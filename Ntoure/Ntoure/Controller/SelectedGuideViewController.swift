@@ -12,6 +12,11 @@ class SelectedGuideViewController: UIViewController {
     let sections = ["To do", "Done"]
     
     var listGuide = [Guide]()
+    
+    var adventureList = [Adventure]()
+    var doneAdventure = [Adventure]()
+    var notDoneAdventure = [Adventure]()
+    
     var indexPathSelected = 0
     
     let emptyState: EmptyState = {
@@ -39,9 +44,19 @@ class SelectedGuideViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTitle))
         
+        adventureList = fetchData()
+        doneAdventure = adventureList.filter {$0.done == true}
+        notDoneAdventure = adventureList.filter {$0.done == false}
+        
         setupEmptyState()
+//        hiddenTableView()
         setupTableView()
-        // Do any additional setup after loading the view.
+    }
+    
+    func hiddenTableView() {
+        if adventureList.isEmpty {
+            tableView.isHidden = true
+        }
     }
     
     @objc func editTitle() {
@@ -96,8 +111,31 @@ extension SelectedGuideViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if section == 0 {
+            let num = self.notDoneAdventure.count
+            return num
+        } else {
+            let num = self.doneAdventure.count
+            return num
+        }
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                if indexPath.section == 0 {
+                    self.notDoneAdventure.remove(at: indexPath.row)
+                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                } else {
+                    self.doneAdventure.remove(at: indexPath.row)
+                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+            }
+            self.hiddenTableView()
+        }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = (tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderCell") as? MyCustomHeader)!
@@ -108,13 +146,25 @@ extension SelectedGuideViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "AdventureCell", for: indexPath) as? AdventureTableViewCell)!
-        
-        let listAdventures = fetchData()
-        cell.set(adventure: listAdventures[indexPath.row])
+       
         cell.backgroundColor = .background
         cell.selectionStyle = .none
-        print(indexPath.section)
+        
+        if indexPath.section == 0 {
+            cell.set(adventure: self.notDoneAdventure[indexPath.row])
+        } else {
+            cell.set(adventure: self.doneAdventure[indexPath.row])
+            cell.subviews.forEach {$0.alpha = 0.7}
+            cell.adventureTitleLabel.attributedText = addStrikethrough(string: doneAdventure[indexPath.row].title)
+        }
+        
         return cell
+    }
+    func addStrikethrough(string: String) -> NSMutableAttributedString {
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: string)
+        let range = NSMakeRange(0, attributeString.length)
+        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: range)
+        return attributeString
     }
     
 }
@@ -122,9 +172,9 @@ extension SelectedGuideViewController: UITableViewDataSource, UITableViewDelegat
 extension SelectedGuideViewController {
     
     func fetchData() -> [Adventure] {
-        let adventure1 = Adventure(image: UIImage(named: "parapenteImg")!, title: "Aventura de Parapente", categoria: "Parapente", distancia: "5km")
-        let adventure2 = Adventure(image: UIImage(named: "jangadaImg")!, title: "Travessia de Jangada", categoria: "Jangada", distancia: "7km")
-        let adventure3 = Adventure(image: UIImage(named: "kitesurfImg")!, title: "Praia de KiteSurfing", categoria: "Kitesurf", distancia: "11km")
+        let adventure1 = Adventure(image: UIImage(named: "parapenteImg")!, title: "Aventura de Parapente", categoria: "Parapente", distancia: "5km", done: false)
+        let adventure2 = Adventure(image: UIImage(named: "jangadaImg")!, title: "Travessia de Jangada", categoria: "Jangada", distancia: "7km", done: true)
+        let adventure3 = Adventure(image: UIImage(named: "kitesurfImg")!, title: "Praia de KiteSurfing", categoria: "Kitesurf", distancia: "11km", done: true)
         
         return [adventure1, adventure2, adventure3]
     }
