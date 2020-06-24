@@ -11,8 +11,8 @@ import UIKit
 class SelectedAdventureViewController: UIViewController {
     
     var data: Adventure? {
-        didSet{
-            guard let data = data else{return}
+        didSet {
+            guard let data = data else { return }
             titleComponent.title.text = data.title
             titleComponent.locationDistance.text = data.distancia
             titleComponent.category.text = data.categoria
@@ -122,8 +122,8 @@ extension SelectedAdventureViewController: ViewCode {
 
         NSLayoutConstraint.activate([
             titleComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            titleComponent.widthAnchor.constraint(equalTo: collectionComponent.widthAnchor, multiplier: 0.8),
-            titleComponent.heightAnchor.constraint(equalTo: collectionComponent.heightAnchor, multiplier: 0.3),
+            titleComponent.widthAnchor.constraint(equalTo: collectionComponent.widthAnchor, multiplier: 0.89),
+            titleComponent.heightAnchor.constraint(equalTo: collectionComponent.heightAnchor, multiplier: 0.26),
             titleComponent.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.bounds.height*0.65)
 
         ])

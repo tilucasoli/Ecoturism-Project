@@ -34,7 +34,7 @@ class LocationMapView: UIView {
 
     lazy var locationDistance: UILabel = {
         let location = UILabel()
-        location.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        location.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         location.adjustsFontSizeToFitWidth = true
         location.numberOfLines = 1
         location.textColor = .titleColor
@@ -82,16 +82,16 @@ extension LocationMapView: ViewCode {
 
     func setUpLayoutConstraints() {
         NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            title.topAnchor.constraint(equalTo: topAnchor, constant: 6),
             title.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            title.trailingAnchor.constraint(equalTo: mapLocation.leadingAnchor),
-            title.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.4)
+            title.trailingAnchor.constraint(equalTo: mapLocation.leadingAnchor)
+//            title.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.4)
         ])
 
         NSLayoutConstraint.activate([
-            locationIcon.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 5),
-            locationIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            locationIcon.trailingAnchor.constraint(equalTo: locationDistance.leadingAnchor, constant: -10),
+            locationIcon.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 4),
+            locationIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 17),
+            locationIcon.trailingAnchor.constraint(equalTo: locationDistance.leadingAnchor, constant: -5),
             locationIcon.widthAnchor.constraint(equalTo: locationIcon.heightAnchor, multiplier: 0.7),
             locationIcon.heightAnchor.constraint(equalTo: locationDistance.heightAnchor, multiplier: 0.5)
         ])

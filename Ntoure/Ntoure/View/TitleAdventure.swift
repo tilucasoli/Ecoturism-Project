@@ -42,7 +42,7 @@ class TitleAdventure: UIView {
 
     lazy var category: UILabel = {
         let category = UILabel()
-        category.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        category.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         category.adjustsFontSizeToFitWidth = true
         category.numberOfLines = 1
         category.textColor = .titleColor
@@ -52,7 +52,7 @@ class TitleAdventure: UIView {
     
     lazy var locationDistance: UILabel = {
         let location = UILabel()
-        location.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        location.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         location.adjustsFontSizeToFitWidth = true
         location.numberOfLines = 1
         location.textColor = .titleColor
@@ -98,23 +98,23 @@ extension TitleAdventure: ViewCode {
 
     func setUpLayoutConstraints() {
         NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            title.topAnchor.constraint(equalTo: topAnchor, constant: 6),
             title.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             title.trailingAnchor.constraint(equalTo: savedIcon.leadingAnchor),
-            title.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.4)
+//            title.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.4)
         ])
 
         NSLayoutConstraint.activate([
-            locationIcon.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 5),
-            locationIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            locationIcon.trailingAnchor.constraint(equalTo: locationDistance.leadingAnchor, constant: -10),
+            locationIcon.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 4),
+            locationIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 17),
+            locationIcon.trailingAnchor.constraint(equalTo: locationDistance.leadingAnchor, constant: -5),
             locationIcon.widthAnchor.constraint(equalTo: locationIcon.heightAnchor, multiplier: 0.7),
             locationIcon.heightAnchor.constraint(equalTo: locationDistance.heightAnchor, multiplier: 0.5)
         ])
 
         NSLayoutConstraint.activate([
             locationDistance.centerYAnchor.constraint(equalTo: locationIcon.centerYAnchor),
-            locationDistance.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.3)
+//            locationDistance.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.3)
         ])
 
         NSLayoutConstraint.activate([
@@ -123,15 +123,15 @@ extension TitleAdventure: ViewCode {
         ])
         
         NSLayoutConstraint.activate([
-            typeIcon.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 5),
-            typeIcon.trailingAnchor.constraint(equalTo: locationDistance.leadingAnchor, constant: 66),
+            typeIcon.centerYAnchor.constraint(equalTo: locationDistance.centerYAnchor),
+            typeIcon.leadingAnchor.constraint(equalTo: locationDistance.trailingAnchor, constant: 16),
             typeIcon.widthAnchor.constraint(equalToConstant: 15),
             typeIcon.heightAnchor.constraint(equalToConstant: 15)
         ])
         
         NSLayoutConstraint.activate([
            category.centerYAnchor.constraint(equalTo: typeIcon.centerYAnchor),
-           category.leadingAnchor.constraint(equalTo: typeIcon.trailingAnchor, constant: 10),
+           category.leadingAnchor.constraint(equalTo: typeIcon.trailingAnchor, constant: 4),
            category.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.3)
         ])
        
