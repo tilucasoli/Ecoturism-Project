@@ -10,12 +10,8 @@ import UIKit
 
 
 class ExplorerViewController: UIViewController {
-    
-    //places example
-    let data = [
-        CustomData(title: "Canoa Quebrada", distance: "136 Km", image: #imageLiteral(resourceName: "canoa")),
-        CustomData(title: "Parque do Cocó", distance: "13 Km", image: #imageLiteral(resourceName: "Parque") )
-    ]
+
+    var data = [CustomData]()
     
     fileprivate let collectionView: UICollectionView = {
         let layout = UPCarouselFlowLayout()
@@ -123,6 +119,13 @@ class ExplorerViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        APIManager().fetchPlace { [weak self] (datas) in
+            self?.data = datas
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
+        }
     }
 
 }

@@ -12,8 +12,8 @@ class CustomCellViewController: UICollectionViewCell {
     var data: CustomData? {
         didSet {
             guard let data = data else {return}
-            bg.image = data.image
-            title.text = data.title
+            bg.image = UIImage(data: data.photo)
+            title.text = data.name
             describ.text = data.distance
         }
     }
