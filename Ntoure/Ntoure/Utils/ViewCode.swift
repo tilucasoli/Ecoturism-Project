@@ -28,9 +28,9 @@ extension ViewCode {
     }
 }
 
-struct CustomData {
-    var title: String
+struct CustomData: Codable {
+    var name: String
     var distance: String
-    var image: UIImage
-    var state: String?
+    var photo: Data
+    var placeID: UUID
 }
