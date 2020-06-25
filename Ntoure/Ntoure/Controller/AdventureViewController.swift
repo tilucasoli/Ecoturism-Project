@@ -12,6 +12,7 @@ class AdventureViewController: UIViewController {
 
     var tableView = UITableView()
     var adventures: [Adventure] = []
+    var placeIDReference: UUID?
     
     struct Cells {
         static let adventureCell = "AdventureCell"
@@ -21,11 +22,14 @@ class AdventureViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.98, alpha: 1.00)
         tableView.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.98, alpha: 1.00)
-        
-        adventures = fetchData()
-        
         title = "Aventuras"
         navigationController?.navigationBar.prefersLargeTitles = true
+        APIManager().fetchAllAdventures(placeID: placeIDReference!) { (adventures) in
+            DispatchQueue.main.async {
+                self.adventures = adventures
+                self.tableView.reloadData()
+            }
+        }
         
         setupTableView()
     }
@@ -101,20 +105,9 @@ extension AdventureViewController: UITableViewDataSource, UITableViewDelegate {
 //        let cell = tableView.cellForRow(at: indexPath) as! AdventureTableViewCell
         let nextViewController = SelectedAdventureViewController()
         //pass cell id here to the next controller
-        nextViewController.data = fetchData()[indexPath.row]
+        nextViewController.data = adventures[indexPath.row]
         navigationController?.pushViewController(nextViewController, animated: true)
         
     }
     
-}
-
-extension AdventureViewController {
-    
-    func fetchData() -> [Adventure] {
-        let adventure1 = Adventure(image: UIImage(named: "parapenteImg")!, title: "Aventura de Parapente", categoria: "Parapente", distancia: "5km", done: true)
-        let adventure2 = Adventure(image: UIImage(named: "jangadaImg")!, title: "Travessia de Jangada", categoria: "Jangada", distancia: "7km", done: false)
-        let adventure3 = Adventure(image: UIImage(named: "kitesurfImg")!, title: "Praia de KiteSurfing", categoria: "Kitesurf", distancia: "11km", done: true)
-        
-        return [adventure1, adventure2, adventure3]
-    }
 }

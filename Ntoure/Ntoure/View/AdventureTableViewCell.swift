@@ -44,21 +44,27 @@ class AdventureTableViewCell: UITableViewCell {
     }
     
     func set(adventure: Adventure) {
-        adventureImageView.image = UIImage(data: adventure.imageData)
-        adventureTitleLabel.text = adventure.title
+        adventureImageView.image = UIImage(data: adventure.photoActivity)
+        adventureTitleLabel.text = adventure.activityName
         
-        categoriaLabel.text = adventure.categoria
-        distanciaLabel.text = adventure.distancia
+        distanciaLabel.text = "\(Int.random(in: 1...5)) km"
         
-        switch adventure.categoria {
-        case "Parapente":
+        switch adventure.category {
+        case 0:
             categoriaImage.image = UIImage(named: "parapenteIcon")
-        case "Jangada":
+            categoriaLabel.text = "Trilha"
+        case 1:
             categoriaImage.image = UIImage(named: "jangadaIcon")
-        case "Kitesurf":
+            categoriaLabel.text = "Barco"
+        case 2:
             categoriaImage.image = UIImage(named: "kitesurfIcon")
+            categoriaLabel.text = "Windsurf"
+        case 3:
+            
+            categoriaLabel.text = "Windsurf"
         default:
             categoriaImage.image = nil
+            categoriaLabel.text = "Stand Up Padle"
         }
         
         distanciaImage.image = #imageLiteral(resourceName: "location")

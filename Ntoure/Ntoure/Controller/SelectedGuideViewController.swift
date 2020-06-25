@@ -44,9 +44,9 @@ class SelectedGuideViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTitle))
         
-        adventureList = fetchData()
-        doneAdventure = adventureList.filter {$0.done == true}
-        notDoneAdventure = adventureList.filter {$0.done == false}
+        //adventureList = fetchData()
+        doneAdventure = adventureList.filter {$0.status == true}
+        notDoneAdventure = adventureList.filter {$0.status == false}
         
         setupEmptyState()
 //        hiddenTableView()
@@ -155,7 +155,7 @@ extension SelectedGuideViewController: UITableViewDataSource, UITableViewDelegat
         } else {
             cell.set(adventure: self.doneAdventure[indexPath.row])
             cell.subviews.forEach {$0.alpha = 0.7}
-            cell.adventureTitleLabel.attributedText = addStrikethrough(string: doneAdventure[indexPath.row].title)
+            cell.adventureTitleLabel.attributedText = addStrikethrough(string: doneAdventure[indexPath.row].activityName)
         }
         
         return cell
@@ -169,13 +169,13 @@ extension SelectedGuideViewController: UITableViewDataSource, UITableViewDelegat
     
 }
 
-extension SelectedGuideViewController {
-    
-    func fetchData() -> [Adventure] {
-        let adventure1 = Adventure(image: UIImage(named: "parapenteImg")!, title: "Aventura de Parapente", categoria: "Parapente", distancia: "5km", done: false)
-        let adventure2 = Adventure(image: UIImage(named: "jangadaImg")!, title: "Travessia de Jangada", categoria: "Jangada", distancia: "7km", done: true)
-        let adventure3 = Adventure(image: UIImage(named: "kitesurfImg")!, title: "Praia de KiteSurfing", categoria: "Kitesurf", distancia: "11km", done: true)
-        
-        return [adventure1, adventure2, adventure3]
-    }
-}
+//extension SelectedGuideViewController {
+//    
+//    func fetchData() -> [Adventure] {
+//        let adventure1 = Adventure(image: UIImage(named: "parapenteImg")!, title: "Aventura de Parapente", categoria: "Parapente", distancia: "5km", done: false)
+//        let adventure2 = Adventure(image: UIImage(named: "jangadaImg")!, title: "Travessia de Jangada", categoria: "Jangada", distancia: "7km", done: true)
+//        let adventure3 = Adventure(image: UIImage(named: "kitesurfImg")!, title: "Praia de KiteSurfing", categoria: "Kitesurf", distancia: "11km", done: true)
+//        
+//        return [adventure1, adventure2, adventure3]
+//    }
+//}

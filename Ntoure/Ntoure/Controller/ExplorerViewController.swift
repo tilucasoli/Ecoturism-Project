@@ -146,6 +146,7 @@ extension ExplorerViewController: UICollectionViewDelegateFlowLayout, UICollecti
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let nextViewController = SelectedLocationViewController()
+        nextViewController.placeIDReference = data[indexPath.row].placeID
         navigationController?.pushViewController(nextViewController, animated: true)
     }
 

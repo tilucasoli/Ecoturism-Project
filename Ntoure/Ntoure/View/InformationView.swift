@@ -24,6 +24,7 @@ class InformationView: UIView {
     lazy var placeDescription: UILabel = {
         var description = UILabel()
         description.textColor = .textColor
+        description.text = ""
         description.numberOfLines = 0
         description.textAlignment = .left
         description.adjustsFontSizeToFitWidth = true
@@ -32,9 +33,8 @@ class InformationView: UIView {
         return description
     }()
     
-    init(frame: CGRect, placeDescription: String) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        self.placeDescription.text = placeDescription
         setUp()
     }
     

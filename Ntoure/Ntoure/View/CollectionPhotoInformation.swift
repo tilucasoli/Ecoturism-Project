@@ -10,7 +10,11 @@ import UIKit
 
 class CollectionPhotoInformation: UIView {
     
-    var images = [UIImage(named: "canoaQuebrada3"), UIImage(named: "canoaQuebrada2"), UIImage(named: "canoaQuebrada1")]
+    var images = [Data]() {
+        didSet {
+            self.collectionPhotos.reloadData()
+        }
+    }
 
     lazy var collectionPhotos: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -67,13 +71,7 @@ extension CollectionPhotoInformation: UICollectionViewDelegate, UICollectionView
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotoCollectionViewCell
-        cell?.image.image = images[indexPath.row]
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
-//        gradientLayer.colors = [UIColor.red.cgColor,UIColor.green.withAlphaComponent(0.7).cgColor]
-//        gradientLayer.startPoint = CGPoint(x: 1.0, y: 0.0)
-//        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-//        cell?.image.layer.addSublayer(gradientLayer)
+        cell?.image.image = UIImage(data: images[indexPath.row])
         return cell ?? UICollectionViewCell()
     }
 }

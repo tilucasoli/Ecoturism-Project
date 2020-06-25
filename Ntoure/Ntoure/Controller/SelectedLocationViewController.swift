@@ -9,16 +9,8 @@
 import UIKit
 
 class SelectedLocationViewController: UIViewController, MyDelegate {
-
-    func onButtonTapped() {
-        let nextViewController = AdventureViewController()
-        navigationController?.pushViewController(nextViewController, animated: true)
-    }
-    func adventureTapped(data: Adventure) {
-        let nextViewController = SelectedAdventureViewController()
-        nextViewController.data = data
-        navigationController?.pushViewController(nextViewController, animated: true)
-    }
+    
+    var placeIDReference: UUID?
     
     lazy var collectionComponent: CollectionPhotoInformation = {
         let collection = CollectionPhotoInformation()
@@ -34,7 +26,7 @@ class SelectedLocationViewController: UIViewController, MyDelegate {
     }()
     
     lazy var informationComponent: InformationView = {
-        let informationComponent = InformationView(frame: .zero, placeDescription: "Canoa Quebrada é uma praia localizada no litoral leste do Estado do Ceará. A sua paisagem é caracterizada por dunas e falésias avermelhadas de até trinta metros acima do nível do mar.")
+        let informationComponent = InformationView()
         informationComponent.translatesAutoresizingMaskIntoConstraints = false
         return informationComponent
     }()
@@ -61,10 +53,44 @@ class SelectedLocationViewController: UIViewController, MyDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        APIManager().fetchPlaceInformations(placeID: placeIDReference!) { (place) in
+            DispatchQueue.main.async {
+                self.informationComponent.placeDescription.text = place.description
+                self.collectionComponent.images = place.presentationPhotos
+                self.locationMapComponent.title.text = place.namePlace
+                self.locationMapComponent.locationDistance.text = place.distance
+            }
+        }
+        
+        APIManager().fetchStandardAdventures(placeID: placeIDReference!) { (adventures) in
+            DispatchQueue.main.async {
+                self.servicesComponent.guideList = adventures
+            }
+        }
     }
 
     override func viewWillLayoutSubviews() {
         setUp()
+    }
+    
+    func onButtonTapped() {
+        let nextViewController = AdventureViewController()
+        nextViewController.placeIDReference = placeIDReference
+        navigationController?.pushViewController(nextViewController, animated: true)
+    }
+
+    func adventureTapped(data: Adventure) {
+        let nextViewController = SelectedAdventureViewController()
+        nextViewController.data = data
+        navigationController?.pushViewController(nextViewController, animated: true)
+    }
+}
+
+extension SelectedLocationViewController: PresentMapLocationDelegate {
+    func presentLocation() {
+        let mapController = MapLocationControllerViewController()
+        navigationController?.pushViewController(mapController, animated: true)
     }
 }
 
@@ -120,9 +146,3 @@ extension SelectedLocationViewController: ViewCode {
     }
 }
 
-extension SelectedLocationViewController: PresentMapLocationDelegate {
-    func presentLocation() {
-        let mapController = MapLocationControllerViewController()
-        navigationController?.pushViewController(mapController, animated: true)
-    }
-}

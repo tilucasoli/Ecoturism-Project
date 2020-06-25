@@ -9,25 +9,19 @@
 import UIKit
 
 struct Adventure: Codable {
-    var imageData: Data
-    var title: String
-    var categoria: String
-    var distancia: String
-    
-    var done: Bool = false
-    
-    init(image: UIImage, title: String, categoria: String, distancia: String, done: Bool) {
-        self.imageData = image.pngData()!
-        self.title = title
-        self.categoria = categoria
-        self.distancia = distancia
-        self.done = done
+    var id: UUID
+    var photoActivity: Data
+    var activityName: String
+    var location: [String]
+    var category: Int
+    var description: String
+    var status: Bool
+    var care: [String]
+    var phoneNumber: String
+    var address: String
+    var place: PlaceAcessory
+}
 
-    }
-    
-    func getImage() -> UIImage? {
-        let image = UIImage(data: self.imageData)
-        guard let img = image else { return nil }
-        return img
-    }
+struct PlaceAcessory: Codable {
+    var id: UUID
 }
