@@ -20,6 +20,10 @@ protocol MyDelegate: class {
     func adventureTapped(data: Adventure)
 }
 
+protocol Delegate: class {
+    func showModal()
+}
+
 extension ViewCode {
     func setUp() {
         buildHierarchy()

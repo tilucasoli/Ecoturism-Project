@@ -8,7 +8,15 @@
 
 import UIKit
 
-class SelectedAdventureViewController: UIViewController {
+class SelectedAdventureViewController: UIViewController, Delegate{
+    
+    func showModal() {
+        let modalVC = ModalViewController()
+        modalVC.modalPresentationStyle = .formSheet
+        modalVC.data = data
+        present(modalVC, animated: true, completion: nil)
+        
+    }
     
     var data: Adventure? {
         didSet{
@@ -39,6 +47,7 @@ class SelectedAdventureViewController: UIViewController {
 
     lazy var titleComponent: TitleAdventure = {
         let locationMap = TitleAdventure(frame: .zero, title: "Canoa Quebrada", locationDistance: "163km")
+        locationMap.delegate = self
         locationMap.translatesAutoresizingMaskIntoConstraints = false
         return locationMap
     }()

@@ -10,6 +10,7 @@ import UIKit
 
 class TitleAdventure: UIView {
     
+    weak var delegate: Delegate?
     
     lazy var title: UILabel = {
         var title = UILabel()
@@ -63,6 +64,7 @@ class TitleAdventure: UIView {
     lazy var savedIcon: UIButton = {
         let saved = UIButton()
         saved.setImage(UIImage(named: "saved"), for: .normal)
+        saved.addTarget(self, action: #selector(showModal), for: .touchUpInside)
         saved.adjustsImageWhenHighlighted = true // ver o comportamento disso
         saved.translatesAutoresizingMaskIntoConstraints = false
         return saved
@@ -82,6 +84,10 @@ class TitleAdventure: UIView {
     override func layoutSubviews() {
         roundCorners(corners: [.bottomLeft, .topLeft], radius: 10)
         addShadow()
+    }
+    
+    @objc func showModal(){
+        delegate?.showModal()
     }
 
 }
