@@ -12,6 +12,8 @@ class SelectedLocationViewController: UIViewController, MyDelegate {
     
     var placeIDReference: UUID?
     
+    let manager = APIManager()
+    
     lazy var collectionComponent: CollectionPhotoInformation = {
         let collection = CollectionPhotoInformation()
         collection.translatesAutoresizingMaskIntoConstraints = false
@@ -19,7 +21,7 @@ class SelectedLocationViewController: UIViewController, MyDelegate {
     }()
 
     lazy var locationMapComponent: LocationMapView = {
-        let locationMap = LocationMapView(frame: .zero, title: "Canoa Quebrada", locationDistance: "163km")
+        let locationMap = LocationMapView(frame: .zero)
         locationMap.delegate = self
         locationMap.translatesAutoresizingMaskIntoConstraints = false
         return locationMap
@@ -54,7 +56,7 @@ class SelectedLocationViewController: UIViewController, MyDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        APIManager().fetchPlaceInformations(placeID: placeIDReference!) { (place) in
+        manager.fetchPlaceInformations(placeID: placeIDReference!) { (place) in
             DispatchQueue.main.async {
                 self.informationComponent.placeDescription.text = place.description
                 self.collectionComponent.images = place.presentationPhotos
@@ -63,7 +65,7 @@ class SelectedLocationViewController: UIViewController, MyDelegate {
             }
         }
         
-        APIManager().fetchStandardAdventures(placeID: placeIDReference!) { (adventures) in
+        manager.fetchStandardAdventures(placeID: placeIDReference!) { (adventures) in
             DispatchQueue.main.async {
                 self.servicesComponent.guideList = adventures
             }
@@ -77,6 +79,7 @@ class SelectedLocationViewController: UIViewController, MyDelegate {
     func onButtonTapped() {
         let nextViewController = AdventureViewController()
         nextViewController.placeIDReference = placeIDReference
+        nextViewController.headerTable = locationMapComponent.title.text
         navigationController?.pushViewController(nextViewController, animated: true)
     }
 
@@ -145,4 +148,3 @@ extension SelectedLocationViewController: ViewCode {
         view.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.98, alpha: 1.00)
     }
 }
-

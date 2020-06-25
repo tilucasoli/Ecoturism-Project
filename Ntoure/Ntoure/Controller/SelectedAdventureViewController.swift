@@ -9,12 +9,12 @@
 import UIKit
 
 class SelectedAdventureViewController: UIViewController {
-    
+
     var data: Adventure? {
         didSet {
             guard let data = data else { return }
             titleComponent.title.text = data.activityName
-            titleComponent.locationDistance.text = "\(Int.random(in: 1...2))"
+            titleComponent.locationDistance.text = "\(Int.random(in: 1...4)) km"
             
             switch data.category {
             case 0:
@@ -33,6 +33,10 @@ class SelectedAdventureViewController: UIViewController {
                 titleComponent.typeIcon.image = nil
                 titleComponent.category.text = "Stand Up Paddle"
             }
+            informationComponent.placeDescription.text = data.description
+            contactComponent.placeDescription.setTitle("85 "+data.phoneNumber, for: .normal)
+            addressComponent.placeDescription.setTitle(data.address, for: .normal)
+            collectionComponent.images = [data.photoActivity]
         }
     }
 
@@ -43,7 +47,7 @@ class SelectedAdventureViewController: UIViewController {
     }()
 
     lazy var titleComponent: TitleAdventure = {
-        let locationMap = TitleAdventure(frame: .zero, title: "Canoa Quebrada", locationDistance: "163km")
+        let locationMap = TitleAdventure(frame: .zero)
         locationMap.translatesAutoresizingMaskIntoConstraints = false
         return locationMap
     }()
@@ -62,13 +66,13 @@ class SelectedAdventureViewController: UIViewController {
     }()
     
     lazy var contactComponent: ContactView = {
-        let contact = ContactView(frame: .zero, placeDescription: "+55 99999-9999", title: "Contato")
+        let contact = ContactView(frame: .zero, title: "Contato")
         contact.translatesAutoresizingMaskIntoConstraints = false
         return contact
     }()
     
     lazy var addressComponent: ContactView = {
-        let address = ContactView(frame: .zero, placeDescription: "Av. da Integração, 1, Aracati - CE, 62800-000", title: "Endereço")
+        let address = ContactView(frame: .zero, title: "Endereço")
         address.translatesAutoresizingMaskIntoConstraints = false
         return address
     }()
@@ -158,4 +162,3 @@ extension SelectedAdventureViewController: ViewCode {
         view.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.98, alpha: 1.00)
     }
 }
-

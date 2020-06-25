@@ -11,8 +11,11 @@ import UIKit
 class AdventureViewController: UIViewController {
 
     var tableView = UITableView()
+    var headerTable: String?
     var adventures: [Adventure] = []
     var placeIDReference: UUID?
+    
+    let manager = APIManager()
     
     struct Cells {
         static let adventureCell = "AdventureCell"
@@ -24,7 +27,7 @@ class AdventureViewController: UIViewController {
         tableView.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.98, alpha: 1.00)
         title = "Aventuras"
         navigationController?.navigationBar.prefersLargeTitles = true
-        APIManager().fetchAllAdventures(placeID: placeIDReference!) { (adventures) in
+        manager.fetchAllAdventures(placeID: placeIDReference!) { (adventures) in
             DispatchQueue.main.async {
                 self.adventures = adventures
                 self.tableView.reloadData()
@@ -66,7 +69,7 @@ extension AdventureViewController: UITableViewDataSource, UITableViewDelegate {
         
         view.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.98, alpha: 1.00)
         
-        labelLocation.text = "Canoa Quebrada, Ceará"
+        labelLocation.text = headerTable! + ", Ceará"
         labelLocation.textColor = .black
         labelLocation.font = UIFont(name: "SFProText", size: 16)
         labelLocation.font.withSize(16)

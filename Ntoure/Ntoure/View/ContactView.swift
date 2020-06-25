@@ -30,9 +30,8 @@ class ContactView: UIView {
         return description
    }()
    
-    init(frame: CGRect, placeDescription: String , title: String) {
+    init(frame: CGRect, title: String) {
         super.init(frame: frame)
-        self.placeDescription.setTitle(placeDescription, for: .normal)
         self.title.text = title
         setUp()
    }
@@ -66,6 +65,3 @@ extension ContactView: ViewCode {
        backgroundColor = .background
    }
 }
-
-
-

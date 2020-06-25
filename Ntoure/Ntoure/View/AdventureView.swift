@@ -143,13 +143,3 @@ extension AdventureView: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
-
-//extension AdventureView {
-//    
-//    func fetchData() -> [Adventure] {
-//        let adventure1 = Adventure(image: UIImage(named: "parapenteImg")!, title: "Aventura de Parapente", categoria: "Parapente", distancia: "5km", done: false)
-//        let adventure2 = Adventure(image: UIImage(named: "jangadaImg")!, title: "Travessia de Jangada", categoria: "Jangada", distancia: "7km", done: true)
-//        let adventure3 = Adventure(image: UIImage(named: "kitesurfImg")!, title: "Praia de KiteSurfing", categoria: "Kitesurf", distancia: "11km", done: false)
-//        return [adventure1, adventure2, adventure3]
-//    }
-//}

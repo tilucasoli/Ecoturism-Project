@@ -158,12 +158,12 @@
 				036D08C2248EBCF80011A44B /* TabBarController.swift */,
 				036D08C4248EBD750011A44B /* ExplorerViewController.swift */,
 				E26D3623248FC05B006A935C /* SelectedLocationViewController.swift */,
+				69263E4E249D0662009EB2A6 /* SelectedAdventureViewController.swift */,
 				5401888A248FB65A0073E630 /* AdventureViewController.swift */,
 				037423092493A6CD007BDD38 /* SelectedGuideViewController.swift */,
 				036D08C6248EBDBF0011A44B /* GuideViewController.swift */,
 				E279004424984261004D1FF5 /* MapLocationControllerViewController.swift */,
 				69683ECB2497AB8300358395 /* CustomCellViewController.swift */,
-				69263E4E249D0662009EB2A6 /* SelectedAdventureViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

@@ -10,11 +10,10 @@ import UIKit
 
 class TitleAdventure: UIView {
     
-    
     lazy var title: UILabel = {
         var title = UILabel()
         title.font = .placeTitle
-        title.attributedText = NSMutableAttributedString(string: "Canoa", attributes: placeTitle)
+        title.attributedText = NSMutableAttributedString(string: " ", attributes: placeTitle)
         title.adjustsFontSizeToFitWidth = true
         title.numberOfLines = 1
         title.textColor = .titleColor
@@ -33,7 +32,6 @@ class TitleAdventure: UIView {
     
     lazy var typeIcon: UIImageView = {
         let typeIcon  = UIImageView()
-//        typeIcon.image = UIImage(named: "kitesurfIcon")
         typeIcon.contentMode = .scaleAspectFill
         typeIcon.clipsToBounds = true
         typeIcon.translatesAutoresizingMaskIntoConstraints = false
@@ -68,10 +66,8 @@ class TitleAdventure: UIView {
         return saved
     }()
 
-    init(frame: CGRect, title: String, locationDistance: String) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        self.title.text = title
-        self.locationDistance.text = locationDistance
         setUp()
     }
 
@@ -100,8 +96,7 @@ extension TitleAdventure: ViewCode {
         NSLayoutConstraint.activate([
             title.topAnchor.constraint(equalTo: topAnchor, constant: 6),
             title.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            title.trailingAnchor.constraint(equalTo: savedIcon.leadingAnchor),
-//            title.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.4)
+            title.trailingAnchor.constraint(equalTo: savedIcon.leadingAnchor)
         ])
 
         NSLayoutConstraint.activate([
@@ -113,8 +108,7 @@ extension TitleAdventure: ViewCode {
         ])
 
         NSLayoutConstraint.activate([
-            locationDistance.centerYAnchor.constraint(equalTo: locationIcon.centerYAnchor),
-//            locationDistance.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.3)
+            locationDistance.centerYAnchor.constraint(equalTo: locationIcon.centerYAnchor)
         ])
 
         NSLayoutConstraint.activate([
@@ -150,5 +144,3 @@ extension TitleAdventure: ViewCode {
         layer.shadowRadius = 25.0
     }
 }
-
-
