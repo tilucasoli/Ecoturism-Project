@@ -133,30 +133,32 @@ class AdventureTableViewCell: UITableViewCell {
     }
     
     func setSubtitleConstraints() {
-        // Constraints da Categoria Label
-        categoriaLabel.translatesAutoresizingMaskIntoConstraints = false
-        categoriaLabel.topAnchor.constraint(equalTo: adventureTitleLabel.bottomAnchor, constant: 4).isActive = true
-        categoriaLabel.leadingAnchor.constraint(equalTo: categoriaImage.trailingAnchor, constant: 5).isActive = true
-        categoriaLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
         
         // Constraints da Categoria Image
         categoriaImage.translatesAutoresizingMaskIntoConstraints = false
         categoriaImage.leadingAnchor.constraint(equalTo: adventureImageView.trailingAnchor, constant: 16).isActive = true
-        categoriaImage.topAnchor.constraint(equalTo: adventureTitleLabel.bottomAnchor, constant: 5).isActive = true
+        categoriaImage.topAnchor.constraint(equalTo: adventureTitleLabel.bottomAnchor, constant: 6).isActive = true
         categoriaImage.widthAnchor.constraint(equalToConstant: 12).isActive = true
         categoriaImage.heightAnchor.constraint(equalToConstant: 13).isActive = true
-        
-        //Constraints da Distancia Label
-        distanciaLabel.translatesAutoresizingMaskIntoConstraints = false
-        distanciaLabel.topAnchor.constraint(equalTo: adventureTitleLabel.bottomAnchor, constant: 3).isActive = true
-        distanciaLabel.leadingAnchor.constraint(equalTo: distanciaImage.trailingAnchor, constant: 5).isActive = true
-        distanciaLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
+
+        // Constraints da Categoria Label
+        categoriaLabel.translatesAutoresizingMaskIntoConstraints = false
+        categoriaLabel.centerYAnchor.constraint(equalTo: categoriaImage.centerYAnchor).isActive = true
+        categoriaLabel.leadingAnchor.constraint(equalTo: categoriaImage.trailingAnchor, constant: 5).isActive = true
+//        categoriaLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
         
         // Constraints da Distancia Image
         distanciaImage.translatesAutoresizingMaskIntoConstraints = false
         distanciaImage.leadingAnchor.constraint(equalTo: categoriaLabel.trailingAnchor, constant: 16).isActive = true
-        distanciaImage.topAnchor.constraint(equalTo: adventureTitleLabel.bottomAnchor, constant: 5).isActive = true
+        distanciaImage.centerYAnchor.constraint(equalTo: categoriaImage.centerYAnchor).isActive = true
         distanciaImage.widthAnchor.constraint(equalToConstant: 8).isActive = true
         distanciaImage.heightAnchor.constraint(equalToConstant: 12).isActive = true
+        
+        //Constraints da Distancia Label
+        distanciaLabel.translatesAutoresizingMaskIntoConstraints = false
+        distanciaLabel.centerYAnchor.constraint(equalTo: categoriaImage.centerYAnchor).isActive = true
+        distanciaLabel.leadingAnchor.constraint(equalTo: distanciaImage.trailingAnchor, constant: 5).isActive = true
+        distanciaLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        
     }
 }

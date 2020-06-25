@@ -95,8 +95,8 @@ extension SelectedLocationViewController: ViewCode {
 
         NSLayoutConstraint.activate([
             locationMapComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            locationMapComponent.widthAnchor.constraint(equalTo: collectionComponent.widthAnchor, multiplier: 0.8),
-            locationMapComponent.heightAnchor.constraint(equalTo: collectionComponent.heightAnchor, multiplier: 0.3),
+            locationMapComponent.widthAnchor.constraint(equalTo: collectionComponent.widthAnchor, multiplier: 0.89),
+            locationMapComponent.heightAnchor.constraint(equalTo: collectionComponent.heightAnchor, multiplier: 0.25),
             locationMapComponent.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.bounds.height*0.65)
 
         ])
