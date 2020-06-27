@@ -15,7 +15,7 @@ public class PlistManager {
       return documents.appendingPathComponent("GuideData.plist")
     }
     
-    func write(guide: [Guide]) {
+    func write(guide: [Guide]) -> Bool {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
 
@@ -23,19 +23,20 @@ public class PlistManager {
             if FileManager.default.fileExists(atPath: plistURL.path) {
                 // Update an existing plist
                 try? data.write(to: plistURL)
+                return true
             } else {
                 // Create a new plist
                 FileManager.default.createFile(atPath: plistURL.path, contents: data, attributes: nil)
+                return true
             }
         }
+        return false
     }
     
     func read() -> [Guide] {
         let decoder = PropertyListDecoder()
-        
         do {
             let infoPlistData = try Data(contentsOf: plistURL)
-            
             if let arr = try decoder .decode([Guide].self, from: infoPlistData) as? [Guide] {
                 return arr
             }

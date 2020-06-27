@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct Place: Codable {
     var id: UUID
     var namePlace: String

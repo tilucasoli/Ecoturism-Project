@@ -79,7 +79,7 @@ class GuideViewController: UIViewController {
                 
                 self.tableView.reloadData()
                 self.tableView.isHidden = false
-                PlistManager().write(guide: self.guideList)
+                _ = PlistManager().write(guide: self.guideList)
             }
         }))
         

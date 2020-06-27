@@ -17,7 +17,7 @@ class LocationCoordinate: NSObject, MKAnnotation {
     var subtitle: String? {
       return locationName
     }
-    
+
     var mapItem: MKMapItem? {
         guard let location = locationName else {return nil}
         let addressDict = [CNPostalAddressStreetKey: location]
@@ -26,6 +26,7 @@ class LocationCoordinate: NSObject, MKAnnotation {
         mapItem.name = title
         return mapItem
     }
+
     init(title: String?, locationName: String?, coordinate: CLLocationCoordinate2D) {
         self.coordinate = coordinate
         self.title = title

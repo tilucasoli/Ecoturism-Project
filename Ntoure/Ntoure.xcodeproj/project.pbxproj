@@ -32,9 +32,13 @@
 		69263E5124A0E985009EB2A6 /* TitleAdventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69263E5024A0E985009EB2A6 /* TitleAdventure.swift */; };
 		69263E5324A27D1B009EB2A6 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69263E5224A27D1A009EB2A6 /* ContactView.swift */; };
 		69683ECC2497AB8300358395 /* CustomCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69683ECB2497AB8300358395 /* CustomCellViewController.swift */; };
+		E244522D24A7C55F00CB318E /* NtoureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244522C24A7C55F00CB318E /* NtoureTests.swift */; };
+		E244523524A7CFDD00CB318E /* PlistManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244523424A7CFDD00CB318E /* PlistManagerTests.swift */; };
+		E244523724A7D56100CB318E /* LocationCoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244523624A7D56100CB318E /* LocationCoordinateTests.swift */; };
+		E244523924A7D84A00CB318E /* GuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244523824A7D84A00CB318E /* GuideTests.swift */; };
+		E244523B24A7DAC500CB318E /* AdventureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244523A24A7DAC500CB318E /* AdventureTests.swift */; };
 		E247E94A24A5131C0081DBA9 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247E94924A5131C0081DBA9 /* APIManager.swift */; };
 		E247E94C24A52AF20081DBA9 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247E94B24A52AF20081DBA9 /* Place.swift */; };
-		E247E94E24A541450081DBA9 /* Adventure2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247E94D24A541450081DBA9 /* Adventure2.swift */; };
 		E26D3624248FC05B006A935C /* SelectedLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3623248FC05B006A935C /* SelectedLocationViewController.swift */; };
 		E26D3626248FC15E006A935C /* CollectionPhotoInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3625248FC15E006A935C /* CollectionPhotoInformation.swift */; };
 		E26D3628248FD209006A935C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */; };
@@ -46,6 +50,16 @@
 		E2AFA1412492BF2A00F56A21 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AFA1402492BF2A00F56A21 /* InformationView.swift */; };
 		E2AFA1432493152000F56A21 /* AdventureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AFA1422493152000F56A21 /* AdventureView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E244522F24A7C55F00CB318E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 036D089E248EBB2A0011A44B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 036D08A5248EBB2B0011A44B;
+			remoteInfo = Ntoure;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0355D4612491B2A8006B6070 /* Harbor Type - Graviola Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Harbor Type - Graviola Regular.otf"; sourceTree = "<group>"; };
@@ -76,9 +90,15 @@
 		69263E5024A0E985009EB2A6 /* TitleAdventure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAdventure.swift; sourceTree = "<group>"; };
 		69263E5224A27D1A009EB2A6 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		69683ECB2497AB8300358395 /* CustomCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellViewController.swift; sourceTree = "<group>"; };
+		E244522A24A7C55F00CB318E /* NtoureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NtoureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E244522C24A7C55F00CB318E /* NtoureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NtoureTests.swift; sourceTree = "<group>"; };
+		E244522E24A7C55F00CB318E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E244523424A7CFDD00CB318E /* PlistManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistManagerTests.swift; sourceTree = "<group>"; };
+		E244523624A7D56100CB318E /* LocationCoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinateTests.swift; sourceTree = "<group>"; };
+		E244523824A7D84A00CB318E /* GuideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideTests.swift; sourceTree = "<group>"; };
+		E244523A24A7DAC500CB318E /* AdventureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureTests.swift; sourceTree = "<group>"; };
 		E247E94924A5131C0081DBA9 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		E247E94B24A52AF20081DBA9 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
-		E247E94D24A541450081DBA9 /* Adventure2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adventure2.swift; sourceTree = "<group>"; };
 		E26D3623248FC05B006A935C /* SelectedLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedLocationViewController.swift; sourceTree = "<group>"; };
 		E26D3625248FC15E006A935C /* CollectionPhotoInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionPhotoInformation.swift; path = Ntoure/View/CollectionPhotoInformation.swift; sourceTree = SOURCE_ROOT; };
 		E26D3627248FD209006A935C /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCollectionViewCell.swift; path = Ntoure/View/PhotoCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -99,6 +119,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E244522724A7C55F00CB318E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -106,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				036D08A8248EBB2B0011A44B /* Ntoure */,
+				E244522B24A7C55F00CB318E /* NtoureTests */,
 				036D08A7248EBB2B0011A44B /* Products */,
 				54A4AB662497A5AF007D9DAF /* Recovered References */,
 			);
@@ -115,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				036D08A6248EBB2B0011A44B /* Ntoure.app */,
+				E244522A24A7C55F00CB318E /* NtoureTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,7 +175,6 @@
 				E2790046249AC0E9004D1FF5 /* LocationCoordinate.swift */,
 				036B06C424A0E5DD007F0BD3 /* PlistManager.swift */,
 				E247E94B24A52AF20081DBA9 /* Place.swift */,
-				E247E94D24A541450081DBA9 /* Adventure2.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +212,27 @@
 				5401888C248FD1490073E630 /* AdventureTableViewCell.swift */,
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		E244522B24A7C55F00CB318E /* NtoureTests */ = {
+			isa = PBXGroup;
+			children = (
+				E244523C24A7DD8D00CB318E /* ModelTests */,
+				E244522E24A7C55F00CB318E /* Info.plist */,
+			);
+			path = NtoureTests;
+			sourceTree = "<group>";
+		};
+		E244523C24A7DD8D00CB318E /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				E244522C24A7C55F00CB318E /* NtoureTests.swift */,
+				E244523A24A7DAC500CB318E /* AdventureTests.swift */,
+				E244523424A7CFDD00CB318E /* PlistManagerTests.swift */,
+				E244523624A7D56100CB318E /* LocationCoordinateTests.swift */,
+				E244523824A7D84A00CB318E /* GuideTests.swift */,
+			);
+			path = ModelTests;
 			sourceTree = "<group>";
 		};
 		E247E94824A512FE0081DBA9 /* Network */ = {
@@ -242,6 +291,24 @@
 			productReference = 036D08A6248EBB2B0011A44B /* Ntoure.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E244522924A7C55F00CB318E /* NtoureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E244523324A7C56000CB318E /* Build configuration list for PBXNativeTarget "NtoureTests" */;
+			buildPhases = (
+				E244522624A7C55F00CB318E /* Sources */,
+				E244522724A7C55F00CB318E /* Frameworks */,
+				E244522824A7C55F00CB318E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E244523024A7C55F00CB318E /* PBXTargetDependency */,
+			);
+			name = NtoureTests;
+			productName = NtoureTests;
+			productReference = E244522A24A7C55F00CB318E /* NtoureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -254,6 +321,10 @@
 				TargetAttributes = {
 					036D08A5248EBB2B0011A44B = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					E244522924A7C55F00CB318E = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 036D08A5248EBB2B0011A44B;
 					};
 				};
 			};
@@ -271,6 +342,7 @@
 			projectRoot = "";
 			targets = (
 				036D08A5248EBB2B0011A44B /* Ntoure */,
+				E244522924A7C55F00CB318E /* NtoureTests */,
 			);
 		};
 /* End PBXProject section */
@@ -284,6 +356,13 @@
 				036B06C324A0D833007F0BD3 /* GuideData.plist in Resources */,
 				036D08B3248EBB300011A44B /* Assets.xcassets in Resources */,
 				0355D4622491B2A8006B6070 /* Harbor Type - Graviola Regular.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E244522824A7C55F00CB318E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +408,6 @@
 				036B06C524A0E5DD007F0BD3 /* PlistManager.swift in Sources */,
 				69263E4B249B99BC009EB2A6 /* UPCarouselFlowLayout.swift in Sources */,
 				0374230A2493A6CD007BDD38 /* SelectedGuideViewController.swift in Sources */,
-				E247E94E24A541450081DBA9 /* Adventure2.swift in Sources */,
 				036D08AA248EBB2B0011A44B /* AppDelegate.swift in Sources */,
 				69263E5324A27D1B009EB2A6 /* ContactView.swift in Sources */,
 				E2790049249AC2CF004D1FF5 /* PresentMapLocationDelegate.swift in Sources */,
@@ -351,7 +429,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E244522624A7C55F00CB318E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E244523924A7D84A00CB318E /* GuideTests.swift in Sources */,
+				E244523B24A7DAC500CB318E /* AdventureTests.swift in Sources */,
+				E244523724A7D56100CB318E /* LocationCoordinateTests.swift in Sources */,
+				E244523524A7CFDD00CB318E /* PlistManagerTests.swift in Sources */,
+				E244522D24A7C55F00CB318E /* NtoureTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E244523024A7C55F00CB318E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 036D08A5248EBB2B0011A44B /* Ntoure */;
+			targetProxy = E244522F24A7C55F00CB318E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		036D08B4248EBB300011A44B /* LaunchScreen.storyboard */ = {
@@ -515,6 +613,46 @@
 			};
 			name = Release;
 		};
+		E244523124A7C56000CB318E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3XAHB7RJJD;
+				INFOPLIST_FILE = NtoureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = anderson.alencar.NtoureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ntoure.app/Ntoure";
+			};
+			name = Debug;
+		};
+		E244523224A7C56000CB318E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3XAHB7RJJD;
+				INFOPLIST_FILE = NtoureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = anderson.alencar.NtoureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ntoure.app/Ntoure";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -532,6 +670,15 @@
 			buildConfigurations = (
 				036D08BB248EBB300011A44B /* Debug */,
 				036D08BC248EBB300011A44B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E244523324A7C56000CB318E /* Build configuration list for PBXNativeTarget "NtoureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E244523124A7C56000CB318E /* Debug */,
+				E244523224A7C56000CB318E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
