@@ -15,7 +15,7 @@ class LocationMapView: UIView {
     lazy var title: UILabel = {
         var title = UILabel()
         title.font = .placeTitle
-        title.attributedText = NSMutableAttributedString(string: "Canoa", attributes: placeTitle)
+        title.attributedText = NSMutableAttributedString(string: " ", attributes: placeTitle)
         title.adjustsFontSizeToFitWidth = true
         title.numberOfLines = 1
         title.textColor = .titleColor
@@ -51,10 +51,8 @@ class LocationMapView: UIView {
         return mapLocation
     }()
 
-    init(frame: CGRect, title: String, locationDistance: String) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        self.title.text = title
-        self.locationDistance.text = locationDistance
         setUp()
     }
 

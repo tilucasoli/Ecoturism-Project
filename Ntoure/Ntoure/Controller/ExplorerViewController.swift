@@ -13,6 +13,8 @@ class ExplorerViewController: UIViewController {
 
     var data = [CustomData]()
     
+    let manager = APIManager()
+    
     fileprivate let collectionView: UICollectionView = {
         let layout = UPCarouselFlowLayout()
         layout.scrollDirection = .horizontal
@@ -120,7 +122,7 @@ class ExplorerViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        APIManager().fetchPlace { [weak self] (datas) in
+        manager.fetchPlace { [weak self] (datas) in
             self?.data = datas
             DispatchQueue.main.async {
                 self?.collectionView.reloadData()
@@ -146,6 +148,7 @@ extension ExplorerViewController: UICollectionViewDelegateFlowLayout, UICollecti
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let nextViewController = SelectedLocationViewController()
+        nextViewController.placeIDReference = data[indexPath.row].placeID
         navigationController?.pushViewController(nextViewController, animated: true)
     }
 

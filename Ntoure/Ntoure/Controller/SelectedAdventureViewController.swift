@@ -21,21 +21,30 @@ class SelectedAdventureViewController: UIViewController, Delegate{
     var data: Adventure? {
         didSet {
             guard let data = data else { return }
-            titleComponent.title.text = data.title
-            titleComponent.locationDistance.text = data.distancia
-            titleComponent.category.text = data.categoria
-//            collectionComponent.images[0] = data.image //change dataimage type to array
+            titleComponent.title.text = data.activityName
+            titleComponent.locationDistance.text = "\(Int.random(in: 1...4)) km"
             
-            switch data.categoria {
-            case "Parapente":
+            switch data.category {
+            case 0:
                 titleComponent.typeIcon.image = UIImage(named: "parapenteIcon")
-            case "Jangada":
+                titleComponent.category.text = "Trilha"
+            case 1:
                 titleComponent.typeIcon.image = UIImage(named: "jangadaIcon")
-            case "Kitesurf":
+                titleComponent.category.text = "Barco"
+            case 2:
                 titleComponent.typeIcon.image = UIImage(named: "kitesurfIcon")
+                titleComponent.category.text = "Windsurf"
+            case 3:
+                titleComponent.typeIcon.image = UIImage(named: "kitesurfIcon")
+                titleComponent.category.text = "Kitesurf"
             default:
                 titleComponent.typeIcon.image = nil
+                titleComponent.category.text = "Stand Up Paddle"
             }
+            informationComponent.placeDescription.text = data.description
+            contactComponent.placeDescription.setTitle("85 "+data.phoneNumber, for: .normal)
+            addressComponent.placeDescription.setTitle(data.address, for: .normal)
+            collectionComponent.images = [data.photoActivity]
         }
     }
 
@@ -46,37 +55,33 @@ class SelectedAdventureViewController: UIViewController, Delegate{
     }()
 
     lazy var titleComponent: TitleAdventure = {
-        let locationMap = TitleAdventure(frame: .zero, title: "Canoa Quebrada", locationDistance: "163km")
+        let locationMap = TitleAdventure(frame: .zero)
         locationMap.delegate = self
         locationMap.translatesAutoresizingMaskIntoConstraints = false
         return locationMap
     }()
     
     lazy var informationComponent: InformationView = {
-        let informationComponent = InformationView(frame: .zero, placeDescription: "Canoa Quebrada é uma praia localizada no litoral leste do Estado do Ceará. A sua paisagem é caracterizada por dunas e falésias avermelhadas de até trinta metros acima do nível do mar.")
+        let informationComponent = InformationView()
         informationComponent.translatesAutoresizingMaskIntoConstraints = false
         return informationComponent
     }()
     
     lazy var carefulComponent: InformationView = {
-        let careful = InformationView(frame: .zero, placeDescription: """
- 1. Não jogue lixo na praia
- 2. Leve os equipamentos de segurança
- 3. Verifique o mar antes de entrar
- """)
+        let careful = InformationView()
         careful.title.text = "Cuidados"
         careful.translatesAutoresizingMaskIntoConstraints = false
         return careful
     }()
     
     lazy var contactComponent: ContactView = {
-        let contact = ContactView(frame: .zero, placeDescription: "+55 99999-9999", title: "Contato")
+        let contact = ContactView(frame: .zero, title: "Contato")
         contact.translatesAutoresizingMaskIntoConstraints = false
         return contact
     }()
     
     lazy var addressComponent: ContactView = {
-        let address = ContactView(frame: .zero, placeDescription: "Av. da Integração, 1, Aracati - CE, 62800-000", title: "Endereço")
+        let address = ContactView(frame: .zero, title: "Endereço")
         address.translatesAutoresizingMaskIntoConstraints = false
         return address
     }()
@@ -166,4 +171,3 @@ extension SelectedAdventureViewController: ViewCode {
         view.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.98, alpha: 1.00)
     }
 }
-
