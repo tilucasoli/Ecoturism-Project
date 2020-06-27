@@ -37,6 +37,17 @@
 		E244523724A7D56100CB318E /* LocationCoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244523624A7D56100CB318E /* LocationCoordinateTests.swift */; };
 		E244523924A7D84A00CB318E /* GuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244523824A7D84A00CB318E /* GuideTests.swift */; };
 		E244523B24A7DAC500CB318E /* AdventureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244523A24A7DAC500CB318E /* AdventureTests.swift */; };
+		E244523F24A7EDF500CB318E /* TitleAdventureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244523E24A7EDF500CB318E /* TitleAdventureTests.swift */; };
+		E244524124A7F1B700CB318E /* ContactViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244524024A7F1B700CB318E /* ContactViewTests.swift */; };
+		E244524324A7F37200CB318E /* MyCustomHeaderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244524224A7F37200CB318E /* MyCustomHeaderViewTests.swift */; };
+		E244524524A7F4E900CB318E /* EmptyStateComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244524424A7F4E900CB318E /* EmptyStateComponentTests.swift */; };
+		E244524724A7F56A00CB318E /* AdventureViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244524624A7F56A00CB318E /* AdventureViewTests.swift */; };
+		E244524924A7FEC200CB318E /* InformationViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244524824A7FEC200CB318E /* InformationViewTests.swift */; };
+		E244524B24A7FF8700CB318E /* LocationMapViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244524A24A7FF8700CB318E /* LocationMapViewTests.swift */; };
+		E244524D24A7FFE800CB318E /* PhotoCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244524C24A7FFE800CB318E /* PhotoCollectionViewCellTests.swift */; };
+		E244524F24A802CE00CB318E /* CollectionPhotoInformationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244524E24A802CE00CB318E /* CollectionPhotoInformationTests.swift */; };
+		E244525124A803FD00CB318E /* GuideCellTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244525024A803FD00CB318E /* GuideCellTableViewCellTests.swift */; };
+		E244525324A804DC00CB318E /* AdventureTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244525224A804DC00CB318E /* AdventureTableViewCellTests.swift */; };
 		E247E94A24A5131C0081DBA9 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247E94924A5131C0081DBA9 /* APIManager.swift */; };
 		E247E94C24A52AF20081DBA9 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = E247E94B24A52AF20081DBA9 /* Place.swift */; };
 		E26D3624248FC05B006A935C /* SelectedLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26D3623248FC05B006A935C /* SelectedLocationViewController.swift */; };
@@ -97,6 +108,17 @@
 		E244523624A7D56100CB318E /* LocationCoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinateTests.swift; sourceTree = "<group>"; };
 		E244523824A7D84A00CB318E /* GuideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideTests.swift; sourceTree = "<group>"; };
 		E244523A24A7DAC500CB318E /* AdventureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureTests.swift; sourceTree = "<group>"; };
+		E244523E24A7EDF500CB318E /* TitleAdventureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAdventureTests.swift; sourceTree = "<group>"; };
+		E244524024A7F1B700CB318E /* ContactViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewTests.swift; sourceTree = "<group>"; };
+		E244524224A7F37200CB318E /* MyCustomHeaderViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomHeaderViewTests.swift; sourceTree = "<group>"; };
+		E244524424A7F4E900CB318E /* EmptyStateComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateComponentTests.swift; sourceTree = "<group>"; };
+		E244524624A7F56A00CB318E /* AdventureViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureViewTests.swift; sourceTree = "<group>"; };
+		E244524824A7FEC200CB318E /* InformationViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewTests.swift; sourceTree = "<group>"; };
+		E244524A24A7FF8700CB318E /* LocationMapViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapViewTests.swift; sourceTree = "<group>"; };
+		E244524C24A7FFE800CB318E /* PhotoCollectionViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCellTests.swift; sourceTree = "<group>"; };
+		E244524E24A802CE00CB318E /* CollectionPhotoInformationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPhotoInformationTests.swift; sourceTree = "<group>"; };
+		E244525024A803FD00CB318E /* GuideCellTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideCellTableViewCellTests.swift; sourceTree = "<group>"; };
+		E244525224A804DC00CB318E /* AdventureTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureTableViewCellTests.swift; sourceTree = "<group>"; };
 		E247E94924A5131C0081DBA9 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		E247E94B24A52AF20081DBA9 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		E26D3623248FC05B006A935C /* SelectedLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedLocationViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +239,7 @@
 		E244522B24A7C55F00CB318E /* NtoureTests */ = {
 			isa = PBXGroup;
 			children = (
+				E244523D24A7EDCE00CB318E /* ViewTests */,
 				E244523C24A7DD8D00CB318E /* ModelTests */,
 				E244522E24A7C55F00CB318E /* Info.plist */,
 			);
@@ -233,6 +256,24 @@
 				E244523824A7D84A00CB318E /* GuideTests.swift */,
 			);
 			path = ModelTests;
+			sourceTree = "<group>";
+		};
+		E244523D24A7EDCE00CB318E /* ViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				E244523E24A7EDF500CB318E /* TitleAdventureTests.swift */,
+				E244524024A7F1B700CB318E /* ContactViewTests.swift */,
+				E244524224A7F37200CB318E /* MyCustomHeaderViewTests.swift */,
+				E244524424A7F4E900CB318E /* EmptyStateComponentTests.swift */,
+				E244524624A7F56A00CB318E /* AdventureViewTests.swift */,
+				E244524824A7FEC200CB318E /* InformationViewTests.swift */,
+				E244524A24A7FF8700CB318E /* LocationMapViewTests.swift */,
+				E244524C24A7FFE800CB318E /* PhotoCollectionViewCellTests.swift */,
+				E244524E24A802CE00CB318E /* CollectionPhotoInformationTests.swift */,
+				E244525024A803FD00CB318E /* GuideCellTableViewCellTests.swift */,
+				E244525224A804DC00CB318E /* AdventureTableViewCellTests.swift */,
+			);
+			path = ViewTests;
 			sourceTree = "<group>";
 		};
 		E247E94824A512FE0081DBA9 /* Network */ = {
@@ -433,11 +474,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E244525324A804DC00CB318E /* AdventureTableViewCellTests.swift in Sources */,
+				E244524324A7F37200CB318E /* MyCustomHeaderViewTests.swift in Sources */,
+				E244524724A7F56A00CB318E /* AdventureViewTests.swift in Sources */,
+				E244524B24A7FF8700CB318E /* LocationMapViewTests.swift in Sources */,
 				E244523924A7D84A00CB318E /* GuideTests.swift in Sources */,
+				E244523F24A7EDF500CB318E /* TitleAdventureTests.swift in Sources */,
+				E244524F24A802CE00CB318E /* CollectionPhotoInformationTests.swift in Sources */,
+				E244524D24A7FFE800CB318E /* PhotoCollectionViewCellTests.swift in Sources */,
 				E244523B24A7DAC500CB318E /* AdventureTests.swift in Sources */,
 				E244523724A7D56100CB318E /* LocationCoordinateTests.swift in Sources */,
 				E244523524A7CFDD00CB318E /* PlistManagerTests.swift in Sources */,
+				E244525124A803FD00CB318E /* GuideCellTableViewCellTests.swift in Sources */,
 				E244522D24A7C55F00CB318E /* NtoureTests.swift in Sources */,
+				E244524524A7F4E900CB318E /* EmptyStateComponentTests.swift in Sources */,
+				E244524124A7F1B700CB318E /* ContactViewTests.swift in Sources */,
+				E244524924A7FEC200CB318E /* InformationViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
