@@ -11,12 +11,22 @@ import UIKit
 class Guide: Codable {
     var name: String
     var adventures = [Adventure]()
+    var image: String?
 
     func addServiceInTodo(service: Adventure) {
         adventures.append(service)
     }
     
-    required init(name: String) {
+    func getImage() -> UIImage? {
+        let data = adventures.first?.photoActivity
+        guard let datalet = data else {
+            return nil
+        }
+        return UIImage(data: datalet)
+    }
+    
+    required init(name: String, image: String?) {
         self.name = name
+        self.image = image
     }
 }

@@ -75,7 +75,7 @@ class GuideViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancelar", style: .destructive, handler: { _ in}))
         alert.addAction(UIAlertAction(title: "Criar", style: .default, handler: {_ in
             if let txtField = alert.textFields?.first, let text = txtField.text {
-                let newGuide = Guide(name: text)
+                let newGuide = Guide(name: text, image: nil)
                 self.guideList.append(newGuide)
                 
                 self.tableView.reloadData()
@@ -125,6 +125,13 @@ extension GuideViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "guideCell", for: indexPath) as? GuideCellTableViewCell
         cell?.backgroundColor = .background
         cell?.title.text = guideList[indexPath.row].name
+        
+        if let image = guideList[indexPath.row].getImage() {
+            cell?.imgService.image = image
+        } else {
+            cell?.imageView?.backgroundColor = .withoutImage
+        }
+        
         return cell ?? UITableViewCell()
     }
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

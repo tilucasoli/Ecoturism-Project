@@ -71,7 +71,7 @@ class TitleAdventure: UIView {
     }()
 
     @objc func picker() {
-        let alertController = UIAlertController(title: "Lucas", message: "Currencies", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "Roteiros", message: "Adicione essa Aventura a um Roteiro", preferredStyle: .actionSheet)
         
         let margin: CGFloat = 8.0
         let rect = CGRect(x: margin, y: margin, width: alertController.view.bounds.size.width - margin * 4.0, height: 100.0)
@@ -81,15 +81,15 @@ class TitleAdventure: UIView {
         alertController.view.addSubview(customView)
         
         customView.translatesAutoresizingMaskIntoConstraints = false
-        customView.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: 45).isActive = true
+        customView.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: 80).isActive = true
         customView.rightAnchor.constraint(equalTo: alertController.view.rightAnchor).isActive = true
         customView.leftAnchor.constraint(equalTo: alertController.view.leftAnchor).isActive = true
         customView.heightAnchor.constraint(equalToConstant: CGFloat(self.numberOfRows * 57)).isActive = true
         
         alertController.view.translatesAutoresizingMaskIntoConstraints = false
-        alertController.view.bottomAnchor.constraint(equalTo: customView.bottomAnchor, constant: 56).isActive = true
+        alertController.view.bottomAnchor.constraint(equalTo: customView.bottomAnchor, constant: 57).isActive = true
         
-        alertController.addAction(UIAlertAction(title: "ok", style: .destructive, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Cancelar", style: .destructive, handler: nil))
         
         self.viewCon.present(alertController, animated: true, completion: nil)
     }
