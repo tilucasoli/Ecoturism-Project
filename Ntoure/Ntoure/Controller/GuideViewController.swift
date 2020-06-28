@@ -129,7 +129,7 @@ extension GuideViewController: UITableViewDelegate, UITableViewDataSource {
         if let image = guideList[indexPath.row].getImage() {
             cell?.imgService.image = image
         } else {
-            cell?.imageView?.backgroundColor = .withoutImage
+            cell?.imgService.backgroundColor = .withoutImage
         }
         
         return cell ?? UITableViewCell()

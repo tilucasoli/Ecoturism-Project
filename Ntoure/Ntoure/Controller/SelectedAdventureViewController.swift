@@ -34,6 +34,7 @@ class SelectedAdventureViewController: UIViewController {
                 titleComponent.category.text = "Stand Up Paddle"
             }
             informationComponent.placeDescription.text = data.description
+            carefulComponent.placeDescription.text = data.careStringTemplate()
             contactComponent.placeDescription.setTitle("85 " + data.phoneNumber, for: .normal)
             addressComponent.placeDescription.setTitle(data.address, for: .normal)
             collectionComponent.images = [data.photoActivity]

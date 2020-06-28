@@ -20,8 +20,19 @@ struct Adventure: Codable {
     var phoneNumber: String
     var address: String
     var place: PlaceAcessory
+    
+    func careStringTemplate() -> String {
+        var str = ""
+        for index in 0..<care.count {
+            if index == care.count-1 {
+                str += "\(index+1). \(care[index])"
+            } else {
+            str += "\(index+1). \(care[index])\n"
+            }
+        }
+        return str
+    }
 }
-
 struct PlaceAcessory: Codable {
     var id: UUID
 }

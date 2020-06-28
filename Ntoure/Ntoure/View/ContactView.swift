@@ -10,7 +10,7 @@ import UIKit
 
 class ContactView: UIView {
 
-   lazy var title: UILabel = {
+    lazy var title: UILabel = {
        var title = UILabel()
        title.textColor = .titleColor
        title.numberOfLines = 1
@@ -23,8 +23,10 @@ class ContactView: UIView {
    lazy var placeDescription: UIButton = {
         var description = UIButton()
         description.setTitleColor(.actionColor, for: .normal)
-        description.titleLabel?.textAlignment = .left
         description.titleLabel!.adjustsFontSizeToFitWidth = true
+        description.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        description.titleLabel?.numberOfLines = 0
+        description.titleLabel?.textAlignment = .left
         description.titleLabel!.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         description.translatesAutoresizingMaskIntoConstraints = false
         return description
@@ -55,9 +57,11 @@ extension ContactView: ViewCode {
        ])
        
        NSLayoutConstraint.activate([
-           placeDescription.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-           placeDescription.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 4),
-           placeDescription.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            placeDescription.titleLabel!.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            placeDescription.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            placeDescription.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            placeDescription.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 4),
+            placeDescription.bottomAnchor.constraint(equalTo: self.bottomAnchor)
        ])
    }
 

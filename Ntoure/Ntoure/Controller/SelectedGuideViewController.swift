@@ -9,7 +9,7 @@
 import UIKit
 
 class SelectedGuideViewController: UIViewController {
-    let sections = ["To do", "Done"]
+    let sections = ["Quero fazer", "Feito"]
     
     var listGuide = [Guide]()
     
