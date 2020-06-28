@@ -37,7 +37,7 @@ extension tableViewAlert: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "guideCell", for: indexPath) as? GuideCellTableViewCell
-        cell?.backgroundColor = .none
+        cell?.backgroundColor = #colorLiteral(red: 0.937048316, green: 0.9412510991, blue: 0.9411101937, alpha: 1)
         cell?.title.text = PlistManager().read()[indexPath.row].name
         return cell ?? UITableViewCell()
     }
