@@ -34,7 +34,7 @@ class SelectedAdventureViewController: UIViewController {
                 titleComponent.category.text = "Stand Up Paddle"
             }
             informationComponent.placeDescription.text = data.description
-            contactComponent.placeDescription.setTitle("85 "+data.phoneNumber, for: .normal)
+            contactComponent.placeDescription.setTitle("85 " + data.phoneNumber, for: .normal)
             addressComponent.placeDescription.setTitle(data.address, for: .normal)
             collectionComponent.images = [data.photoActivity]
         }
@@ -47,8 +47,12 @@ class SelectedAdventureViewController: UIViewController {
     }()
 
     lazy var titleComponent: TitleAdventure = {
-        let locationMap = TitleAdventure(frame: .zero)
+        var locationMap = TitleAdventure(frame: .zero)
+        guard let data = data else { return locationMap}
+        locationMap.data = data
+        locationMap.numberOfRows = PlistManager().read().count
         locationMap.translatesAutoresizingMaskIntoConstraints = false
+        locationMap.viewCon = self
         return locationMap
     }()
     
@@ -92,6 +96,9 @@ class SelectedAdventureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        titleComponent.numberOfRows = PlistManager().read().count
     }
     
     override func viewWillLayoutSubviews() {

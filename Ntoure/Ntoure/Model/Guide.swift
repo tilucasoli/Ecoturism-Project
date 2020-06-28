@@ -10,11 +10,10 @@ import UIKit
 
 class Guide: Codable {
     var name: String
-    var todo = [Adventure]()
-    var done = [Adventure]()
+    var adventures = [Adventure]()
 
     func addServiceInTodo(service: Adventure) {
-        todo.append(service)
+        adventures.append(service)
     }
     
     required init(name: String) {
