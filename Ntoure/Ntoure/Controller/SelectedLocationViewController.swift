@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import MapKit
 
 class SelectedLocationViewController: UIViewController, MyDelegate {
     
     var placeIDReference: UUID?
     
     let manager = APIManager()
+    
+    var place: Place!
     
     lazy var collectionComponent: CollectionPhotoInformation = {
         let collection = CollectionPhotoInformation()
@@ -58,6 +61,7 @@ class SelectedLocationViewController: UIViewController, MyDelegate {
         
         manager.fetchPlaceInformations(placeID: placeIDReference!) { (place) in
             DispatchQueue.main.async {
+                self.place = place
                 self.informationComponent.placeDescription.text = place.description
                 self.collectionComponent.images = place.presentationPhotos
                 self.locationMapComponent.title.text = place.namePlace
@@ -93,6 +97,7 @@ class SelectedLocationViewController: UIViewController, MyDelegate {
 extension SelectedLocationViewController: PresentMapLocationDelegate {
     func presentLocation() {
         let mapController = MapLocationControllerViewController()
+        mapController.location = LocationCoordinate(title: place.namePlace, locationName: "Região do Ceará", coordinate: CLLocationCoordinate2D(latitude: Double(place.location[0])!, longitude: Double(place.location[1])!))
         navigationController?.pushViewController(mapController, animated: true)
     }
 }
