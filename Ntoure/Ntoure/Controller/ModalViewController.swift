@@ -11,7 +11,7 @@ import UIKit
 class ModalViewController: UIViewController {
 
     var guideList = [Guide]()
-    var data: Adventure?
+    var adventureData: Adventure?
     
     let tableView: UITableView = {
         let tableView = UITableView()
@@ -83,6 +83,7 @@ extension ModalViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cv = SelectedGuideViewController()
-//        cv.adventureList.append(data!)
+        guard let data = adventureData else {return}
+        cv.adventureList.append(data)
     }
 }

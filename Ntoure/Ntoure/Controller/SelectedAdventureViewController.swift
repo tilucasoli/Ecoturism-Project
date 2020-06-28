@@ -10,14 +10,6 @@ import UIKit
 
 class SelectedAdventureViewController: UIViewController, Delegate{
     
-    func showModal() {
-        let modalVC = ModalViewController()
-        modalVC.modalPresentationStyle = .formSheet
-        modalVC.data = data
-        present(modalVC, animated: true, completion: nil)
-        
-    }
-    
     var data: Adventure? {
         didSet {
             guard let data = data else { return }
@@ -45,9 +37,19 @@ class SelectedAdventureViewController: UIViewController, Delegate{
             contactComponent.placeDescription.setTitle("85 "+data.phoneNumber, for: .normal)
             addressComponent.placeDescription.setTitle(data.address, for: .normal)
             collectionComponent.images = [data.photoActivity]
+            
         }
     }
 
+    func showModal() {
+        let modalVC = ModalViewController()
+        guard let takeData = data else {return}
+        modalVC.modalPresentationStyle = .formSheet
+        modalVC.adventureData = takeData
+        present(modalVC, animated: true, completion: nil)
+                   
+    }
+    
     lazy var collectionComponent: CollectionPhotoInformation = {
         let collection = CollectionPhotoInformation()
         collection.translatesAutoresizingMaskIntoConstraints = false

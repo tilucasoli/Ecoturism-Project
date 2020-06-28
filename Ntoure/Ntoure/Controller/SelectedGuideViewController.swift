@@ -44,7 +44,7 @@ class SelectedGuideViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTitle))
         
-        //adventureList = fetchData()
+//        adventureList = fetchData()
         doneAdventure = adventureList.filter {$0.status == true}
         notDoneAdventure = adventureList.filter {$0.status == false}
         
