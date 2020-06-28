@@ -44,13 +44,19 @@ class SelectedGuideViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTitle))
         
-        //adventureList = fetchData()
+        adventureList = listGuide[indexPathSelected].adventures
         doneAdventure = adventureList.filter {$0.status == true}
         notDoneAdventure = adventureList.filter {$0.status == false}
         
         setupEmptyState()
 //        hiddenTableView()
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        hiddenTableView()
+        adventureList = PlistManager().read()[indexPathSelected].adventures
+        tableView.reloadData()
     }
     
     func hiddenTableView() {
@@ -133,8 +139,12 @@ extension SelectedGuideViewController: UITableViewDataSource, UITableViewDelegat
                     self.doneAdventure.remove(at: indexPath.row)
                     self.tableView.deleteRows(at: [indexPath], with: .fade)
                 }
+                listGuide[indexPathSelected].adventures = notDoneAdventure + doneAdventure
+                PlistManager().write(guide: self.listGuide)
+                adventureList = PlistManager().read()[indexPathSelected].adventures
+                self.hiddenTableView()
             }
-            self.hiddenTableView()
+            
         }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

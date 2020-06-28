@@ -9,6 +9,9 @@
 import UIKit
 
 class TitleAdventure: UIView {
+    var data: Adventure?
+    var viewCon = SelectedAdventureViewController()
+    var numberOfRows = 0
     
     lazy var title: UILabel = {
         var title = UILabel()
@@ -63,8 +66,33 @@ class TitleAdventure: UIView {
         saved.setImage(UIImage(named: "saved"), for: .normal)
         saved.adjustsImageWhenHighlighted = true // ver o comportamento disso
         saved.translatesAutoresizingMaskIntoConstraints = false
+        saved.addTarget(self, action: #selector(picker), for: .touchUpInside)
         return saved
     }()
+
+    @objc func picker() {
+        let alertController = UIAlertController(title: "Lucas", message: "Currencies", preferredStyle: .actionSheet)
+        
+        let margin: CGFloat = 8.0
+        let rect = CGRect(x: margin, y: margin, width: alertController.view.bounds.size.width - margin * 4.0, height: 100.0)
+        let customView = tableViewAlert(frame: rect)
+        guard let data = data else {return}
+        customView.data = data
+        alertController.view.addSubview(customView)
+        
+        customView.translatesAutoresizingMaskIntoConstraints = false
+        customView.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: 45).isActive = true
+        customView.rightAnchor.constraint(equalTo: alertController.view.rightAnchor).isActive = true
+        customView.leftAnchor.constraint(equalTo: alertController.view.leftAnchor).isActive = true
+        customView.heightAnchor.constraint(equalToConstant: CGFloat(self.numberOfRows * 57)).isActive = true
+        
+        alertController.view.translatesAutoresizingMaskIntoConstraints = false
+        alertController.view.bottomAnchor.constraint(equalTo: customView.bottomAnchor, constant: 56).isActive = true
+        
+        alertController.addAction(UIAlertAction(title: "ok", style: .destructive, handler: nil))
+        
+        self.viewCon.present(alertController, animated: true, completion: nil)
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)

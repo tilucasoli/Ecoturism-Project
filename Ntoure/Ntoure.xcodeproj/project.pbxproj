@@ -22,6 +22,7 @@
 		036D08D024900DC20011A44B /* Guide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08CF24900DC20011A44B /* Guide.swift */; };
 		036D08D4249015CC0011A44B /* GuideCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D08D3249015CC0011A44B /* GuideCellTableViewCell.swift */; };
 		0374230A2493A6CD007BDD38 /* SelectedGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037423092493A6CD007BDD38 /* SelectedGuideViewController.swift */; };
+		03B6134824A7DFCE00FFE519 /* TableViewAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6134724A7DFCE00FFE519 /* TableViewAlert.swift */; };
 		03C8BBB22497AA97007992BA /* EmptyStateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8BBB12497AA97007992BA /* EmptyStateComponent.swift */; };
 		03EB928F249A66E800B68FD8 /* MyCustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EB928E249A66E800B68FD8 /* MyCustomHeader.swift */; };
 		5401888B248FB65A0073E630 /* AdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5401888A248FB65A0073E630 /* AdventureViewController.swift */; };
@@ -65,6 +66,7 @@
 		036D08CF24900DC20011A44B /* Guide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guide.swift; sourceTree = "<group>"; };
 		036D08D3249015CC0011A44B /* GuideCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GuideCellTableViewCell.swift; path = Ntoure/View/GuideCellTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		037423092493A6CD007BDD38 /* SelectedGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedGuideViewController.swift; sourceTree = "<group>"; };
+		03B6134724A7DFCE00FFE519 /* TableViewAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAlert.swift; sourceTree = "<group>"; };
 		03C8BBB12497AA97007992BA /* EmptyStateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateComponent.swift; sourceTree = "<group>"; };
 		03EB928E249A66E800B68FD8 /* MyCustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomHeader.swift; sourceTree = "<group>"; };
 		5401888A248FB65A0073E630 /* AdventureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				03EB928E249A66E800B68FD8 /* MyCustomHeader.swift */,
 				69263E5224A27D1A009EB2A6 /* ContactView.swift */,
 				69263E5024A0E985009EB2A6 /* TitleAdventure.swift */,
+				03B6134724A7DFCE00FFE519 /* TableViewAlert.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				036D08D4249015CC0011A44B /* GuideCellTableViewCell.swift in Sources */,
 				036D08C3248EBCF80011A44B /* TabBarController.swift in Sources */,
 				036B06C524A0E5DD007F0BD3 /* PlistManager.swift in Sources */,
+				03B6134824A7DFCE00FFE519 /* TableViewAlert.swift in Sources */,
 				69263E4B249B99BC009EB2A6 /* UPCarouselFlowLayout.swift in Sources */,
 				0374230A2493A6CD007BDD38 /* SelectedGuideViewController.swift in Sources */,
 				E247E94E24A541450081DBA9 /* Adventure2.swift in Sources */,

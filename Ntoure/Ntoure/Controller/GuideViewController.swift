@@ -44,6 +44,7 @@ class GuideViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.guideList = PlistManager().read()
         tableView.reloadData()
         hiddenTableView()
         
