@@ -27,6 +27,6 @@ class GuideTests: XCTestCase {
         let idealAdventuresCount = 1
         let adventure = Adventure(id: id, photoActivity: UIImage(named: "canoaQuebrada1")!.jpegData(compressionQuality: 0.9)!, activityName: "Canoagem", location: ["location"], category: 0, description: "Muito radical", status: false, care: ["Não jogar lixo"], phoneNumber: "989656232", address: "Rua maria, 187", place: acessory)
         guide.addServiceInTodo(service: adventure)
-        XCTAssertEqual(idealAdventuresCount, guide.todo.count)
+        XCTAssertEqual(idealAdventuresCount, guide.adventures.count)
     }
 }
