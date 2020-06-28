@@ -12,9 +12,9 @@ import Contacts
 
 class MapLocationControllerViewController: UIViewController {
     
-    let cumbuco = CLLocationCoordinate2D(latitude: -3.6467904, longitude: -38.69615054)
-    let apple = CLLocationCoordinate2D(latitude: 37.3348469, longitude: -122.01139216)
-    let location = LocationCoordinate(title: "Cumbuco", locationName: "Bairro no Ceará", coordinate: CLLocationCoordinate2D(latitude: -3.6467904, longitude: -38.69615054))
+//    let cumbuco = CLLocationCoordinate2D(latitude: -3.6467904, longitude: -38.69615054)
+//    let apple = CLLocationCoordinate2D(latitude: 37.3348469, longitude: -122.01139216)
+    var location: LocationCoordinate!
 
     lazy var mapView: MKMapView = {
         let mapView = MKMapView()
