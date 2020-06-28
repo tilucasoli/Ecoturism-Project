@@ -51,20 +51,26 @@ class AdventureTableViewCell: UITableViewCell {
         
         switch adventure.category {
         case 0:
-            categoriaImage.image = UIImage(named: "parapenteIcon")
+            categoriaImage.image = UIImage(named: "trilha")
             categoriaLabel.text = "Trilha"
-        case 1:
-            categoriaImage.image = UIImage(named: "jangadaIcon")
+        case 1, 6:
+            categoriaImage.image = UIImage(named: "boat")
             categoriaLabel.text = "Barco"
         case 2:
-            categoriaImage.image = UIImage(named: "kitesurfIcon")
+            categoriaImage.image = UIImage(named: "windsurf")
             categoriaLabel.text = "Windsurf"
         case 3:
-            
-            categoriaLabel.text = "Windsurf"
+            categoriaImage.image = UIImage(named: "kitesurfIcon")
+            categoriaLabel.text = "Kitesurf"
+        case 4:
+            categoriaImage.image = UIImage(named: "surfing")
+            categoriaLabel.text = "Stand Up Paddle"
+        case 5:
+            categoriaImage.image = UIImage(named: "parapenteIcon")
+            categoriaLabel.text = "Parapente"
         default:
             categoriaImage.image = nil
-            categoriaLabel.text = "Stand Up Padle"
+            categoriaLabel.text = "Stand Up Paddle"
         }
         
         distanciaImage.image = #imageLiteral(resourceName: "location")

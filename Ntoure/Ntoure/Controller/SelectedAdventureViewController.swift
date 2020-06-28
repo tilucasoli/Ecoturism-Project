@@ -18,17 +18,23 @@ class SelectedAdventureViewController: UIViewController {
             
             switch data.category {
             case 0:
-                titleComponent.typeIcon.image = UIImage(named: "parapenteIcon")
+                titleComponent.typeIcon.image = UIImage(named: "trilha")
                 titleComponent.category.text = "Trilha"
-            case 1:
-                titleComponent.typeIcon.image = UIImage(named: "jangadaIcon")
+            case 1, 6:
+                titleComponent.typeIcon.image = UIImage(named: "boat")
                 titleComponent.category.text = "Barco"
             case 2:
-                titleComponent.typeIcon.image = UIImage(named: "kitesurfIcon")
+                titleComponent.typeIcon.image = UIImage(named: "windsurf")
                 titleComponent.category.text = "Windsurf"
             case 3:
                 titleComponent.typeIcon.image = UIImage(named: "kitesurfIcon")
                 titleComponent.category.text = "Kitesurf"
+            case 4:
+                titleComponent.typeIcon.image = UIImage(named: "surfing")
+                titleComponent.category.text = "Stand Up Paddle"
+            case 5:
+                titleComponent.typeIcon.image = UIImage(named: "parapenteIcon")
+                titleComponent.category.text = "Parapente"
             default:
                 titleComponent.typeIcon.image = nil
                 titleComponent.category.text = "Stand Up Paddle"
